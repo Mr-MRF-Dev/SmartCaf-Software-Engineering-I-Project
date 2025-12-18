@@ -3,7 +3,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/Mr-MRF-Dev/SmartCaf-Software-Engineering-I-Project)
 [![GitHub License](https://img.shields.io/github/license/Mr-MRF-Dev/SmartCaf-Software-Engineering-I-Project)](/LICENSE)
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Hi+There!+👋;🙋+Welcome!;software+engineering+(I);SEI+project;🍽+Smart+Caf+🍽+;&size=28)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome+to+SmartCaf!+🍽️;Smart+Cafeteria+Management+System;Software+Engineering+I+Project;Complete+SDLC+Documentation;Analysis+%26+Design+Phase;&size=28&center=true&width=600)](https://git.io/typing-svg)
 
 ## 📋 Overview
 
