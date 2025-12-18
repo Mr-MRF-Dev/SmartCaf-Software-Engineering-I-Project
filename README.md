@@ -51,6 +51,18 @@ SmartCaf-Software-Engineering-I-Project/
   └── README.md                  # This file
 ```
 
+## � Documentation
+
+This project includes comprehensive software engineering documentation:
+
+- **Activity Diagrams**: Visual representation of system workflows and processes
+- **Process Models**: Detailed process flows for various system operations
+- **Project Proposal**: Initial project vision, scope, and objectives
+- **Requirements Specification**: Complete functional and non-functional requirements
+- **Use Case Descriptions**: Detailed descriptions of system interactions
+- **Use Case Diagrams**: UML diagrams showing actors and system interactions
+- **User Stories**: Agile user stories capturing user needs and expectations
+
 ## 👥 Team Members
 
 The project is a collaborative effort by the following team members:
@@ -62,8 +74,8 @@ The project is a collaborative effort by the following team members:
 
 ## 🤝 Contributing
 
-we welcome any contributions you may have. If you're interested in helping out, fork the repository
-and create an [Issue](https://github.com/Mr-MRF-Dev/SmartCaf-Software-Engineering-I-Project/issues) and
+We welcome any contributions you may have. If you're interested in helping out, fork the repository
+and create an [Issue](https://github.com/Mr-MRF-Dev/SmartCaf-Software-Engineering-I-Project/issues) or
 [PR](https://github.com/Mr-MRF-Dev/SmartCaf-Software-Engineering-I-Project/pulls).
 
 ## 📄 License
