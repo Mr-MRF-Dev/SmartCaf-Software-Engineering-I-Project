@@ -22,6 +22,12 @@
 ~$*.vsd
 ~$*.vsdx
 
+# Draw.io temporary files
+*.dtmp
+*.bkp
+.~*.drawio
+.~*.dio
+
 # Office temporary
 *.~*
 .~lock.*
