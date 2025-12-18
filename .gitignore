@@ -1,0 +1,81 @@
+# Microsoft Office Temporary Files
+~$*.doc*
+~$*.xls*
+~$*.ppt*
+*.tmp
+*.temp
+
+# Word temporary files
+~WRL*.tmp
+~WRD*.tmp
+
+# Excel temporary files
+~$*.xls
+~$*.xlsx
+~$*.xlsm
+
+# PowerPoint temporary files
+~$*.ppt
+~$*.pptx
+
+# Visio temporary files
+~$*.vsd
+~$*.vsdx
+
+# Office temporary
+*.~*
+.~lock.*
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Log files
+*.log
+
+# Compressed files (optional)
+# *.zip
+# *.rar
+# *.7z
+# *.tar.gz
