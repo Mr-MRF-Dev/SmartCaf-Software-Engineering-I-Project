@@ -41,9 +41,13 @@ The SmartCaf system is designed to streamline cafeteria operations with:
 SmartCaf-Software-Engineering-I-Project/
   ├── docs/
   │   ├── activity-diagram/      # UML activity diagrams for system processes
+  │   ├── class-diagram/
+  │   ├── communication-diagram/
   │   ├── process-model/         # System process diagrams and workflows
   │   ├── proposal/              # Project proposal and initial documentation
   │   ├── requirements/          # Functional and non-functional requirements
+  │   ├── sequence-diagram/
+  │   ├── state-diagram/
   │   ├── use-case-description/  # Detailed use case descriptions
   │   ├── use-case-diagram/      # UML use case diagrams
   │   └── user-story/            # User stories and use cases
