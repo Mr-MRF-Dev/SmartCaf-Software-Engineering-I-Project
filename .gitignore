@@ -60,7 +60,6 @@ ehthumbs_vista.db
 .Trash-*
 
 # IDEs and Editors
-.vscode/
 .idea/
 *.swp
 *.swo
