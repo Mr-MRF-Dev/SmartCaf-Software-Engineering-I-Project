@@ -40,19 +40,57 @@ The SmartCaf system is designed to streamline cafeteria operations with:
 ```plaintext
 SmartCaf-Software-Engineering-I-Project/
   ├── docs/
-  │   ├── activity-diagram/      # UML activity diagrams for system processes
+  │   ├── activity-diagram/
+  │   │   # UML Activity Diagrams illustrating the dynamic flow of activities
+  │   │   # such as order placement, payment process, and inventory updates
+  │   │
   │   ├── class-diagram/
+  │   │   # UML Class Diagrams defining system classes, attributes, methods,
+  │   │   # and relationships between core entities like User, Order, Menu, and Inventory
+  │   │
   │   ├── communication-diagram/
-  │   ├── process-model/         # System process diagrams and workflows
-  │   ├── proposal/              # Project proposal and initial documentation
-  │   ├── requirements/          # Functional and non-functional requirements
+  │   │   # UML Communication Diagrams showing object interactions
+  │   │   # and message exchanges between system components
+  │   │
+  │   ├── process-model/
+  │   │   # High-level and detailed process models describing
+  │   │   # the operational workflows of the SmartCaf system
+  │   │
+  │   ├── proposal/
+  │   │   # Project proposal documents including problem statement,
+  │   │   # project scope, objectives, assumptions, and feasibility analysis
+  │   │
+  │   ├── requirements/
+  │   │   # Software Requirements Specification (SRS)
+  │   │   # including functional, non-functional requirements,
+  │   │   # constraints, and system assumptions
+  │   │
   │   ├── sequence-diagram/
+  │   │   # UML Sequence Diagrams representing time-ordered interactions
+  │   │   # between actors and system components for key use cases
+  │   │
   │   ├── state-diagram/
-  │   ├── use-case-description/  # Detailed use case descriptions
-  │   ├── use-case-diagram/      # UML use case diagrams
-  │   └── user-story/            # User stories and use cases
-  ├── LICENSE                    # Project license
-  └── README.md                  # This file
+  │   │   # UML State Diagrams describing state transitions
+  │   │   # of core entities such as orders and payments
+  │   │
+  │   ├── use-case-description/
+  │   │   # Detailed textual descriptions of each use case
+  │   │   # including actors, preconditions, main flow, and exceptions
+  │   │
+  │   ├── use-case-diagram/
+  │   │   # UML Use Case Diagrams showing system boundaries,
+  │   │   # actors, and their interactions with the SmartCaf system
+  │   │
+  │   └── user-story/
+  │       # Agile user stories representing user needs
+  │       # from the perspective of customers, staff, and administrators
+  │
+  ├── LICENSE
+  │   # License file defining usage and distribution terms of the repository
+  │
+  └── README.md
+      # Main documentation file providing an overview
+      # of the SmartCaf Software Engineering project
 ```
 
 ## � Documentation
