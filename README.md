@@ -121,6 +121,15 @@ This repository contains a complete set of Software Engineering documentation ar
 
 - **User Stories**: Capture user needs in an agile-friendly format to support requirement understanding and prioritization.
 
+## 🧠 Educational Purpose
+
+This project is intended for **academic use** in the _Software Engineering I_ course and demonstrates:
+
+- Application of UML and modeling techniques
+- Requirement analysis and documentation skills
+- Structured system design thinking
+- Team-based software engineering practices
+
 ## 👥 Team Members
 
 The project is a collaborative effort by the following team members:
