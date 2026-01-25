@@ -93,17 +93,33 @@ SmartCaf-Software-Engineering-I-Project/
       # of the SmartCaf Software Engineering project
 ```
 
-## � Documentation
+## 📚 Documentation
 
-This project includes comprehensive software engineering documentation:
+This repository contains a complete set of Software Engineering documentation artifacts created throughout the analysis and design phases of the SmartCaf project. Each document follows standard software engineering practices and UML conventions.
 
-- **Activity Diagrams**: Visual representation of system workflows and processes
-- **Process Models**: Detailed process flows for various system operations
-- **Project Proposal**: Initial project vision, scope, and objectives
-- **Requirements Specification**: Complete functional and non-functional requirements
-- **Use Case Descriptions**: Detailed descriptions of system interactions
-- **Use Case Diagrams**: UML diagrams showing actors and system interactions
-- **User Stories**: Agile user stories capturing user needs and expectations
+### Included Documentation
+
+- **Activity Diagrams**: Describe the flow of activities within the system, including user actions, system decisions, and parallel processes.
+
+- **Class Diagrams**: Define the static structure of the system by modeling classes, attributes, methods, and relationships.
+
+- **Communication Diagrams**: Illustrate how system components interact through message passing and object collaboration.
+
+- **Process Models**: Represent business processes and operational workflows at both high-level and detailed views.
+
+- **Project Proposal**: Outlines the problem statement, project goals, scope, stakeholders, and feasibility considerations.
+
+- **Requirements Specification (SRS)**: Includes detailed functional and non-functional requirements, system constraints, and assumptions.
+
+- **Sequence Diagrams**: Show chronological interactions between actors and system components for key scenarios.
+
+- **State Diagrams**: Model the lifecycle and state transitions of critical system entities.
+
+- **Use Case Descriptions**: Provide structured textual explanations of system behavior from the user’s perspective.
+
+- **Use Case Diagrams**: Visualize system functionality and actor interactions within defined system boundaries.
+
+- **User Stories**: Capture user needs in an agile-friendly format to support requirement understanding and prioritization.
 
 ## 👥 Team Members
 
