@@ -1,4 +1,4 @@
-# 🍽 SmartCaf Software Project
+# 🍽 SmartCaf
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Mr-MRF-Dev/SmartCaf-Software-Engineering-I-Project)
 [![GitHub License](https://img.shields.io/github/license/Mr-MRF-Dev/SmartCaf-Software-Engineering-I-Project)](/LICENSE)
