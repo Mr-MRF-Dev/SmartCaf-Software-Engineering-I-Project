@@ -56,48 +56,48 @@ export default function StatsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl font-bold text-gray-900">آمار و گزارشات</h1>
-        <p className="text-sm text-gray-500 mt-1">
+        <h1 className="text-xl font-bold text-gray-900 dark:text-white">آمار و گزارشات</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           نمای کلی از عملکرد سامانه در هفته اخیر
         </p>
       </div>
 
       {/* Summary Stats */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card className="bg-blue-50 border-blue-200">
+        <Card className="bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800">
           <CardContent className="pt-4 pb-3 px-4">
-            <p className="text-xs text-blue-600">کل سفارشات</p>
-            <p className="text-2xl font-bold text-blue-800 mt-1">
+            <p className="text-xs text-blue-600 dark:text-blue-400">کل سفارشات</p>
+            <p className="text-2xl font-bold text-blue-800 dark:text-blue-300 mt-1">
               {totalOrders.toLocaleString("fa-IR")}
             </p>
             <p className="text-xs text-blue-500 mt-1">در ۷ روز اخیر</p>
           </CardContent>
         </Card>
 
-        <Card className="bg-emerald-50 border-emerald-200">
+        <Card className="bg-emerald-50 dark:bg-emerald-950 border-emerald-200 dark:border-emerald-800">
           <CardContent className="pt-4 pb-3 px-4">
-            <p className="text-xs text-emerald-600">کل درآمد</p>
-            <p className="text-xl font-bold text-emerald-800 mt-1">
+            <p className="text-xs text-emerald-600 dark:text-emerald-400">کل درآمد</p>
+            <p className="text-xl font-bold text-emerald-800 dark:text-emerald-300 mt-1">
               {formatPrice(totalRevenue)}
             </p>
             <p className="text-xs text-emerald-500 mt-1">در ۷ روز اخیر</p>
           </CardContent>
         </Card>
 
-        <Card className="bg-amber-50 border-amber-200">
+        <Card className="bg-amber-50 dark:bg-amber-950 border-amber-200 dark:border-amber-800">
           <CardContent className="pt-4 pb-3 px-4">
-            <p className="text-xs text-amber-600">میانگین سفارش روزانه</p>
-            <p className="text-2xl font-bold text-amber-800 mt-1">
+            <p className="text-xs text-amber-600 dark:text-amber-400">میانگین سفارش روزانه</p>
+            <p className="text-2xl font-bold text-amber-800 dark:text-amber-300 mt-1">
               {avgOrders.toLocaleString("fa-IR")}
             </p>
             <p className="text-xs text-amber-500 mt-1">سفارش در روز</p>
           </CardContent>
         </Card>
 
-        <Card className="bg-red-50 border-red-200">
+        <Card className="bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800">
           <CardContent className="pt-4 pb-3 px-4">
-            <p className="text-xs text-red-600">لغو شده‌ها</p>
-            <p className="text-2xl font-bold text-red-800 mt-1">
+            <p className="text-xs text-red-600 dark:text-red-400">لغو شده‌ها</p>
+            <p className="text-2xl font-bold text-red-800 dark:text-red-300 mt-1">
               {totalCancelled.toLocaleString("fa-IR")}
             </p>
             <p className="text-xs text-red-500 mt-1">

@@ -23,10 +23,10 @@ export default function AIReservePage() {
           <Brain className="w-6 h-6 text-purple-600" />
         </div>
         <div>
-          <h1 className="text-xl font-bold text-gray-900">
+          <h1 className="text-xl font-bold text-gray-900 dark:text-white">
             پیشنهاد هوشمند غذا
           </h1>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             بر اساس سابقه سفارشات و سلیقه شما، بهترین غذاها را پیشنهاد
             می‌دهیم.
           </p>
@@ -34,12 +34,12 @@ export default function AIReservePage() {
       </div>
 
       {/* AI Analysis Card */}
-      <Card className="border-purple-200 bg-gradient-to-l from-purple-50 to-white">
+      <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-l from-purple-50 to-white dark:from-purple-950 dark:to-gray-900">
         <CardContent className="p-5">
           <div className="flex items-start gap-3">
             <Sparkles className="w-5 h-5 text-purple-500 mt-0.5 shrink-0" />
             <div className="space-y-2">
-              <p className="text-sm text-gray-700">
+              <p className="text-sm text-gray-700 dark:text-gray-300">
                 <strong>تحلیل هوش مصنوعی:</strong> با بررسی ۵ سفارش اخیر شما،
                 متوجه شدیم که بیشتر به غذاهای با گوشت و مرغ علاقه‌مندید. همچنین
                 معمولاً وعده ناهار را رزرو می‌کنید.
@@ -71,7 +71,7 @@ export default function AIReservePage() {
 
       {/* Recommendations */}
       <div className="space-y-4">
-        <h2 className="font-semibold text-gray-900">
+        <h2 className="font-semibold text-gray-900 dark:text-white">
           پیشنهادات ویژه برای شما
         </h2>
         {mockAIRecommendations.map((rec, idx) => (
@@ -94,7 +94,7 @@ export default function AIReservePage() {
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-semibold text-gray-900">
+                      <h3 className="font-semibold text-gray-900 dark:text-white">
                         {rec.foodItem.name}
                       </h3>
                       {idx === 0 && (
@@ -137,7 +137,7 @@ export default function AIReservePage() {
 
       {/* Popular This Week */}
       <div className="space-y-4">
-        <h2 className="font-semibold text-gray-900">
+        <h2 className="font-semibold text-gray-900 dark:text-white">
           محبوب‌ترین غذاهای این هفته
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">

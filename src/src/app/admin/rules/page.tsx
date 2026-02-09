@@ -68,10 +68,10 @@ export default function RulesPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-gray-900">
+          <h1 className="text-xl font-bold text-gray-900 dark:text-white">
             قوانین و محدودیت‌ها
           </h1>
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
             قوانین و محدودیت‌های سامانه را مدیریت کنید.
           </p>
         </div>
@@ -86,14 +86,14 @@ export default function RulesPage() {
 
       {/* Summary */}
       <div className="grid grid-cols-2 gap-4">
-        <Card className="bg-emerald-50 border-emerald-200">
+        <Card className="bg-emerald-50 dark:bg-emerald-950 border-emerald-200 dark:border-emerald-800">
           <CardContent className="pt-4 pb-3 px-4 flex items-center gap-3">
             <ShieldCheck className="w-8 h-8 text-emerald-600" />
             <div>
-              <p className="text-2xl font-bold text-emerald-800">
+              <p className="text-2xl font-bold text-emerald-800 dark:text-emerald-300">
                 {activeRules.length}
               </p>
-              <p className="text-xs text-emerald-600">قانون فعال</p>
+              <p className="text-xs text-emerald-600 dark:text-emerald-400">قانون فعال</p>
             </div>
           </CardContent>
         </Card>
@@ -116,14 +116,14 @@ export default function RulesPage() {
           <Card
             key={rule.id}
             className={`transition-all ${
-              !rule.isActive ? "opacity-60 bg-gray-50" : ""
+              !rule.isActive ? "opacity-60 bg-gray-50 dark:bg-gray-800" : ""
             }`}
           >
             <CardContent className="p-4">
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-semibold text-gray-900">
+                    <h3 className="font-semibold text-gray-900 dark:text-white">
                       {rule.title}
                     </h3>
                     <Badge
@@ -133,7 +133,7 @@ export default function RulesPage() {
                       {rule.isActive ? "فعال" : "غیرفعال"}
                     </Badge>
                   </div>
-                  <p className="text-sm text-gray-600">{rule.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{rule.description}</p>
                   <p className="text-xs text-gray-400 mt-2">
                     تاریخ ایجاد: {rule.createdAt}
                   </p>

@@ -65,8 +65,8 @@ export default function PaymentPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl font-bold text-gray-900">پرداخت و کیف پول</h1>
-        <p className="text-sm text-gray-500 mt-1">
+        <h1 className="text-xl font-bold text-gray-900 dark:text-white">پرداخت و کیف پول</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           موجودی خود را مدیریت کنید و رزروهای خود را پرداخت نمایید.
         </p>
       </div>
@@ -162,7 +162,7 @@ export default function PaymentPage() {
             {mockTransactions.slice(0, 5).map((tx) => (
               <div
                 key={tx.id}
-                className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50"
+                className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
               >
                 <div className="flex items-center gap-3">
                   <div

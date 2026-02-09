@@ -55,57 +55,57 @@ export default function AccountingPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl font-bold text-gray-900">حسابداری و مالی</h1>
-        <p className="text-sm text-gray-500 mt-1">
+        <h1 className="text-xl font-bold text-gray-900 dark:text-white">حسابداری و مالی</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           گزارشات مالی و تراکنش‌های سامانه
         </p>
       </div>
 
       {/* Financial Summary */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card className="bg-emerald-50 border-emerald-200">
+        <Card className="bg-emerald-50 dark:bg-emerald-950 border-emerald-200 dark:border-emerald-800">
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center gap-2 mb-2">
               <DollarSign className="w-5 h-5 text-emerald-600" />
-              <p className="text-xs text-emerald-600">کل درآمد هفته</p>
+              <p className="text-xs text-emerald-600 dark:text-emerald-400">کل درآمد هفته</p>
             </div>
-            <p className="text-xl font-bold text-emerald-800">
+            <p className="text-xl font-bold text-emerald-800 dark:text-emerald-300">
               {formatPrice(totalRevenue)}
             </p>
           </CardContent>
         </Card>
 
-        <Card className="bg-blue-50 border-blue-200">
+        <Card className="bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800">
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center gap-2 mb-2">
               <ArrowDownCircle className="w-5 h-5 text-blue-600" />
-              <p className="text-xs text-blue-600">پرداخت‌ها</p>
+              <p className="text-xs text-blue-600 dark:text-blue-400">پرداخت‌ها</p>
             </div>
-            <p className="text-xl font-bold text-blue-800">
+            <p className="text-xl font-bold text-blue-800 dark:text-blue-300">
               {formatPrice(totalPayments)}
             </p>
           </CardContent>
         </Card>
 
-        <Card className="bg-amber-50 border-amber-200">
+        <Card className="bg-amber-50 dark:bg-amber-950 border-amber-200 dark:border-amber-800">
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center gap-2 mb-2">
               <ArrowUpCircle className="w-5 h-5 text-amber-600" />
-              <p className="text-xs text-amber-600">بازگشت وجوه</p>
+              <p className="text-xs text-amber-600 dark:text-amber-400">بازگشت وجوه</p>
             </div>
-            <p className="text-xl font-bold text-amber-800">
+            <p className="text-xl font-bold text-amber-800 dark:text-amber-300">
               {formatPrice(totalRefunds)}
             </p>
           </CardContent>
         </Card>
 
-        <Card className="bg-purple-50 border-purple-200">
+        <Card className="bg-purple-50 dark:bg-purple-950 border-purple-200 dark:border-purple-800">
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center gap-2 mb-2">
               <Receipt className="w-5 h-5 text-purple-600" />
-              <p className="text-xs text-purple-600">شارژ کیف پول</p>
+              <p className="text-xs text-purple-600 dark:text-purple-400">شارژ کیف پول</p>
             </div>
-            <p className="text-xl font-bold text-purple-800">
+            <p className="text-xl font-bold text-purple-800 dark:text-purple-300">
               {formatPrice(totalCharges)}
             </p>
           </CardContent>

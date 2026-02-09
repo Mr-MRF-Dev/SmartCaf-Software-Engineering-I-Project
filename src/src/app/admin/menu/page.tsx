@@ -72,10 +72,10 @@ export default function MenuManagementPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-gray-900">
+          <h1 className="text-xl font-bold text-gray-900 dark:text-white">
             تعیین برنامه غذایی
           </h1>
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
             برنامه غذایی هر روز را مدیریت کنید.
           </p>
         </div>
@@ -196,7 +196,7 @@ export default function MenuManagementPage() {
               <div
                 key={food.id}
                 className={`border rounded-lg p-3 text-center space-y-1 ${
-                  !food.available ? "opacity-60 bg-gray-50" : ""
+                  !food.available ? "opacity-60 bg-gray-50 dark:bg-gray-800" : ""
                 }`}
               >
                 <div className="text-2xl">{food.image}</div>

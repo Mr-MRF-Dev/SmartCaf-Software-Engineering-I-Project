@@ -36,10 +36,10 @@ export default function StudentDashboard() {
       {/* Welcome Section */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
             سلام، {user.name}! 👋
           </h1>
-          <p className="text-gray-500 text-sm mt-1">
+          <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
             به سامانه رزرو غذای دانشگاه خوش آمدید.
           </p>
         </div>
@@ -53,15 +53,15 @@ export default function StudentDashboard() {
 
       {/* Quick Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <Card className="border-emerald-200 bg-emerald-50">
+        <Card className="border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950">
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center">
                 <CreditCard className="w-5 h-5 text-emerald-600" />
               </div>
               <div>
-                <p className="text-xs text-emerald-600">موجودی کیف پول</p>
-                <p className="text-sm font-bold text-emerald-800">
+                <p className="text-xs text-emerald-600 dark:text-emerald-400">موجودی کیف پول</p>
+                <p className="text-sm font-bold text-emerald-800 dark:text-emerald-300">
                   {formatPrice(user.balance)}
                 </p>
               </div>
@@ -76,8 +76,8 @@ export default function StudentDashboard() {
                 <CalendarDays className="w-5 h-5 text-blue-600" />
               </div>
               <div>
-                <p className="text-xs text-gray-500">رزروهای فعال</p>
-                <p className="text-sm font-bold text-gray-900">
+                <p className="text-xs text-gray-500 dark:text-gray-400">رزروهای فعال</p>
+                <p className="text-sm font-bold text-gray-900 dark:text-white">
                   {activeReservations.length} عدد
                 </p>
               </div>
@@ -92,8 +92,8 @@ export default function StudentDashboard() {
                 <TrendingUp className="w-5 h-5 text-purple-600" />
               </div>
               <div>
-                <p className="text-xs text-gray-500">کل سفارشات</p>
-                <p className="text-sm font-bold text-gray-900">
+                <p className="text-xs text-gray-500 dark:text-gray-400">کل سفارشات</p>
+                <p className="text-sm font-bold text-gray-900 dark:text-white">
                   {mockReservations.length} عدد
                 </p>
               </div>
@@ -108,8 +108,8 @@ export default function StudentDashboard() {
                 <Bell className="w-5 h-5 text-amber-600" />
               </div>
               <div>
-                <p className="text-xs text-gray-500">اعلان‌ها</p>
-                <p className="text-sm font-bold text-gray-900">۲ جدید</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">اعلان‌ها</p>
+                <p className="text-sm font-bold text-gray-900 dark:text-white">۲ جدید</p>
               </div>
             </div>
           </CardContent>
@@ -139,7 +139,7 @@ export default function StudentDashboard() {
                     {menu.foods.map((food) => (
                       <div
                         key={food.id}
-                        className="flex items-center gap-1.5 bg-gray-50 rounded-md px-2 py-1 text-sm"
+                        className="flex items-center gap-1.5 bg-gray-50 dark:bg-gray-800 rounded-md px-2 py-1 text-sm"
                       >
                         <span>{food.image}</span>
                         <span>{food.name}</span>
@@ -221,17 +221,17 @@ export default function StudentDashboard() {
       </div>
 
       {/* AI Suggestion Teaser */}
-      <Card className="border-purple-200 bg-gradient-to-l from-purple-50 to-white">
+      <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-l from-purple-50 to-white dark:from-purple-950 dark:to-gray-900">
         <CardContent className="py-5 px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center">
               <Brain className="w-6 h-6 text-purple-600" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900">
+              <h3 className="font-semibold text-gray-900 dark:text-white">
                 پیشنهاد هوشمند غذا
               </h3>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 dark:text-gray-400">
                 بر اساس سلیقه و سابقه سفارشاتتان، بهترین غذا را پیشنهاد
                 می‌دهیم.
               </p>
@@ -255,15 +255,15 @@ export default function StudentDashboard() {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-2">
-          <div className="flex items-center gap-3 p-2 rounded-lg bg-blue-50">
+          <div className="flex items-center gap-3 p-2 rounded-lg bg-blue-50 dark:bg-blue-950">
             <div className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
-            <p className="text-sm text-gray-700">
+            <p className="text-sm text-gray-700 dark:text-gray-300">
               برنامه غذایی فردا ۱۴۰۴/۱۱/۲۲ اعلام شد. همین الان رزرو کنید.
             </p>
           </div>
-          <div className="flex items-center gap-3 p-2 rounded-lg bg-amber-50">
+          <div className="flex items-center gap-3 p-2 rounded-lg bg-amber-50 dark:bg-amber-950">
             <div className="w-2 h-2 rounded-full bg-amber-500 shrink-0" />
-            <p className="text-sm text-gray-700">
+            <p className="text-sm text-gray-700 dark:text-gray-300">
               سفارش جوجه‌کباب شما برای شام امشب آماده تحویل است. کد QR خود را
               همراه داشته باشید.
             </p>

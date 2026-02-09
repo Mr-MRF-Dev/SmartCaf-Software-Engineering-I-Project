@@ -67,8 +67,8 @@ export default function HistoryPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl font-bold text-gray-900">تاریخچه سفارشات</h1>
-        <p className="text-sm text-gray-500 mt-1">
+        <h1 className="text-xl font-bold text-gray-900 dark:text-white">تاریخچه سفارشات</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           لیست همه رزروها و سفارشات شما در یک نگاه.
         </p>
       </div>
@@ -243,38 +243,38 @@ export default function HistoryPage() {
           </DialogHeader>
           {selectedRes && (
             <div className="space-y-4">
-              <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+              <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                 <span className="text-3xl">{selectedRes.foodItem.image}</span>
                 <div>
                   <p className="font-semibold">{selectedRes.foodItem.name}</p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
                     {selectedRes.foodItem.description}
                   </p>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3 text-sm">
-                <div className="bg-gray-50 rounded-lg p-3">
-                  <p className="text-gray-500">تاریخ</p>
+                <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
+                  <p className="text-gray-500 dark:text-gray-400">تاریخ</p>
                   <p className="font-medium">{selectedRes.date}</p>
                 </div>
-                <div className="bg-gray-50 rounded-lg p-3">
-                  <p className="text-gray-500">وعده</p>
+                <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
+                  <p className="text-gray-500 dark:text-gray-400">وعده</p>
                   <p className="font-medium">{getMealLabel(selectedRes.meal)}</p>
                 </div>
-                <div className="bg-gray-50 rounded-lg p-3">
-                  <p className="text-gray-500">پرس</p>
+                <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
+                  <p className="text-gray-500 dark:text-gray-400">پرس</p>
                   <p className="font-medium">{selectedRes.portion}</p>
                 </div>
-                <div className="bg-gray-50 rounded-lg p-3">
-                  <p className="text-gray-500">مبلغ</p>
+                <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
+                  <p className="text-gray-500 dark:text-gray-400">مبلغ</p>
                   <p className="font-medium">
                     {formatPrice(selectedRes.totalPrice)}
                   </p>
                 </div>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-3 text-center">
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 text-center">
                 <Badge variant={getStatusBadgeVariant(selectedRes.status)} className="mb-2">
                   {getStatusLabel(selectedRes.status)}
                 </Badge>

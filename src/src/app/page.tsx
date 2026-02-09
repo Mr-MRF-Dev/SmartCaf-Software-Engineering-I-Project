@@ -11,14 +11,14 @@ import {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-bl from-emerald-50 via-white to-emerald-50">
+    <div className="min-h-screen bg-gradient-to-bl from-emerald-50 via-white to-emerald-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
       {/* Hero */}
       <header className="max-w-5xl mx-auto px-4 pt-12 pb-16 text-center">
         <div className="w-20 h-20 rounded-2xl bg-emerald-600 flex items-center justify-center mx-auto mb-6">
           <UtensilsCrossed className="w-10 h-10 text-white" />
         </div>
-        <h1 className="text-4xl font-bold text-gray-900 mb-3">اسمارت چف</h1>
-        <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-8">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">اسمارت چف</h1>
+        <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-8">
           سامانه هوشمند مدیریت و رزرو غذای دانشگاهی. رزرو آسان، پرداخت سریع،
           پیشنهاد هوشمند غذا با هوش مصنوعی.
         </p>
@@ -32,13 +32,13 @@ export default function Home() {
           </Link>
           <Link
             href="/student"
-            className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+            className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
           >
             پنل دانشجو
           </Link>
           <Link
             href="/admin"
-            className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+            className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
           >
             پنل مدیریت
           </Link>
@@ -47,7 +47,7 @@ export default function Home() {
 
       {/* Features */}
       <section className="max-w-5xl mx-auto px-4 pb-16">
-        <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
+        <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-8">
           امکانات سامانه
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -91,17 +91,17 @@ export default function Home() {
           ].map((feature, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow"
+              className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-5 hover:shadow-md transition-shadow"
             >
               <div
                 className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${feature.color}`}
               >
                 <feature.icon className="w-6 h-6" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-1">
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
                 {feature.title}
               </h3>
-              <p className="text-sm text-gray-500">{feature.desc}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">{feature.desc}</p>
             </div>
           ))}
         </div>
@@ -140,7 +140,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 py-6">
+      <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-6">
         <p className="text-center text-xs text-gray-400">
           سامانه هوشمند رزرو غذا - اسمارت چف © ۱۴۰۴ | پروژه مهندسی نرم‌افزار
         </p>

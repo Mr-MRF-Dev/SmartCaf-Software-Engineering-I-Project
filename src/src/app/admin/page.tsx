@@ -39,8 +39,8 @@ export default function AdminDashboard() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">داشبورد مدیریت</h1>
-        <p className="text-sm text-gray-500 mt-1">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">داشبورد مدیریت</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           خلاصه وضعیت سامانه در یک نگاه
         </p>
       </div>
@@ -51,8 +51,8 @@ export default function AdminDashboard() {
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-gray-500">سفارشات امروز</p>
-                <p className="text-2xl font-bold text-gray-900 mt-1">
+                <p className="text-xs text-gray-500 dark:text-gray-400">سفارشات امروز</p>
+                <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
                   {todayStats.totalOrders}
                 </p>
               </div>
@@ -82,8 +82,8 @@ export default function AdminDashboard() {
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-gray-500">درآمد امروز</p>
-                <p className="text-xl font-bold text-gray-900 mt-1">
+                <p className="text-xs text-gray-500 dark:text-gray-400">درآمد امروز</p>
+                <p className="text-xl font-bold text-gray-900 dark:text-white mt-1">
                   {formatPrice(todayStats.totalRevenue)}
                 </p>
               </div>
@@ -113,8 +113,8 @@ export default function AdminDashboard() {
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-gray-500">لغو شده‌ها</p>
-                <p className="text-2xl font-bold text-gray-900 mt-1">
+                <p className="text-xs text-gray-500 dark:text-gray-400">لغو شده‌ها</p>
+                <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
                   {todayStats.cancelledOrders}
                 </p>
               </div>
@@ -132,8 +132,8 @@ export default function AdminDashboard() {
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-gray-500">هشدار موجودی</p>
-                <p className="text-2xl font-bold text-gray-900 mt-1">
+                <p className="text-xs text-gray-500 dark:text-gray-400">هشدار موجودی</p>
+                <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
                   {lowStockItems.length}
                 </p>
               </div>
@@ -173,14 +173,14 @@ export default function AdminDashboard() {
               ].map((meal) => (
                 <div key={meal.label} className="space-y-1">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-600">{meal.label}</span>
+                    <span className="text-gray-600 dark:text-gray-400">{meal.label}</span>
                     <span className="font-medium">
                       {meal.count} سفارش (
                       {((meal.count / todayStats.totalOrders) * 100).toFixed(0)}
                       %)
                     </span>
                   </div>
-                  <div className="w-full bg-gray-100 rounded-full h-2">
+                  <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2">
                     <div
                       className={`${meal.color} h-2 rounded-full transition-all`}
                       style={{
@@ -214,7 +214,7 @@ export default function AdminDashboard() {
               lowStockItems.map((item) => (
                 <div
                   key={item.id}
-                  className="flex items-center justify-between p-2 rounded-lg bg-amber-50 border border-amber-100"
+                  className="flex items-center justify-between p-2 rounded-lg bg-amber-50 dark:bg-amber-950 border border-amber-100 dark:border-amber-800"
                 >
                   <div>
                     <p className="text-sm font-medium">{item.name}</p>

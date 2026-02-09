@@ -65,8 +65,8 @@ export default function ReservePage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl font-bold text-gray-900">رزرو غذا</h1>
-        <p className="text-sm text-gray-500 mt-1">
+        <h1 className="text-xl font-bold text-gray-900 dark:text-white">رزرو غذا</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           روز مورد نظر را انتخاب کنید و غذای خود را رزرو نمایید.
         </p>
       </div>
@@ -115,7 +115,7 @@ export default function ReservePage() {
                         <div className="flex items-center gap-2">
                           <span className="text-3xl">{food.image}</span>
                           <div>
-                            <h3 className="font-semibold text-gray-900">
+                            <h3 className="font-semibold text-gray-900 dark:text-white">
                               {food.name}
                             </h3>
                             <p className="text-xs text-gray-500">
@@ -129,7 +129,7 @@ export default function ReservePage() {
                           </Badge>
                         )}
                       </div>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
                         {food.description}
                       </p>
                       <div className="flex items-center justify-between pt-2 border-t">
@@ -175,7 +175,7 @@ export default function ReservePage() {
           </DialogHeader>
           {selectedFood && (
             <div className="space-y-4">
-              <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+              <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                 <span className="text-3xl">{selectedFood.image}</span>
                 <div>
                   <p className="font-semibold">{selectedFood.name}</p>
@@ -187,7 +187,7 @@ export default function ReservePage() {
 
               {/* Portion Selection */}
               <div className="space-y-2">
-                <p className="text-sm font-medium text-gray-700">
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   اندازه پرس:
                 </p>
                 <div className="flex gap-2">
@@ -213,8 +213,8 @@ export default function ReservePage() {
                 </div>
               </div>
 
-              <div className="p-3 bg-emerald-50 rounded-lg text-center">
-                <p className="text-sm text-gray-600">مبلغ قابل پرداخت</p>
+              <div className="p-3 bg-emerald-50 dark:bg-emerald-950 rounded-lg text-center">
+                <p className="text-sm text-gray-600 dark:text-gray-400">مبلغ قابل پرداخت</p>
                 <p className="text-xl font-bold text-emerald-700">
                   {formatPrice(
                     Math.round(
