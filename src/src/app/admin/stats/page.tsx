@@ -16,7 +16,33 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  type ChartConfig,
+} from "@/components/ui/chart";
+import { Bar, BarChart, XAxis, YAxis, CartesianGrid } from "recharts";
 import { mockDailyStats, formatPrice } from "@/lib/mock-data";
+
+const ordersChartConfig = {
+  totalOrders: {
+    label: "کل سفارشات",
+    color: "#3b82f6",
+  },
+  breakfastOrders: {
+    label: "صبحانه",
+    color: "#f59e0b",
+  },
+  lunchOrders: {
+    label: "ناهار",
+    color: "#10b981",
+  },
+  dinnerOrders: {
+    label: "شام",
+    color: "#6366f1",
+  },
+} satisfies ChartConfig;
 
 export default function StatsPage() {
   const totalOrders = mockDailyStats.reduce((a, b) => a + b.totalOrders, 0);
@@ -81,7 +107,7 @@ export default function StatsPage() {
         </Card>
       </div>
 
-      {/* Chart Simulation */}
+      {/* Orders Bar Chart */}
       <Card>
         <CardHeader className="pb-3">
           <CardTitle className="text-base flex items-center gap-2">
@@ -90,29 +116,25 @@ export default function StatsPage() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex items-end justify-between gap-2 h-48 px-4">
-            {mockDailyStats.map((stat, idx) => {
-              const maxOrders = Math.max(...mockDailyStats.map((s) => s.totalOrders));
-              const height = (stat.totalOrders / maxOrders) * 100;
-              const isMax = stat.totalOrders === maxOrders;
-              return (
-                <div key={idx} className="flex-1 flex flex-col items-center gap-1">
-                  <span className="text-xs text-gray-500 font-medium">
-                    {stat.totalOrders}
-                  </span>
-                  <div
-                    className={`w-full rounded-t-md transition-all ${
-                      isMax ? "bg-emerald-500" : "bg-blue-400"
-                    }`}
-                    style={{ height: `${height}%` }}
-                  />
-                  <span className="text-xs text-gray-400">
-                    {stat.date.slice(-2)}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
+          <ChartContainer config={ordersChartConfig} className="h-64 w-full">
+            <BarChart
+              data={mockDailyStats.map((s) => ({
+                date: s.date.slice(-5),
+                breakfastOrders: s.breakfastOrders,
+                lunchOrders: s.lunchOrders,
+                dinnerOrders: s.dinnerOrders,
+              }))}
+              margin={{ top: 10, right: 10, left: 10, bottom: 0 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" vertical={false} />
+              <XAxis dataKey="date" tick={{ fontSize: 12 }} />
+              <YAxis tick={{ fontSize: 12 }} />
+              <ChartTooltip content={<ChartTooltipContent />} />
+              <Bar dataKey="breakfastOrders" fill="var(--color-breakfastOrders)" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="lunchOrders" fill="var(--color-lunchOrders)" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="dinnerOrders" fill="var(--color-dinnerOrders)" radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ChartContainer>
         </CardContent>
       </Card>
 

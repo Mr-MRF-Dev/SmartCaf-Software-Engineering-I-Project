@@ -20,11 +20,25 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  type ChartConfig,
+} from "@/components/ui/chart";
+import { Bar, BarChart, XAxis, YAxis, CartesianGrid } from "recharts";
+import {
   mockDailyStats,
   mockTransactions,
   formatPrice,
   getTransactionTypeLabel,
 } from "@/lib/mock-data";
+
+const revenueChartConfig = {
+  totalRevenue: {
+    label: "درآمد (تومان)",
+    color: "#10b981",
+  },
+} satisfies ChartConfig;
 
 export default function AccountingPage() {
   const totalRevenue = mockDailyStats.reduce((a, b) => a + b.totalRevenue, 0);
@@ -107,31 +121,32 @@ export default function AccountingPage() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex items-end justify-between gap-2 h-40 px-4">
-            {mockDailyStats.map((stat, idx) => {
-              const maxRevenue = Math.max(
-                ...mockDailyStats.map((s) => s.totalRevenue)
-              );
-              const height = (stat.totalRevenue / maxRevenue) * 100;
-              return (
-                <div
-                  key={idx}
-                  className="flex-1 flex flex-col items-center gap-1"
-                >
-                  <span className="text-xs text-gray-500 whitespace-nowrap">
-                    {(stat.totalRevenue / 1000000).toFixed(1)}M
-                  </span>
-                  <div
-                    className="w-full rounded-t-md bg-emerald-400 transition-all"
-                    style={{ height: `${height}%` }}
+          <ChartContainer config={revenueChartConfig} className="h-56 w-full">
+            <BarChart
+              data={mockDailyStats.map((s) => ({
+                date: s.date.slice(-5),
+                totalRevenue: s.totalRevenue,
+              }))}
+              margin={{ top: 10, right: 10, left: 10, bottom: 0 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" vertical={false} />
+              <XAxis dataKey="date" tick={{ fontSize: 12 }} />
+              <YAxis
+                tick={{ fontSize: 11 }}
+                tickFormatter={(v) => `${(v / 1000000).toFixed(0)}M`}
+              />
+              <ChartTooltip
+                content={
+                  <ChartTooltipContent
+                    formatter={(value) =>
+                      `${Number(value).toLocaleString("fa-IR")} تومان`
+                    }
                   />
-                  <span className="text-xs text-gray-400">
-                    {stat.date.slice(-2)}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
+                }
+              />
+              <Bar dataKey="totalRevenue" fill="var(--color-totalRevenue)" radius={[6, 6, 0, 0]} />
+            </BarChart>
+          </ChartContainer>
         </CardContent>
       </Card>
 
