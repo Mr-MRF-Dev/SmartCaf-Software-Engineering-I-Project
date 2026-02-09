@@ -37,15 +37,15 @@ export default function AdminLayout({
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Top Navigation */}
-      <header className="bg-slate-900 sticky top-0 z-50">
+      <header className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/admin" className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-lg bg-amber-500 flex items-center justify-center">
+              <div className="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center">
                 <Settings className="w-5 h-5 text-white" />
               </div>
-              <span className="text-lg font-bold text-white">
+              <span className="text-lg font-bold text-slate-800">
                 پنل مدیریت اسمارت‌کف
               </span>
             </Link>
@@ -53,18 +53,18 @@ export default function AdminLayout({
             {/* User Info */}
             <div className="flex items-center gap-3">
               <Avatar className="w-8 h-8">
-                <AvatarFallback className="bg-amber-100 text-amber-700 text-sm">
+                <AvatarFallback className="bg-slate-100 text-slate-600 text-sm">
                   م
                 </AvatarFallback>
               </Avatar>
-              <span className="hidden sm:block text-sm text-slate-300">
+              <span className="hidden sm:block text-sm text-slate-500">
                 {user.name}
               </span>
               <Link href="/login">
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-slate-400 hover:text-red-400 hover:bg-slate-800"
+                  className="text-slate-400 hover:text-red-500 hover:bg-red-50"
                 >
                   <LogOut className="w-4 h-4" />
                 </Button>
@@ -74,9 +74,9 @@ export default function AdminLayout({
         </div>
 
         {/* Nav */}
-        <div className="border-t border-slate-700 overflow-x-auto">
+        <div className="border-t border-gray-100 overflow-x-auto">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <nav className="flex items-center gap-1 py-2">
+            <nav className="flex items-center gap-1 py-1.5">
               {adminNav.map((item) => {
                 const isActive =
                   pathname === item.href ||
@@ -89,8 +89,8 @@ export default function AdminLayout({
                       className={cn(
                         "gap-1.5 whitespace-nowrap text-sm",
                         isActive
-                          ? "bg-amber-500/20 text-amber-400 hover:bg-amber-500/30 hover:text-amber-300"
-                          : "text-slate-400 hover:text-slate-200 hover:bg-slate-800"
+                          ? "bg-slate-900 text-white hover:bg-slate-800"
+                          : "text-slate-500 hover:text-slate-800 hover:bg-slate-100"
                       )}
                     >
                       <item.icon className="w-4 h-4" />
