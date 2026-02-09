@@ -17,6 +17,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { mockUsers, formatPrice } from "@/lib/mock-data";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const studentNav = [
   { href: "/student", label: "صفحه اصلی", icon: Home },
@@ -35,9 +36,9 @@ export default function StudentLayout({
   const user = mockUsers[0];
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex flex-col">
       {/* Top Navigation */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -45,7 +46,7 @@ export default function StudentLayout({
               <div className="w-9 h-9 rounded-lg bg-emerald-600 flex items-center justify-center">
                 <UtensilsCrossed className="w-5 h-5 text-white" />
               </div>
-              <span className="text-lg font-bold text-gray-900">
+              <span className="text-lg font-bold text-gray-900 dark:text-white">
                 اسمارت چف
               </span>
             </Link>
@@ -79,7 +80,8 @@ export default function StudentLayout({
 
             {/* User Info */}
             <div className="flex items-center gap-3">
-              <div className="hidden sm:flex items-center gap-2 text-sm text-gray-600 bg-gray-100 rounded-full px-3 py-1.5">
+              <ThemeToggle />
+              <div className="hidden sm:flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 rounded-full px-3 py-1.5">
                 <Wallet className="w-4 h-4 text-emerald-600" />
                 <span className="font-medium">
                   {formatPrice(user.balance)}
@@ -105,7 +107,7 @@ export default function StudentLayout({
         </div>
 
         {/* Mobile Nav */}
-        <div className="md:hidden border-t border-gray-100 overflow-x-auto">
+        <div className="md:hidden border-t border-gray-100 dark:border-gray-800 overflow-x-auto">
           <nav className="flex items-center gap-1 px-4 py-2">
             {studentNav.map((item) => {
               const isActive =
@@ -134,14 +136,14 @@ export default function StudentLayout({
       </header>
 
       {/* Breadcrumb / Status Bar */}
-      <div className="bg-white border-b border-gray-100">
+      <div className="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2">
-          <div className="flex items-center justify-between text-xs text-gray-500">
+          <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
             <div className="flex items-center gap-1">
               <User className="w-3 h-3" />
               <span>پنل دانشجو</span>
               <span className="mx-1">/</span>
-              <span className="text-gray-900 font-medium">
+              <span className="text-gray-900 dark:text-gray-100 font-medium">
                 {studentNav.find(
                   (n) =>
                     pathname === n.href ||
@@ -160,7 +162,7 @@ export default function StudentLayout({
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 py-4">
+      <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center text-xs text-gray-400">
           <p>سامانه هوشمند رزرو غذا - اسمارت چف © ۱۴۰۴</p>
         </div>
