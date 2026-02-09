@@ -56,7 +56,7 @@ export default function LoginPage() {
           <div className="w-16 h-16 rounded-2xl bg-emerald-600 flex items-center justify-center mx-auto mb-4">
             <UtensilsCrossed className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-900">اسمارت‌کف</h1>
+          <h1 className="text-2xl font-bold text-gray-900">اسمارت چف</h1>
           <p className="text-gray-500 text-sm mt-1">
             سامانه هوشمند رزرو غذای دانشگاه
           </p>
@@ -147,7 +147,7 @@ export default function LoginPage() {
         </Card>
 
         <p className="text-center text-xs text-gray-400 mt-6">
-          سامانه هوشمند رزرو غذا - اسمارت‌کف © ۱۴۰۴
+          سامانه هوشمند رزرو غذا - اسمارت چف © ۱۴۰۴
         </p>
       </div>
     </div>

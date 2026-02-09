@@ -46,7 +46,7 @@ export default function StudentLayout({
                 <UtensilsCrossed className="w-5 h-5 text-white" />
               </div>
               <span className="text-lg font-bold text-gray-900">
-                اسمارت‌کف
+                اسمارت چف
               </span>
             </Link>
 
@@ -162,7 +162,7 @@ export default function StudentLayout({
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center text-xs text-gray-400">
-          <p>سامانه هوشمند رزرو غذا - اسمارت‌کف © ۱۴۰۴</p>
+          <p>سامانه هوشمند رزرو غذا - اسمارت چف © ۱۴۰۴</p>
         </div>
       </footer>
     </div>

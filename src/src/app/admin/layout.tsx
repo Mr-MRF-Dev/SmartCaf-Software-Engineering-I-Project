@@ -46,7 +46,7 @@ export default function AdminLayout({
                 <Settings className="w-5 h-5 text-white" />
               </div>
               <span className="text-lg font-bold text-slate-800">
-                پنل مدیریت اسمارت‌کف
+                پنل مدیریت اسمارت چف
               </span>
             </Link>
 
@@ -130,7 +130,7 @@ export default function AdminLayout({
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center text-xs text-gray-400">
-          <p>پنل مدیریت سامانه اسمارت‌کف © ۱۴۰۴</p>
+          <p>پنل مدیریت سامانه اسمارت چف © ۱۴۰۴</p>
         </div>
       </footer>
     </div>

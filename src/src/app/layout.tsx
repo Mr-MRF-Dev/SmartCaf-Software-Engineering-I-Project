@@ -4,7 +4,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
-  title: "اسمارت‌کف - سامانه هوشمند رزرو غذا",
+  title: "اسمارت چف - سامانه هوشمند رزرو غذا",
   description: "سامانه هوشمند مدیریت و رزرو غذای دانشگاهی",
 };
 
