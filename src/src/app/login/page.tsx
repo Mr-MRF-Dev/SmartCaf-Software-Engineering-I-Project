@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { UtensilsCrossed, Eye, EyeOff, LogIn, AlertCircle } from "lucide-react";
+import { UtensilsCrossed, Eye, EyeOff, LogIn, AlertCircle, Phone, Mail, MessageCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -159,6 +159,36 @@ export default function LoginPage() {
                   admin
                 </span>
               </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Support Card */}
+        <Card className="mt-4 border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950">
+          <CardContent className="p-4">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900 flex items-center justify-center shrink-0">
+                <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-sm font-semibold text-amber-900 dark:text-amber-200 mb-1">
+                  مشکلی در ورود دارید؟
+                </h3>
+                <p className="text-xs text-amber-700 dark:text-amber-300 mb-2">
+                  برای دریافت پشتیبانی فوری با ما تماس بگیرید:
+                </p>
+                <div className="flex flex-wrap gap-2 text-xs">
+                  <a href="tel:02188776655" className="flex items-center gap-1 text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100">
+                    <Phone className="w-3 h-3" />
+                    ۰۲۱-۸۸۷۷۶۶۵۵
+                  </a>
+                  <span className="text-amber-400">|</span>
+                  <a href="mailto:support@smartchef.ir" className="flex items-center gap-1 text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100">
+                    <Mail className="w-3 h-3" />
+                    support@smartchef.ir
+                  </a>
+                </div>
+              </div>
             </div>
           </CardContent>
         </Card>

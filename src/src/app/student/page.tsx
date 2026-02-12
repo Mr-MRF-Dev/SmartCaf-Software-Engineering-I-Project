@@ -8,6 +8,10 @@ import {
   TrendingUp,
   Bell,
   CalendarDays,
+  HelpCircle,
+  Phone,
+  Mail,
+  MessageCircle,
 } from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -267,6 +271,41 @@ export default function StudentDashboard() {
               سفارش جوجه‌کباب شما برای شام امشب آماده تحویل است. کد QR خود را
               همراه داشته باشید.
             </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Support Section */}
+      <Card className="border-red-200 dark:border-red-800 bg-gradient-to-l from-red-50 to-white dark:from-red-950 dark:to-gray-900">
+        <CardContent className="p-5">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-start gap-3">
+              <div className="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900 flex items-center justify-center shrink-0">
+                <HelpCircle className="w-6 h-6 text-red-600 dark:text-red-400" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
+                  پشتیبانی فوری
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                  مشکلی دارید؟ تیم پشتیبانی ۲۴ ساعته ما آماده کمک به شماست.
+                </p>
+                <div className="flex flex-wrap gap-3 text-sm">
+                  <a href="tel:02188776655" className="flex items-center gap-1 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300">
+                    <Phone className="w-4 h-4" />
+                    ۰۲۱-۸۸۷۷۶۶۵۵
+                  </a>
+                  <a href="mailto:support@smartchef.ir" className="flex items-center gap-1 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300">
+                    <Mail className="w-4 h-4" />
+                    support@smartchef.ir
+                  </a>
+                </div>
+              </div>
+            </div>
+            <Button className="bg-red-600 hover:bg-red-700 gap-2 shrink-0">
+              <MessageCircle className="w-4 h-4" />
+              چت با پشتیبانی
+            </Button>
           </div>
         </CardContent>
       </Card>
