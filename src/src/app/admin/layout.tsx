@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   LogOut,
   Settings,
+  Headset,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -25,6 +26,7 @@ const adminNav = [
   { href: "/admin/inventory", label: "انبارداری", icon: Package },
   { href: "/admin/accounting", label: "حسابداری", icon: Calculator },
   { href: "/admin/rules", label: "قوانین و محدودیت‌ها", icon: ShieldCheck },
+  { href: "/admin/support", label: "پشتیبانی", icon: Headset },
 ];
 
 export default function AdminLayout({

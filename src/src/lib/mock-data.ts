@@ -471,6 +471,264 @@ export const mockAIRecommendations: AIRecommendation[] = [
   },
 ];
 
+// ---- Ticket Support Mock ----
+export interface TicketResponse {
+  id: string;
+  ticketId: string;
+  userId: string;
+  userName: string;
+  userRole: "student" | "admin";
+  message: string;
+  createdAt: string;
+}
+
+export interface Ticket {
+  id: string;
+  userId: string;
+  userName: string;
+  subject: string;
+  description: string;
+  category: "technical" | "financial" | "reservation" | "food" | "other";
+  priority: "low" | "medium" | "high" | "urgent";
+  status: "open" | "in-progress" | "resolved" | "closed";
+  createdAt: string;
+  updatedAt: string;
+  responses: TicketResponse[];
+}
+
+export const mockTickets: Ticket[] = [
+  {
+    id: "ticket1",
+    userId: "student1",
+    userName: "علی احمدی",
+    subject: "مشکل در پرداخت آنلاین",
+    description: "سلام، در هنگام پرداخت آنلاین برای شارژ کیف پول با خطا مواجه می‌شوم. لطفاً پیگیری کنید.",
+    category: "financial",
+    priority: "high",
+    status: "in-progress",
+    createdAt: "1404/11/15 10:30",
+    updatedAt: "1404/11/15 14:20",
+    responses: [
+      {
+        id: "res1",
+        ticketId: "ticket1",
+        userId: "admin1",
+        userName: "پشتیبانی",
+        userRole: "admin",
+        message: "سلام، تیکت شما در دست بررسی است. لطفاً کد رهگیری تراکنش را ارسال کنید.",
+        createdAt: "1404/11/15 11:00",
+      },
+      {
+        id: "res2",
+        ticketId: "ticket1",
+        userId: "student1",
+        userName: "علی احمدی",
+        userRole: "student",
+        message: "کد رهگیری: 123456789",
+        createdAt: "1404/11/15 14:20",
+      },
+    ],
+  },
+  {
+    id: "ticket2",
+    userId: "student2",
+    userName: "زهرا رضایی",
+    subject: "رزرو غذا لغو نمی‌شود",
+    description: "رزرو شام امروز را انجام دادم ولی نمی‌توانم آن را لغو کنم.",
+    category: "reservation",
+    priority: "medium",
+    status: "resolved",
+    createdAt: "1404/11/14 16:00",
+    updatedAt: "1404/11/14 18:00",
+    responses: [
+      {
+        id: "res3",
+        ticketId: "ticket2",
+        userId: "admin1",
+        userName: "پشتیبانی",
+        userRole: "admin",
+        message: "سلام، مهلت لغو رزرو ۴ ساعت قبل از وعده غذایی می‌باشد. متاسفانه زمان لغو رزرو شما گذشته است.",
+        createdAt: "1404/11/14 17:00",
+      },
+      {
+        id: "res4",
+        ticketId: "ticket2",
+        userId: "student2",
+        userName: "زهرا رضایی",
+        userRole: "student",
+        message: "متوجه شدم، ممنون.",
+        createdAt: "1404/11/14 18:00",
+      },
+    ],
+  },
+  {
+    id: "ticket3",
+    userId: "student3",
+    userName: "محمد حسینی",
+    subject: "پیشنهاد هوش مصنوعی کار نمی‌کند",
+    description: "در صفحه پیشنهاد هوشمند هیچ غذایی نمایش داده نمی‌شود.",
+    category: "technical",
+    priority: "low",
+    status: "open",
+    createdAt: "1404/11/16 09:00",
+    updatedAt: "1404/11/16 09:00",
+    responses: [],
+  },
+  {
+    id: "ticket4",
+    userId: "student1",
+    userName: "علی احمدی",
+    subject: "کیفیت غذای دیروز",
+    description: "سلام، کیفیت زرشک‌پلو دیروز مناسب نبود. لطفاً پیگیری شود.",
+    category: "food",
+    priority: "medium",
+    status: "closed",
+    createdAt: "1404/11/13 20:00",
+    updatedAt: "1404/11/14 10:00",
+    responses: [
+      {
+        id: "res5",
+        ticketId: "ticket4",
+        userId: "admin1",
+        userName: "پشتیبانی",
+        userRole: "admin",
+        message: "با سلام، موضوع به واحد آشپزخانه منتقل شد. از شما پوزش می‌خواهیم.",
+        createdAt: "1404/11/14 10:00",
+      },
+    ],
+  },
+  {
+    id: "ticket5",
+    userId: "student4",
+    userName: "فاطمه کریمی",
+    subject: "درخواست غذای گیاهخواری",
+    description: "آیا امکان اضافه کردن گزینه‌های غذایی گیاهخواری وجود دارد؟",
+    category: "other",
+    priority: "low",
+    status: "in-progress",
+    createdAt: "1404/11/12 14:00",
+    updatedAt: "1404/11/15 16:00",
+    responses: [
+      {
+        id: "res6",
+        ticketId: "ticket5",
+        userId: "admin1",
+        userName: "پشتیبانی",
+        userRole: "admin",
+        message: "با سلام، درخواست شما به مدیریت سلف ارجاع داده شد. پس از بررسی به شما اطلاع داده خواهد شد.",
+        createdAt: "1404/11/15 16:00",
+      },
+    ],
+  },
+];
+
+// ---- Software Support Mock ----
+export interface SoftwareVersion {
+  version: string;
+  releaseDate: string;
+  changes: string[];
+  isCurrent: boolean;
+}
+
+export interface SoftwareIssue {
+  id: string;
+  type: "bug" | "feature" | "improvement" | "question";
+  version: string;
+  title: string;
+  description: string;
+  priority: "low" | "medium" | "high" | "critical";
+  status: "submitted" | "under-review" | "in-progress" | "resolved" | "rejected";
+  submittedBy: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export const mockVersions: SoftwareVersion[] = [
+  {
+    version: "v2.1.0",
+    releaseDate: "1404/11/10",
+    isCurrent: true,
+    changes: [
+      "اضافه شدن سیستم پیشنهاد هوشمند غذا",
+      "بهبود رابط کاربری پنل ادمین",
+      "رفع باگ در سیستم پرداخت آنلاین",
+      "اضافه شدن قابلیت تم تاریک",
+    ],
+  },
+  {
+    version: "v2.0.5",
+    releaseDate: "1404/10/25",
+    isCurrent: false,
+    changes: [
+      "بهینه‌سازی سرعت بارگذاری صفحات",
+      "رفع مشکل نمایش جداول در موبایل",
+      "اضافه شدن فیلتر پیشرفته در صفحه تاریخچه",
+    ],
+  },
+  {
+    version: "v2.0.0",
+    releaseDate: "1404/10/01",
+    isCurrent: false,
+    changes: [
+      "طراحی مجدد کامل رابط کاربری",
+      "اضافه شدن پنل مدیریت موجودی انبار",
+      "سیستم جدید گزارش‌گیری",
+      "پشتیبانی از زبان فارسی و چیدمان راست به چپ",
+    ],
+  },
+];
+
+export const mockSoftwareIssues: SoftwareIssue[] = [
+  {
+    id: "issue1",
+    type: "bug",
+    version: "v2.1.0",
+    title: "خطا در محاسبه موجودی انبار",
+    description: "در صفحه موجودی انبار، تعداد برخی اقلام به درستی نمایش داده نمی‌شود.",
+    priority: "high",
+    status: "in-progress",
+    submittedBy: "مدیر سلف دانشگاه تهران",
+    createdAt: "1404/11/14 10:00",
+    updatedAt: "1404/11/15 14:00",
+  },
+  {
+    id: "issue2",
+    type: "feature",
+    version: "v2.1.0",
+    title: "درخواست افزودن گزارش هفتگی",
+    description: "امکان دریافت گزارش آماری هفتگی از فروش و رزروها به صورت خودکار.",
+    priority: "medium",
+    status: "under-review",
+    submittedBy: "مدیر سلف دانشگاه شریف",
+    createdAt: "1404/11/12 16:00",
+    updatedAt: "1404/11/13 09:00",
+  },
+  {
+    id: "issue3",
+    type: "bug",
+    version: "v2.0.5",
+    title: "مشکل در صادر کردن فایل اکسل",
+    description: "در صفحه حسابداری، فایل اکسل صادر شده خالی است.",
+    priority: "critical",
+    status: "resolved",
+    submittedBy: "مدیر سلف دانشگاه صنعتی امیرکبیر",
+    createdAt: "1404/11/08 11:00",
+    updatedAt: "1404/11/10 15:00",
+  },
+  {
+    id: "issue4",
+    type: "improvement",
+    version: "v2.1.0",
+    title: "بهبود سیستم جستجو",
+    description: "اضافه کردن قابلیت جستجوی پیشرفته در لیست دانشجویان.",
+    priority: "low",
+    status: "submitted",
+    submittedBy: "مدیر سلف دانشگاه علم و صنعت",
+    createdAt: "1404/11/16 08:30",
+    updatedAt: "1404/11/16 08:30",
+  },
+];
+
 // Helper functions
 export function formatPrice(price: number): string {
   return new Intl.NumberFormat("fa-IR").format(price) + " تومان";

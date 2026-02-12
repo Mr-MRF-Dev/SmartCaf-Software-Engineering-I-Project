@@ -11,6 +11,7 @@ import {
   LogOut,
   User,
   Wallet,
+  Headset,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -25,6 +26,7 @@ const studentNav = [
   { href: "/student/ai-reserve", label: "پیشنهاد هوشمند", icon: Brain },
   { href: "/student/payment", label: "پرداخت", icon: CreditCard },
   { href: "/student/history", label: "تاریخچه", icon: History },
+  { href: "/student/support", label: "پشتیبانی", icon: Headset },
 ];
 
 export default function StudentLayout({
