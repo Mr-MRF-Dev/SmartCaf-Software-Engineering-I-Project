@@ -81,7 +81,7 @@ export default function StudentSupportPage() {
   const ticket = selectedTicket ? mockTickets.find((t) => t.id === selectedTicket) : null;
 
   return (
-    <div className="container max-w-6xl py-8 px-4">
+    <div className="container py-8 px-4">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">پشتیبانی و راهنمایی</h1>
@@ -158,7 +158,7 @@ export default function StudentSupportPage() {
 
       {/* Quick Contact */}
       <Card className="mb-6 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
-        <CardHeader className="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950 dark:to-teal-950 border-b border-gray-200 dark:border-gray-800">
+        <CardHeader className="border-b border-gray-200 dark:border-gray-800">
           <CardTitle className="text-gray-900 dark:text-white">ارتباط سریع</CardTitle>
           <CardDescription className="text-gray-600 dark:text-gray-400">در صورت نیاز به پشتیبانی فوری با ما تماس بگیرید</CardDescription>
         </CardHeader>
@@ -185,7 +185,7 @@ export default function StudentSupportPage() {
 
       {/* Tickets List */}
       <Card className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
-        <CardHeader>
+        <CardHeader className="border-b border-gray-200 dark:border-gray-800">
           <CardTitle className="text-gray-900 dark:text-white">تیکت‌های من</CardTitle>
           <CardDescription className="text-gray-600 dark:text-gray-400">لیست درخواست‌ها و تیکت‌های شما</CardDescription>
         </CardHeader>
@@ -194,22 +194,6 @@ export default function StudentSupportPage() {
             <div className="text-center py-12">
               <MessageSquare className="w-12 h-12 text-gray-400 dark:text-gray-600 mx-auto mb-4" />
               <p className="text-gray-600 dark:text-gray-400 mb-4">هنوز تیکتی ثبت نکرده‌اید</p>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button variant="outline" className="border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950">
-                    ایجاد اولین تیکت
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-xl bg-white dark:bg-gray-950 border-gray-200 dark:border-gray-800">
-                  <DialogHeader>
-                    <DialogTitle className="text-gray-900 dark:text-white">ایجاد تیکت پشتیبانی</DialogTitle>
-                    <DialogDescription className="text-gray-600 dark:text-gray-400">
-                      لطفاً اطلاعات درخواست خود را با دقت وارد کنید.
-                    </DialogDescription>
-                  </DialogHeader>
-                  {/* Same form as above */}
-                </DialogContent>
-              </Dialog>
             </div>
           ) : (
             <div className="space-y-3">

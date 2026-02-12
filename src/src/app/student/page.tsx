@@ -31,7 +31,7 @@ import {
 export default function StudentDashboard() {
   const user = mockUsers[0];
   const activeReservations = mockReservations.filter(
-    (r) => r.status === "reserved" || r.status === "paid"
+    (r) => r.status === "reserved" || r.status === "paid",
   );
   const todayMenu = mockMenuSchedule.filter((m) => m.date === "1404/11/21");
 
@@ -64,7 +64,9 @@ export default function StudentDashboard() {
                 <CreditCard className="w-5 h-5 text-emerald-600" />
               </div>
               <div>
-                <p className="text-xs text-emerald-600 dark:text-emerald-400">موجودی کیف پول</p>
+                <p className="text-xs text-emerald-600 dark:text-emerald-400">
+                  موجودی کیف پول
+                </p>
                 <p className="text-sm font-bold text-emerald-800 dark:text-emerald-300">
                   {formatPrice(user.balance)}
                 </p>
@@ -80,7 +82,9 @@ export default function StudentDashboard() {
                 <CalendarDays className="w-5 h-5 text-blue-600" />
               </div>
               <div>
-                <p className="text-xs text-gray-500 dark:text-gray-400">رزروهای فعال</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  رزروهای فعال
+                </p>
                 <p className="text-sm font-bold text-gray-900 dark:text-white">
                   {activeReservations.length} عدد
                 </p>
@@ -96,7 +100,9 @@ export default function StudentDashboard() {
                 <TrendingUp className="w-5 h-5 text-purple-600" />
               </div>
               <div>
-                <p className="text-xs text-gray-500 dark:text-gray-400">کل سفارشات</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  کل سفارشات
+                </p>
                 <p className="text-sm font-bold text-gray-900 dark:text-white">
                   {mockReservations.length} عدد
                 </p>
@@ -112,8 +118,12 @@ export default function StudentDashboard() {
                 <Bell className="w-5 h-5 text-amber-600" />
               </div>
               <div>
-                <p className="text-xs text-gray-500 dark:text-gray-400">اعلان‌ها</p>
-                <p className="text-sm font-bold text-gray-900 dark:text-white">۲ جدید</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  اعلان‌ها
+                </p>
+                <p className="text-sm font-bold text-gray-900 dark:text-white">
+                  ۲ جدید
+                </p>
               </div>
             </div>
           </CardContent>
@@ -132,10 +142,7 @@ export default function StudentDashboard() {
           <CardContent className="space-y-3">
             {todayMenu.length > 0 ? (
               todayMenu.map((menu) => (
-                <div
-                  key={menu.id}
-                  className="border rounded-lg p-3 space-y-2"
-                >
+                <div key={menu.id} className="border rounded-lg p-3 space-y-2">
                   <Badge variant="outline" className="text-xs">
                     {getMealLabel(menu.meal)}
                   </Badge>
@@ -189,9 +196,7 @@ export default function StudentDashboard() {
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">{res.foodItem.image}</span>
                     <div>
-                      <p className="text-sm font-medium">
-                        {res.foodItem.name}
-                      </p>
+                      <p className="text-sm font-medium">{res.foodItem.name}</p>
                       <p className="text-xs text-gray-500">
                         {res.date} - {getMealLabel(res.meal)}
                       </p>
@@ -236,8 +241,7 @@ export default function StudentDashboard() {
                 پیشنهاد هوشمند غذا
               </h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                بر اساس سلیقه و سابقه سفارشاتتان، بهترین غذا را پیشنهاد
-                می‌دهیم.
+                بر اساس سلیقه و سابقه سفارشاتتان، بهترین غذا را پیشنهاد می‌دهیم.
               </p>
             </div>
           </div>
@@ -291,21 +295,29 @@ export default function StudentDashboard() {
                   مشکلی دارید؟ تیم پشتیبانی ۲۴ ساعته ما آماده کمک به شماست.
                 </p>
                 <div className="flex flex-wrap gap-3 text-sm">
-                  <a href="tel:02188776655" className="flex items-center gap-1 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300">
+                  <a
+                    href="tel:02188776655"
+                    className="flex items-center gap-1 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300"
+                  >
                     <Phone className="w-4 h-4" />
                     ۰۲۱-۸۸۷۷۶۶۵۵
                   </a>
-                  <a href="mailto:support@smartchef.ir" className="flex items-center gap-1 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300">
+                  <a
+                    href="mailto:support@smartchef.ir"
+                    className="flex items-center gap-1 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300"
+                  >
                     <Mail className="w-4 h-4" />
                     support@smartchef.ir
                   </a>
                 </div>
               </div>
             </div>
-            <Button className="bg-red-600 hover:bg-red-700 gap-2 shrink-0">
-              <MessageCircle className="w-4 h-4" />
-              چت با پشتیبانی
-            </Button>
+            <Link href="/student/support">
+              <Button className="bg-red-600 hover:bg-red-700 gap-2 shrink-0">
+                <MessageCircle className="w-4 h-4" />
+                ایجاد تیکت
+              </Button>
+            </Link>
           </div>
         </CardContent>
       </Card>
