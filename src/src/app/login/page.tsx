@@ -22,7 +22,7 @@ export default function LoginPage() {
     setError("");
 
     if (!studentId) {
-      setError("لطفا شماره دانشجویی خود را وارد کنید.");
+      setError("لطفا نام کاربری خود را وارد کنید.");
       return;
     }
     if (!password) {
@@ -78,10 +78,10 @@ export default function LoginPage() {
               )}
 
               <div className="space-y-2">
-                <Label htmlFor="studentId">شماره دانشجویی</Label>
+                <Label htmlFor="studentId">نام کاربری</Label>
                 <Input
                   id="studentId"
-                  placeholder="شماره دانشجویی خود را وارد کنید"
+                  placeholder="نام کاربری خود را وارد کنید"
                   value={studentId}
                   onChange={(e) => {
                     setStudentId(e.target.value);
@@ -137,7 +137,7 @@ export default function LoginPage() {
 
             <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
               <p className="text-xs text-gray-400 text-center">
-                برای ورود به عنوان دانشجو: شماره دانشجویی ۵ رقمی و هر رمز عبوری
+                برای ورود به عنوان دانشجو: نام کاربری ۵ رقمی و هر رمز عبوری
               </p>
               <p className="text-xs text-gray-400 text-center mt-1">
                 برای ورود به عنوان مدیر: نام کاربری <span className="font-mono bg-gray-100 dark:bg-gray-700 px-1 rounded">admin</span> و رمز <span className="font-mono bg-gray-100 dark:bg-gray-700 px-1 rounded">admin</span>
