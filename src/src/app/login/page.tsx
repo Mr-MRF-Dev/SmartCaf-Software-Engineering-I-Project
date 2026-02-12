@@ -35,13 +35,21 @@ export default function LoginPage() {
     // Simulate login delay
     await new Promise((r) => setTimeout(r, 800));
 
-    if (studentId === "admin" && password === "admin") {
-      toast.success("ورود موفق! خوش آمدید، مدیر سیستم.");
-      router.push("/admin");
+    if (studentId === "admin") {
+      if (password === "admin") {
+        toast.success("ورود موفق! خوش آمدید، مدیر سیستم.");
+        router.push("/admin");
+      } else {
+        toast.error("نام کاربری یا رمز عبور اشتباه است. لطفا مجددا تلاش کنید.");
+        setError("نام کاربری یا رمز عبور اشتباه است. لطفا مجددا تلاش کنید.");
+      }
     } else if (studentId.length >= 5 && password.length >= 3) {
       toast.success("ورود موفق! خوش آمدید.");
       router.push("/student");
     } else {
+      toast.error(
+        "شماره دانشجویی یا رمز عبور اشتباه است. لطفا مجددا تلاش کنید.",
+      );
       setError("شماره دانشجویی یا رمز عبور اشتباه است. لطفا مجددا تلاش کنید.");
     }
 
@@ -56,7 +64,9 @@ export default function LoginPage() {
           <div className="w-16 h-16 rounded-2xl bg-emerald-600 flex items-center justify-center mx-auto mb-4">
             <UtensilsCrossed className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">اسمارت چف</h1>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+            اسمارت چف
+          </h1>
           <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
             سامانه هوشمند رزرو غذای دانشگاه
           </p>
@@ -140,7 +150,14 @@ export default function LoginPage() {
                 برای ورود به عنوان دانشجو: نام کاربری ۵ رقمی و هر رمز عبوری
               </p>
               <p className="text-xs text-gray-400 text-center mt-1">
-                برای ورود به عنوان مدیر: نام کاربری <span className="font-mono bg-gray-100 dark:bg-gray-700 px-1 rounded">admin</span> و رمز <span className="font-mono bg-gray-100 dark:bg-gray-700 px-1 rounded">admin</span>
+                برای ورود به عنوان مدیر: نام کاربری{" "}
+                <span className="font-mono bg-gray-100 dark:bg-gray-700 px-1 rounded">
+                  admin
+                </span>{" "}
+                و رمز{" "}
+                <span className="font-mono bg-gray-100 dark:bg-gray-700 px-1 rounded">
+                  admin
+                </span>
               </p>
             </div>
           </CardContent>
