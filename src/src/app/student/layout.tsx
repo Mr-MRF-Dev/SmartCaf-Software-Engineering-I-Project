@@ -58,8 +58,7 @@ export default function StudentLayout({
               {studentNav.map((item) => {
                 const isActive =
                   pathname === item.href ||
-                  (item.href !== "/student" &&
-                    pathname.startsWith(item.href));
+                  (item.href !== "/student" && pathname.startsWith(item.href));
                 return (
                   <Link key={item.href} href={item.href}>
                     <Button
@@ -69,7 +68,7 @@ export default function StudentLayout({
                         "gap-2",
                         isActive
                           ? "bg-emerald-600 hover:bg-emerald-700 text-white"
-                          : "text-gray-600 hover:text-gray-900"
+                          : "text-gray-600 hover:text-gray-900",
                       )}
                     >
                       <item.icon className="w-4 h-4" />
@@ -83,12 +82,13 @@ export default function StudentLayout({
             {/* User Info */}
             <div className="flex items-center gap-3">
               <ThemeToggle />
-              <div className="hidden sm:flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 rounded-full px-3 py-1.5">
+              <Link
+                href="payment"
+                className="hidden sm:flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 rounded-full px-3 py-1.5"
+              >
                 <Wallet className="w-4 h-4 text-emerald-600" />
-                <span className="font-medium">
-                  {formatPrice(user.balance)}
-                </span>
-              </div>
+                <span className="font-medium">{formatPrice(user.balance)}</span>
+              </Link>
               <div className="flex items-center gap-2">
                 <Avatar className="w-8 h-8">
                   <AvatarFallback className="bg-emerald-100 text-emerald-700 text-sm">
@@ -100,7 +100,11 @@ export default function StudentLayout({
                 </span>
               </div>
               <Link href="/login">
-                <Button variant="ghost" size="icon" className="text-gray-400 hover:text-red-500">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-gray-400 hover:text-red-500"
+                >
                   <LogOut className="w-4 h-4" />
                 </Button>
               </Link>
@@ -124,7 +128,7 @@ export default function StudentLayout({
                       "gap-1.5 whitespace-nowrap text-xs",
                       isActive
                         ? "bg-emerald-600 hover:bg-emerald-700 text-white"
-                        : "text-gray-500"
+                        : "text-gray-500",
                     )}
                   >
                     <item.icon className="w-3.5 h-3.5" />
@@ -149,7 +153,7 @@ export default function StudentLayout({
                 {studentNav.find(
                   (n) =>
                     pathname === n.href ||
-                    (n.href !== "/student" && pathname.startsWith(n.href))
+                    (n.href !== "/student" && pathname.startsWith(n.href)),
                 )?.label || "صفحه اصلی"}
               </span>
             </div>
