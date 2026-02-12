@@ -23,7 +23,6 @@ import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -43,12 +42,9 @@ import {
   mockSoftwareIssues,
   mockVersions,
   Ticket,
-  SoftwareIssue,
 } from "@/lib/mock-data";
 import {
   Users,
-  MessageSquare,
-  Clock,
   CheckCircle2,
   Bug,
   Lightbulb,
@@ -57,14 +53,10 @@ import {
   Plus,
   Send,
   PackageCheck,
-  AlertCircle,
 } from "lucide-react";
 
 export default function AdminSupportPage() {
-  const [selectedTicket, setSelectedTicket] = useState<Ticket | null>(null);
-  const [selectedIssue, setSelectedIssue] = useState<SoftwareIssue | null>(
-    null,
-  );
+  const [, setSelectedTicket] = useState<Ticket | null>(null);
   const [ticketFilter, setTicketFilter] = useState<string>("all");
   const [issueFilter, setIssueFilter] = useState<string>("all");
 
