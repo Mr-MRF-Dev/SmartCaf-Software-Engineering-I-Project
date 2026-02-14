@@ -37,6 +37,25 @@ import {
   FoodItem,
 } from "@/lib/mock-data";
 import { toast } from "sonner";
+import { faIR } from "date-fns/locale";
+
+// Persian month names (Jalali)
+const persianMonths = [
+  "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور",
+  "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند",
+];
+
+// Map Gregorian month index to approximate Jalali month (for display)
+const gregorianToJalaliMonth: Record<string, string> = {
+  "2026-1": "بهمن ۱۴۰۴",
+  "2026-2": "بهمن ۱۴۰۴",
+  "2026-3": "اسفند ۱۴۰۴",
+};
+
+// Convert number to Persian digits
+const toPersianDigits = (n: number | string): string => {
+  return String(n).replace(/[0-9]/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[parseInt(d)]);
+};
 
 // Map Jalali date strings to JS Date objects for calendar (mock mapping)
 const jalaliToGregorian: Record<string, Date> = {
@@ -298,7 +317,7 @@ export default function ReservePage() {
         {/* Sidebar: Calendar */}
         <div className="space-y-4">
           <Card>
-            <CardHeader className="pb-2">
+            <CardHeader>
               <CardTitle className="text-sm flex items-center gap-2">
                 <CalendarDays className="w-4 h-4 text-emerald-600" />
                 تقویم رزرو
@@ -309,6 +328,19 @@ export default function ReservePage() {
                 mode="single"
                 selected={calendarDate}
                 onSelect={handleCalendarSelect}
+                locale={faIR}
+                dir="rtl"
+                formatters={{
+                  formatCaption: (date) => {
+                    const key = `${date.getFullYear()}-${date.getMonth() + 1}`;
+                    return gregorianToJalaliMonth[key] || date.toLocaleDateString("fa-IR", { month: "long", year: "numeric" });
+                  },
+                  formatDay: (date) => toPersianDigits(date.getDate()),
+                  formatWeekdayName: (date) => {
+                    const weekdays = ["یک", "دو", "سه", "چه", "پنج", "جم", "شن"];
+                    return weekdays[date.getDay()];
+                  },
+                }}
                 modifiers={{
                   available: calendarAvailable,
                 }}
