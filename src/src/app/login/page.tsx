@@ -25,7 +25,7 @@ export default function LoginPage() {
   const handleForgotPassword = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!forgotEmail) {
-      toast.error("لطفا شماره دانشجویی یا ایمیل خود را وارد کنید.");
+      toast.error("لطفا شماره دانشجویی یا ایمیل خود را وارد کنید. کد خطا: 12");
       return;
     }
     setForgotLoading(true);
@@ -40,11 +40,11 @@ export default function LoginPage() {
     setError("");
 
     if (!studentId) {
-      setError("لطفا نام کاربری خود را وارد کنید.");
+      setError("لطفا نام کاربری خود را وارد کنید. کد خطا: 14");
       return;
     }
     if (!password) {
-      setError("لطفا رمز عبور خود را وارد کنید.");
+      setError("لطفا رمز عبور خود را وارد کنید. کد خطا: 17");
       return;
     }
 
@@ -58,7 +58,7 @@ export default function LoginPage() {
         toast.success("ورود موفق! خوش آمدید، مدیر سیستم.");
         router.push("/admin");
       } else {
-        toast.error("نام کاربری یا رمز عبور اشتباه است. لطفا مجددا تلاش کنید.");
+        toast.error("نام کاربری یا رمز عبور اشتباه است. لطفا مجددا تلاش کنید. کد خطا: 22");
         setError("نام کاربری یا رمز عبور اشتباه است. لطفا مجددا تلاش کنید.");
       }
     } else if (studentId.length >= 5 && password.length >= 3) {
@@ -66,7 +66,7 @@ export default function LoginPage() {
       router.push("/student");
     } else {
       toast.error(
-        "شماره دانشجویی یا رمز عبور اشتباه است. لطفا مجددا تلاش کنید.",
+        "شماره دانشجویی یا رمز عبور اشتباه است. لطفا مجددا تلاش کنید. کد خطا: 23",
       );
       setError("شماره دانشجویی یا رمز عبور اشتباه است. لطفا مجددا تلاش کنید.");
     }
@@ -75,7 +75,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-bl from-emerald-50 via-white to-emerald-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-bl from-emerald-50 via-white to-emerald-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
