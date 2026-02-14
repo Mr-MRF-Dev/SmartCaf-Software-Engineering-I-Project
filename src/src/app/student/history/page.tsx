@@ -8,11 +8,14 @@ import {
   QrCode,
   XCircle,
   Eye,
+  Star,
+  Send,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -51,6 +54,16 @@ export default function HistoryPage() {
   const [selectedRes, setSelectedRes] = useState<Reservation | null>(null);
   const [showDetail, setShowDetail] = useState(false);
 
+  // Rating & comment state per reservation
+  const [reviews, setReviews] = useState<Record<string, { rating: number; comment: string }>>({
+    "res-3": { rating: 5, comment: "غذای عالی بود! خیلی خوشمزه و تازه." },
+    "res-4": { rating: 4, comment: "کیفیت خوبی داشت. برنج عالی بود." },
+  });
+  const [dialogRating, setDialogRating] = useState(0);
+  const [dialogHover, setDialogHover] = useState(0);
+  const [dialogComment, setDialogComment] = useState("");
+  const [dialogSubmitting, setDialogSubmitting] = useState(false);
+
   const filtered = mockReservations.filter((r) => {
     const matchStatus = statusFilter === "all" || r.status === statusFilter;
     const matchSearch =
@@ -62,6 +75,34 @@ export default function HistoryPage() {
 
   const handleCancel = (id: string) => {
     toast.success("رزرو با موفقیت لغو شد. وجه به کیف پول شما بازگشت.");
+  };
+
+  const openDetail = (res: Reservation) => {
+    setSelectedRes(res);
+    const existing = reviews[res.id];
+    setDialogRating(existing?.rating || 0);
+    setDialogComment(existing?.comment || "");
+    setShowDetail(true);
+  };
+
+  const handleSubmitReview = async () => {
+    if (!selectedRes) return;
+    if (dialogRating === 0) {
+      toast.error("لطفا امتیاز خود را انتخاب کنید.");
+      return;
+    }
+    if (!dialogComment.trim()) {
+      toast.error("لطفا نظر خود را بنویسید.");
+      return;
+    }
+    setDialogSubmitting(true);
+    await new Promise((r) => setTimeout(r, 800));
+    setReviews((prev) => ({
+      ...prev,
+      [selectedRes.id]: { rating: dialogRating, comment: dialogComment.trim() },
+    }));
+    setDialogSubmitting(false);
+    toast.success("نظر شما با موفقیت ثبت شد. ممنون از بازخورد شما!");
   };
 
   return (
@@ -119,6 +160,7 @@ export default function HistoryPage() {
               <TableHead>پرس</TableHead>
               <TableHead>مبلغ</TableHead>
               <TableHead>وضعیت</TableHead>
+              <TableHead>امتیاز</TableHead>
               <TableHead>عملیات</TableHead>
             </TableRow>
           </TableHeader>
@@ -143,14 +185,27 @@ export default function HistoryPage() {
                   </Badge>
                 </TableCell>
                 <TableCell>
+                  {reviews[res.id] ? (
+                    <div className="flex items-center gap-0.5">
+                      {[1, 2, 3, 4, 5].map((s) => (
+                        <Star
+                          key={s}
+                          className={`w-3.5 h-3.5 ${s <= reviews[res.id].rating ? "text-amber-400 fill-amber-400" : "text-gray-300"}`}
+                        />
+                      ))}
+                    </div>
+                  ) : res.status === "delivered" ? (
+                    <span className="text-xs text-gray-400">بدون امتیاز</span>
+                  ) : (
+                    <span className="text-xs text-gray-300">—</span>
+                  )}
+                </TableCell>
+                <TableCell>
                   <div className="flex gap-1">
                     <Button
                       size="sm"
                       variant="ghost"
-                      onClick={() => {
-                        setSelectedRes(res);
-                        setShowDetail(true);
-                      }}
+                      onClick={() => openDetail(res)}
                     >
                       <Eye className="w-4 h-4" />
                     </Button>
@@ -187,6 +242,16 @@ export default function HistoryPage() {
                     <p className="text-xs text-gray-500">
                       {res.date} - {getMealLabel(res.meal)} - {res.portion}
                     </p>
+                    {reviews[res.id] && (
+                      <div className="flex items-center gap-0.5 mt-1">
+                        {[1, 2, 3, 4, 5].map((s) => (
+                          <Star
+                            key={s}
+                            className={`w-3 h-3 ${s <= reviews[res.id].rating ? "text-amber-400 fill-amber-400" : "text-gray-300"}`}
+                          />
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
                 <Badge variant={getStatusBadgeVariant(res.status)} className="text-xs">
@@ -201,10 +266,7 @@ export default function HistoryPage() {
                   <Button
                     size="sm"
                     variant="outline"
-                    onClick={() => {
-                      setSelectedRes(res);
-                      setShowDetail(true);
-                    }}
+                    onClick={() => openDetail(res)}
                   >
                     <Eye className="w-3.5 h-3.5 ml-1" />
                     جزئیات
@@ -290,6 +352,73 @@ export default function HistoryPage() {
               </div>
             </div>
           )}
+
+          {/* Rating & Comment Section */}
+          {selectedRes && selectedRes.status === "delivered" && (
+            <div className="border-t pt-4 space-y-3">
+              <h4 className="text-sm font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                <Star className="w-4 h-4 text-amber-500" />
+                {reviews[selectedRes.id] ? "امتیاز و نظر شما" : "امتیاز دهید"}
+              </h4>
+
+              {/* Star Rating */}
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-500 dark:text-gray-400">امتیاز:</span>
+                <div className="flex items-center gap-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <button
+                      key={star}
+                      type="button"
+                      onClick={() => setDialogRating(star)}
+                      onMouseEnter={() => setDialogHover(star)}
+                      onMouseLeave={() => setDialogHover(0)}
+                      className="transition-transform hover:scale-110"
+                    >
+                      <Star
+                        className={`w-5 h-5 transition-colors ${
+                          star <= (dialogHover || dialogRating)
+                            ? "text-amber-400 fill-amber-400"
+                            : "text-gray-300 dark:text-gray-600"
+                        }`}
+                      />
+                    </button>
+                  ))}
+                </div>
+                {dialogRating > 0 && (
+                  <span className="text-xs text-amber-600 dark:text-amber-400 font-medium">
+                    {dialogRating === 1 && "ضعیف"}
+                    {dialogRating === 2 && "متوسط"}
+                    {dialogRating === 3 && "خوب"}
+                    {dialogRating === 4 && "خیلی خوب"}
+                    {dialogRating === 5 && "عالی"}
+                  </span>
+                )}
+              </div>
+
+              {/* Comment */}
+              <Textarea
+                placeholder="نظر خود را درباره این غذا بنویسید..."
+                value={dialogComment}
+                onChange={(e) => setDialogComment(e.target.value)}
+                className="min-h-[70px] resize-none"
+              />
+
+              <Button
+                onClick={handleSubmitReview}
+                disabled={dialogSubmitting}
+                className="bg-emerald-600 hover:bg-emerald-700 gap-2"
+                size="sm"
+              >
+                {dialogSubmitting ? (
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                ) : (
+                  <Send className="w-4 h-4" />
+                )}
+                {dialogSubmitting ? "در حال ارسال..." : reviews[selectedRes.id] ? "به‌روزرسانی نظر" : "ثبت نظر"}
+              </Button>
+            </div>
+          )}
+
           <DialogFooter>
             <Button variant="outline" onClick={() => setShowDetail(false)}>
               بستن

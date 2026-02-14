@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   UtensilsCrossed,
   CreditCard,
@@ -12,11 +13,17 @@ import {
   Phone,
   Mail,
   MessageCircle,
+  Star,
+  Send,
+  ThumbsUp,
 } from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { toast } from "sonner";
 import {
   mockUsers,
   mockReservations,
@@ -34,6 +41,82 @@ export default function StudentDashboard() {
     (r) => r.status === "reserved" || r.status === "paid",
   );
   const todayMenu = mockMenuSchedule.filter((m) => m.date === "1404/11/21");
+
+  // Rating & Comment state
+  const [rating, setRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0);
+  const [comment, setComment] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [mockComments, setMockComments] = useState([
+    {
+      id: 1,
+      user: "علی محمدی",
+      avatar: "عم",
+      rating: 5,
+      comment: "غذای امروز عالی بود! جوجه‌کباب خیلی خوشمزه بود.",
+      date: "۱۴۰۴/۱۱/۲۱",
+      likes: 12,
+      meal: "ناهار",
+    },
+    {
+      id: 2,
+      user: "زهرا احمدی",
+      avatar: "زا",
+      rating: 4,
+      comment: "کیفیت برنج خوب بود ولی خورشت کمی شور بود. در کل راضی هستم.",
+      date: "۱۴۰۴/۱۱/۲۱",
+      likes: 8,
+      meal: "ناهار",
+    },
+    {
+      id: 3,
+      user: "محمد رضایی",
+      avatar: "مر",
+      rating: 3,
+      comment: "غذا معمولی بود. انتظار تنوع بیشتری در منو دارم.",
+      date: "۱۴۰۴/۱۱/۲۰",
+      likes: 5,
+      meal: "شام",
+    },
+    {
+      id: 4,
+      user: "فاطمه کریمی",
+      avatar: "فک",
+      rating: 5,
+      comment: "سلف خیلی تمیز بود و برخورد پرسنل عالی بود. دست‌پخت خوبی داشت.",
+      date: "۱۴۰۴/۱۱/۲۰",
+      likes: 15,
+      meal: "ناهار",
+    },
+  ]);
+
+  const handleSubmitReview = async () => {
+    if (rating === 0) {
+      toast.error("لطفا امتیاز خود را انتخاب کنید.");
+      return;
+    }
+    if (!comment.trim()) {
+      toast.error("لطفا نظر خود را بنویسید.");
+      return;
+    }
+    setSubmitting(true);
+    await new Promise((r) => setTimeout(r, 800));
+    const newComment = {
+      id: mockComments.length + 1,
+      user: user.name,
+      avatar: user.name.slice(0, 2),
+      rating,
+      comment: comment.trim(),
+      date: "۱۴۰۴/۱۱/۲۱",
+      likes: 0,
+      meal: "ناهار",
+    };
+    setMockComments([newComment, ...mockComments]);
+    setRating(0);
+    setComment("");
+    setSubmitting(false);
+    toast.success("نظر شما با موفقیت ثبت شد. ممنون از بازخورد شما!");
+  };
 
   return (
     <div className="space-y-6">
@@ -318,6 +401,163 @@ export default function StudentDashboard() {
                 ایجاد تیکت
               </Button>
             </Link>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Rating & Comment Section */}
+      <Card>
+        <CardHeader className="pb-3">
+          <CardTitle className="text-base flex items-center gap-2">
+            <Star className="w-4 h-4 text-amber-500" />
+            امتیازدهی و نظرات
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-5">
+          {/* Submit Review Form */}
+          <div className="border rounded-lg p-4 space-y-4 bg-gray-50 dark:bg-gray-900">
+            <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
+              نظر خود را درباره غذای امروز بنویسید
+            </h4>
+
+            {/* Star Rating */}
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-gray-500 dark:text-gray-400">امتیاز شما:</span>
+              <div className="flex items-center gap-1">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <button
+                    key={star}
+                    type="button"
+                    onClick={() => setRating(star)}
+                    onMouseEnter={() => setHoverRating(star)}
+                    onMouseLeave={() => setHoverRating(0)}
+                    className="transition-transform hover:scale-110"
+                  >
+                    <Star
+                      className={`w-6 h-6 transition-colors ${
+                        star <= (hoverRating || rating)
+                          ? "text-amber-400 fill-amber-400"
+                          : "text-gray-300 dark:text-gray-600"
+                      }`}
+                    />
+                  </button>
+                ))}
+              </div>
+              {rating > 0 && (
+                <span className="text-xs text-amber-600 dark:text-amber-400 font-medium">
+                  {rating === 1 && "ضعیف"}
+                  {rating === 2 && "متوسط"}
+                  {rating === 3 && "خوب"}
+                  {rating === 4 && "خیلی خوب"}
+                  {rating === 5 && "عالی"}
+                </span>
+              )}
+            </div>
+
+            {/* Comment Input */}
+            <Textarea
+              placeholder="نظر خود را اینجا بنویسید..."
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              className="min-h-[80px] resize-none"
+            />
+
+            <Button
+              onClick={handleSubmitReview}
+              disabled={submitting}
+              className="bg-emerald-600 hover:bg-emerald-700 gap-2"
+            >
+              {submitting ? (
+                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              ) : (
+                <Send className="w-4 h-4" />
+              )}
+              {submitting ? "در حال ارسال..." : "ثبت نظر"}
+            </Button>
+          </div>
+
+          {/* Average Rating */}
+          <div className="flex items-center gap-3 p-3 border rounded-lg">
+            <div className="text-center">
+              <p className="text-3xl font-bold text-amber-500">
+                {(mockComments.reduce((sum, c) => sum + c.rating, 0) / mockComments.length).toFixed(1)}
+              </p>
+              <div className="flex items-center gap-0.5 mt-1">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star
+                    key={star}
+                    className={`w-3.5 h-3.5 ${
+                      star <= Math.round(mockComments.reduce((sum, c) => sum + c.rating, 0) / mockComments.length)
+                        ? "text-amber-400 fill-amber-400"
+                        : "text-gray-300"
+                    }`}
+                  />
+                ))}
+              </div>
+              <p className="text-xs text-gray-400 mt-1">{mockComments.length} نظر</p>
+            </div>
+            <div className="flex-1 space-y-1 mr-2">
+              {[5, 4, 3, 2, 1].map((star) => {
+                const count = mockComments.filter((c) => c.rating === star).length;
+                const percentage = (count / mockComments.length) * 100;
+                return (
+                  <div key={star} className="flex items-center gap-2 text-xs">
+                    <span className="w-3 text-gray-500">{star}</span>
+                    <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
+                    <div className="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-amber-400 rounded-full transition-all"
+                        style={{ width: `${percentage}%` }}
+                      />
+                    </div>
+                    <span className="w-6 text-gray-400 text-left">{count}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Comments List */}
+          <div className="space-y-3">
+            {mockComments.map((c) => (
+              <div key={c.id} className="border rounded-lg p-3 space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Avatar className="w-8 h-8">
+                      <AvatarFallback className="bg-emerald-100 text-emerald-700 text-xs">
+                        {c.avatar}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">{c.user}</p>
+                      <div className="flex items-center gap-1">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <Star
+                            key={star}
+                            className={`w-3 h-3 ${
+                              star <= c.rating
+                                ? "text-amber-400 fill-amber-400"
+                                : "text-gray-300"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-left">
+                    <Badge variant="outline" className="text-xs">{c.meal}</Badge>
+                    <p className="text-xs text-gray-400 mt-1">{c.date}</p>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-300 pr-10">{c.comment}</p>
+                <div className="flex items-center gap-1 pr-10">
+                  <button className="flex items-center gap-1 text-xs text-gray-400 hover:text-emerald-600 transition-colors">
+                    <ThumbsUp className="w-3.5 h-3.5" />
+                    {c.likes}
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </CardContent>
       </Card>
