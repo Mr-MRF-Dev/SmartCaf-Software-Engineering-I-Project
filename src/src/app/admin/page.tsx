@@ -46,6 +46,9 @@ export default function AdminDashboard() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">داشبورد مدیریت</h1>
+        <p className="text-sm font-medium text-emerald-600 dark:text-emerald-400 mt-1">
+          دانشگاه صنعتی اصفهان
+        </p>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           خلاصه وضعیت سامانه در یک نگاه
         </p>

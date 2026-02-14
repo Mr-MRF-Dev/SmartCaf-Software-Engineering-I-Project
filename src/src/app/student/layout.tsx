@@ -48,9 +48,14 @@ export default function StudentLayout({
               <div className="w-9 h-9 rounded-lg bg-emerald-600 flex items-center justify-center">
                 <UtensilsCrossed className="w-5 h-5 text-white" />
               </div>
-              <span className="text-lg font-bold text-gray-900 dark:text-white">
-                اسمارت چف
-              </span>
+              <div className="flex flex-col">
+                <span className="text-lg font-bold text-gray-900 dark:text-white leading-tight">
+                  اسمارت چف
+                </span>
+                <span className="text-xs text-gray-500 dark:text-gray-400">
+                  دانشگاه صنعتی اصفهان
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Nav */}

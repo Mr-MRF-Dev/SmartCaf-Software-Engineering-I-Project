@@ -25,7 +25,10 @@ export default function Home() {
         <div className="w-20 h-20 rounded-2xl bg-emerald-600 flex items-center justify-center mx-auto mb-6">
           <UtensilsCrossed className="w-10 h-10 text-white" />
         </div>
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">اسمارت چف</h1>
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">اسمارت چف</h1>
+        <p className="text-sm font-medium text-emerald-600 dark:text-emerald-400 mb-3">
+          دانشگاه صنعتی اصفهان
+        </p>
         <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-8">
           سامانه هوشمند مدیریت و رزرو غذای دانشگاهی. رزرو آسان، پرداخت سریع،
           پیشنهاد هوشمند غذا با هوش مصنوعی.

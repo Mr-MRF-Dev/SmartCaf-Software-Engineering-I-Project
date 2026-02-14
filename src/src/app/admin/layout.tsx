@@ -48,9 +48,14 @@ export default function AdminLayout({
               <div className="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center">
                 <Settings className="w-5 h-5 text-white" />
               </div>
-              <span className="text-lg font-bold text-slate-800 dark:text-white">
-                پنل مدیریت اسمارت چف
-              </span>
+              <div className="flex flex-col">
+                <span className="text-lg font-bold text-slate-800 dark:text-white leading-tight">
+                  پنل مدیریت اسمارت چف
+                </span>
+                <span className="text-xs text-slate-500 dark:text-slate-400">
+                  دانشگاه صنعتی اصفهان
+                </span>
+              </div>
             </Link>
 
             {/* User Info */}
