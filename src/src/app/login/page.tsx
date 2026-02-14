@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { UtensilsCrossed, Eye, EyeOff, LogIn, AlertCircle, Phone, Mail, MessageCircle } from "lucide-react";
+import { UtensilsCrossed, Eye, EyeOff, LogIn, AlertCircle, Phone, Mail, MessageCircle, KeyRound, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { toast } from "sonner";
 
 export default function LoginPage() {
@@ -16,6 +17,23 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [forgotOpen, setForgotOpen] = useState(false);
+  const [forgotEmail, setForgotEmail] = useState("");
+  const [forgotLoading, setForgotLoading] = useState(false);
+  const [forgotSent, setForgotSent] = useState(false);
+
+  const handleForgotPassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!forgotEmail) {
+      toast.error("لطفا شماره دانشجویی یا ایمیل خود را وارد کنید.");
+      return;
+    }
+    setForgotLoading(true);
+    await new Promise((r) => setTimeout(r, 1200));
+    setForgotLoading(false);
+    setForgotSent(true);
+    toast.success("لینک بازیابی رمز عبور به ایمیل شما ارسال شد.");
+  };
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -146,6 +164,20 @@ export default function LoginPage() {
                 )}
                 {loading ? "در حال ورود..." : "ورود"}
               </Button>
+
+              <div className="text-center">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setForgotOpen(true);
+                    setForgotSent(false);
+                    setForgotEmail("");
+                  }}
+                  className="text-sm text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 hover:underline"
+                >
+                  رمز عبور خود را فراموش کرده‌اید؟
+                </button>
+              </div>
             </form>
 
             <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
@@ -200,6 +232,72 @@ export default function LoginPage() {
           سامانه هوشمند رزرو غذا - اسمارت چف © ۱۴۰۴
         </p>
       </div>
+
+      {/* Forgot Password Dialog */}
+      <Dialog open={forgotOpen} onOpenChange={setForgotOpen}>
+        <DialogContent className="max-w-sm">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2 text-base">
+              <KeyRound className="w-5 h-5 text-emerald-600" />
+              بازیابی رمز عبور
+            </DialogTitle>
+          </DialogHeader>
+
+          {forgotSent ? (
+            <div className="text-center py-4 space-y-3">
+              <div className="w-14 h-14 rounded-full bg-emerald-100 dark:bg-emerald-900 flex items-center justify-center mx-auto">
+                <CheckCircle2 className="w-7 h-7 text-emerald-600 dark:text-emerald-400" />
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white">ایمیل ارسال شد!</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                لینک بازیابی رمز عبور به ایمیل شما ارسال شد.
+                لطفا صندوق ورودی خود را بررسی کنید.
+              </p>
+              <p className="text-xs text-gray-400">
+                (این یک شبیه‌سازی است و ایمیلی ارسال نمی‌شود)
+              </p>
+              <Button
+                variant="outline"
+                className="mt-2 gap-2"
+                onClick={() => setForgotOpen(false)}
+              >
+                <ArrowRight className="w-4 h-4" />
+                بازگشت به صفحه ورود
+              </Button>
+            </div>
+          ) : (
+            <form onSubmit={handleForgotPassword} className="space-y-4">
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                شماره دانشجویی یا ایمیل خود را وارد کنید تا لینک بازیابی رمز عبور
+                برای شما ارسال شود.
+              </p>
+              <div className="space-y-2">
+                <Label htmlFor="forgotEmail">شماره دانشجویی یا ایمیل</Label>
+                <Input
+                  id="forgotEmail"
+                  placeholder="مثال: 40012345 یا email@iut.ac.ir"
+                  value={forgotEmail}
+                  onChange={(e) => setForgotEmail(e.target.value)}
+                  dir="ltr"
+                  className="text-left"
+                />
+              </div>
+              <Button
+                type="submit"
+                className="w-full bg-emerald-600 hover:bg-emerald-700 gap-2"
+                disabled={forgotLoading}
+              >
+                {forgotLoading ? (
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                ) : (
+                  <Mail className="w-4 h-4" />
+                )}
+                {forgotLoading ? "در حال ارسال..." : "ارسال لینک بازیابی"}
+              </Button>
+            </form>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
