@@ -7,119 +7,110 @@
 
 ## 📋 Overview
 
-**SmartCaf** is a comprehensive Software Engineering I project that focuses on the complete software development lifecycle for a modern smart cafeteria management system. This repository contains all documentation, analysis, and design artifacts created throughout the project, demonstrating best practices in software engineering methodologies.
+**SmartCaf** (اسمارت کف) is a comprehensive Software Engineering I project for a modern smart cafeteria reservation system at **Isfahan University of Technology** (دانشگاه صنعتی اصفهان). The repository includes both the full software engineering documentation (analysis & design artifacts) and a working **Next.js web frontend** that demonstrates the system.
 
 ## 🎯 Project Objectives
 
-- Design an innovative solution for cafeteria operations management
+- Design an innovative solution for university cafeteria reservation management
 - Apply software engineering principles and methodologies
 - Create comprehensive documentation following industry standards
 - Develop detailed requirements specifications and process models
-- Demonstrate proficiency in software analysis and design
+- Build a functional frontend prototype demonstrating the designed system
+- Demonstrate proficiency in software analysis, design, and implementation
 
 ## 🚀 Key Features
 
-The SmartCaf system is designed to streamline cafeteria operations with:
+The SmartCaf system is designed to streamline university cafeteria operations with:
 
-- **Smart Ordering System**: Digital menu browsing and order placement
-- **Real-time Queue Management**: Efficient order tracking and notification system
-- **Inventory Management**: Automated stock tracking and alerts
-- **Payment Integration**: Multiple payment methods support
-- **Analytics Dashboard**: Insights into sales, popular items, and peak hours
-- **User Management**: Separate interfaces for customers, staff, and administrators
+- **Smart Reservation System**: Browse meals by type (breakfast/lunch/dinner) with a Farsi calendar and reserve food
+- **AI-Powered Suggestions**: Intelligent meal recommendations based on user preferences and history
+- **Order History & Reviews**: Track past orders, rate meals, and leave comments
+- **Inventory Management**: Automated stock tracking and low-stock alerts (admin)
+- **Payment & Wallet**: Digital wallet top-up and payment management
+- **Analytics Dashboard**: Insights into sales, popular items, and daily statistics (admin)
+- **User Management**: Separate interfaces for students and administrators
+- **Help & Support**: FAQ system with searchable error codes and ticket-based support
+- **Full RTL/Persian UI**: Complete Farsi interface with Jalali calendar and Vazirmatn font
+- **Dark Mode**: System-wide light/dark theme toggle
 
 ## 📝 Project Status
 
-> **Note**: This is a conceptual Software Engineering I project focused on analysis and design phases. No implementation code is included.
-
-**Current Phase**: Documentation and Design
+**Current Phase**: Documentation, Design & Frontend Implementation
 **Status**: Active Development
+
+| Component | Status |
+|---|---|
+| Documentation & UML Artifacts | ✅ Complete |
+| Frontend Prototype (Next.js) | ✅ Complete |
+| Backend API | 🔲 Not Started |
 
 ## 📁 Repository Structure
 
 ```plaintext
-SmartCaf-Software-Engineering-I-Project/
-  ├── docs/
-  │   ├── activity-diagram/
-  │   │   # UML Activity Diagrams illustrating the dynamic flow of activities
-  │   │   # such as order placement, payment process, and inventory updates
-  │   │
-  │   ├── class-diagram/
-  │   │   # UML Class Diagrams defining system classes, attributes, methods,
-  │   │   # and relationships between core entities like User, Order, Menu, and Inventory
-  │   │
-  │   ├── communication-diagram/
-  │   │   # UML Communication Diagrams showing object interactions
-  │   │   # and message exchanges between system components
-  │   │
-  │   ├── process-model/
-  │   │   # High-level and detailed process models describing
-  │   │   # the operational workflows of the SmartCaf system
-  │   │
-  │   ├── proposal/
-  │   │   # Project proposal documents including problem statement,
-  │   │   # project scope, objectives, assumptions, and feasibility analysis
-  │   │
-  │   ├── requirements/
-  │   │   # Software Requirements Specification (SRS)
-  │   │   # including functional, non-functional requirements,
-  │   │   # constraints, and system assumptions
-  │   │
-  │   ├── sequence-diagram/
-  │   │   # UML Sequence Diagrams representing time-ordered interactions
-  │   │   # between actors and system components for key use cases
-  │   │
-  │   ├── state-diagram/
-  │   │   # UML State Diagrams describing state transitions
-  │   │   # of core entities such as orders and payments
-  │   │
-  │   ├── use-case-description/
-  │   │   # Detailed textual descriptions of each use case
-  │   │   # including actors, preconditions, main flow, and exceptions
-  │   │
-  │   ├── use-case-diagram/
-  │   │   # UML Use Case Diagrams showing system boundaries,
-  │   │   # actors, and their interactions with the SmartCaf system
-  │   │
-  │   └── user-story/
-  │       # Agile user stories representing user needs
-  │       # from the perspective of customers, staff, and administrators
-  │
-  ├── LICENSE
-  │   # License file defining usage and distribution terms of the repository
-  │
-  └── README.md
-      # Main documentation file providing an overview
-      # of the SmartCaf Software Engineering project
+SmartCaf-Software-Project/
+├── docs/                          # Software Engineering documentation
+│   ├── activity-diagram/          # UML Activity Diagrams
+│   ├── class-diagram/             # UML Class Diagrams
+│   ├── communication-diagram/     # UML Communication Diagrams
+│   ├── process-model/             # Business process models
+│   ├── proposal/                  # Project proposal & feasibility
+│   ├── requirements/              # SRS (functional & non-functional)
+│   ├── sequence-diagram/          # UML Sequence Diagrams
+│   ├── state-diagram/             # UML State Diagrams
+│   ├── use-case-description/      # Detailed use case descriptions
+│   ├── use-case-diagram/          # UML Use Case Diagrams
+│   └── user-story/                # Agile user stories
+│
+├── src/                           # Next.js frontend application
+│   ├── public/                    # Static assets
+│   └── src/
+│       ├── app/                   # App Router pages
+│       │   ├── login/             # Login + forgot password
+│       │   ├── admin/             # Admin panel (6 sub-pages)
+│       │   └── student/           # Student panel (6 sub-pages)
+│       ├── components/            # Reusable UI components (shadcn/ui)
+│       ├── hooks/                 # Custom React hooks
+│       └── lib/                   # Mock data & utilities
+│
+├── LICENSE
+└── README.md
 ```
 
 ## 📚 Documentation
 
-This repository contains a complete set of Software Engineering documentation artifacts created throughout the analysis and design phases of the SmartCaf project. Each document follows standard software engineering practices and UML conventions.
+The `docs/` folder contains a complete set of Software Engineering artifacts. Each document follows standard UML conventions.
 
-### Included Documentation
+| Artifact | Description |
+|---|---|
+| Activity Diagrams | Flow of activities: ordering, payment, inventory |
+| Class Diagrams | Static structure: classes, attributes, relationships |
+| Communication Diagrams | Object interactions & message exchanges |
+| Process Models | High-level & detailed operational workflows |
+| Proposal | Problem statement, scope, feasibility |
+| Requirements (SRS) | Functional & non-functional requirements |
+| Sequence Diagrams | Time-ordered interactions for key scenarios |
+| State Diagrams | Lifecycle & state transitions of entities |
+| Use Case Descriptions | Structured textual descriptions of behavior |
+| Use Case Diagrams | System boundaries, actors, interactions |
+| User Stories | Agile user stories for all roles |
 
-- **Activity Diagrams**: Describe the flow of activities within the system, including user actions, system decisions, and parallel processes.
+## 💻 Frontend Application
 
-- **Class Diagrams**: Define the static structure of the system by modeling classes, attributes, methods, and relationships.
+The `src/` folder contains a fully functional **Next.js 16** frontend prototype. See [src/README.md](src/README.md) for detailed setup instructions, tech stack, and project structure.
 
-- **Communication Diagrams**: Illustrate how system components interact through message passing and object collaboration.
+### Quick Start
 
-- **Process Models**: Represent business processes and operational workflows at both high-level and detailed views.
+```bash
+cd src
+npm install
+npm run dev
+```
 
-- **Project Proposal**: Outlines the problem statement, project goals, scope, stakeholders, and feasibility considerations.
+Open [http://localhost:3000](http://localhost:3000) — login with `admin`/`admin` (admin panel) or any 5+ character username (student panel).
 
-- **Requirements Specification (SRS)**: Includes detailed functional and non-functional requirements, system constraints, and assumptions.
+### Tech Stack Highlights
 
-- **Sequence Diagrams**: Show chronological interactions between actors and system components for key scenarios.
-
-- **State Diagrams**: Model the lifecycle and state transitions of critical system entities.
-
-- **Use Case Descriptions**: Provide structured textual explanations of system behavior from the user’s perspective.
-
-- **Use Case Diagrams**: Visualize system functionality and actor interactions within defined system boundaries.
-
-- **User Stories**: Capture user needs in an agile-friendly format to support requirement understanding and prioritization.
+Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · shadcn/ui · Recharts · react-day-picker (Farsi) · Vazirmatn font · Sonner · next-themes
 
 ## 🧠 Educational Purpose
 
@@ -128,6 +119,8 @@ This project is intended for **academic use** in the _Software Engineering I_ co
 - Application of UML and modeling techniques
 - Requirement analysis and documentation skills
 - Structured system design thinking
+- End-to-end implementation from design to prototype
+- Modern web development with Next.js and React
 - Team-based software engineering practices
 
 ## 👥 Team Members

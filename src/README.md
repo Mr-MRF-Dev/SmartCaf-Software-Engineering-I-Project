@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍽 SmartCaf — Frontend
 
-## Getting Started
+The web frontend for **SmartCaf** (اسمارت کف), a smart university cafeteria reservation system.
 
-First, run the development server:
+Built with [Next.js](https://nextjs.org) 16 (App Router), React 19, TypeScript, Tailwind CSS 4, and [shadcn/ui](https://ui.shadcn.com).
+
+## ✨ Features
+
+### Student Panel (`/student`)
+
+- **Dashboard** — Welcome view, daily stats, today's menu, reservations, AI suggestion, notifications, support contact, and a rating & comment section with average ratings
+- **Reserve** (`/student/reserve`) — Meal-type dropdown filter (صبحانه / ناهار / شام), interactive Farsi (Jalali) calendar sidebar, food cards grid with portion selection dialog, and meal summary
+- **AI Reserve** (`/student/ai-reserve`) — AI-powered meal recommendation
+- **History** (`/student/history`) — Order history table/cards with status badges, detail dialog including rating & review for delivered orders
+- **Payment** (`/student/payment`) — Wallet & payment management
+- **Support** (`/student/support`) — Ticket-based support system with contact info
+- **Help** (`/student/help`) — FAQ accordion (5 categories, ~14 questions), searchable error code reference (12 codes with severity badges), and quick-contact section
+
+### Admin Panel (`/admin`)
+
+- **Dashboard** — Stats overview, inventory alerts, support queue
+- **Menu** (`/admin/menu`) — Food menu schedule management
+- **Stats** (`/admin/stats`) — Analytics & reporting
+- **Inventory** (`/admin/inventory`) — Stock tracking & alerts
+- **Accounting** (`/admin/accounting`) — Financial overview
+- **Rules** (`/admin/rules`) — System rules & constraints
+- **Support** (`/admin/support`) — Support ticket management
+
+### Other Pages
+
+- **Landing** (`/`) — Hero, feature grid, call-to-action
+- **Login** (`/login`) — Authentication with mock credentials, forgot-password dialog
+
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript 5 |
+| UI Library | React 19 |
+| Styling | Tailwind CSS 4 + tw-animate-css |
+| Components | shadcn/ui (Radix UI primitives) |
+| Charts | Recharts |
+| Calendar | react-day-picker 9 + date-fns 4 (faIR locale) |
+| Icons | Lucide React |
+| Font | Vazirmatn (Persian) |
+| Toasts | Sonner |
+| Theme | next-themes (light/dark) |
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm / yarn / pnpm / bun
+
+### Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Mock Credentials
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Role | Username | Password |
+|---|---|---|
+| Admin | `admin` | `admin` |
+| Student | any 5+ char username | any password |
 
-## Learn More
+### Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run dev      # Start dev server
+npm run build    # Production build
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📂 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── public/                  # Static assets
+└── src/
+    ├── app/
+    │   ├── layout.tsx       # Root layout (RTL, Vazirmatn font, theme)
+    │   ├── page.tsx         # Landing page
+    │   ├── globals.css      # Global styles
+    │   ├── login/           # Login page + forgot password
+    │   ├── admin/           # Admin panel (layout + 6 sub-pages)
+    │   └── student/         # Student panel (layout + 6 sub-pages)
+    ├── components/
+    │   ├── ui/              # shadcn/ui components (20+)
+    │   ├── theme-provider.tsx
+    │   └── theme-toggle.tsx
+    ├── hooks/
+    │   └── use-mobile.ts    # Mobile detection hook
+    └── lib/
+        ├── mock-data.ts     # Mock data & helpers
+        └── utils.ts         # Utility functions (cn)
+```
 
-## Deploy on Vercel
+## 🌐 Internationalization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The app is fully **RTL** with `lang="fa"` and `dir="rtl"`. The calendar uses the `faIR` locale from date-fns with Persian digit formatting and Jalali month captions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file for details.
