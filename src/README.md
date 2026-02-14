@@ -34,7 +34,7 @@ Built with [Next.js](https://nextjs.org) 16 (App Router), React 19, TypeScript, 
 ## 🛠 Tech Stack
 
 | Layer | Technology |
-|---|---|
+| --- | --- |
 | Framework | Next.js 16 (App Router) |
 | Language | TypeScript 5 |
 | UI Library | React 19 |
@@ -69,7 +69,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the app.
 ### Mock Credentials
 
 | Role | Username | Password |
-|---|---|---|
+| --- | --- | --- |
 | Admin | `admin` | `admin` |
 | Student | any 5+ char username | any password |
 
@@ -84,7 +84,7 @@ npm run lint     # Run ESLint
 
 ## 📂 Project Structure
 
-```
+```text
 src/
 ├── public/                  # Static assets
 └── src/

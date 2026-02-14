@@ -7,7 +7,7 @@
 
 ## 📋 Overview
 
-**SmartCaf** (اسمارت کف) is a comprehensive Software Engineering I project for a modern smart cafeteria reservation system at **Isfahan University of Technology** (دانشگاه صنعتی اصفهان). The repository includes both the full software engineering documentation (analysis & design artifacts) and a working **Next.js web frontend** that demonstrates the system.
+**SmartCaf** (اسمارت کف) is a comprehensive Software Engineering I project for a modern smart cafeteria reservation system. The repository includes both the full software engineering documentation (analysis & design artifacts) and a working **Next.js web frontend** that demonstrates the system.
 
 ## 🎯 Project Objectives
 
@@ -32,17 +32,6 @@ The SmartCaf system is designed to streamline university cafeteria operations wi
 - **Help & Support**: FAQ system with searchable error codes and ticket-based support
 - **Full RTL/Persian UI**: Complete Farsi interface with Jalali calendar and Vazirmatn font
 - **Dark Mode**: System-wide light/dark theme toggle
-
-## 📝 Project Status
-
-**Current Phase**: Documentation, Design & Frontend Implementation
-**Status**: Active Development
-
-| Component | Status |
-|---|---|
-| Documentation & UML Artifacts | ✅ Complete |
-| Frontend Prototype (Next.js) | ✅ Complete |
-| Backend API | 🔲 Not Started |
 
 ## 📁 Repository Structure
 
@@ -81,7 +70,7 @@ SmartCaf-Software-Project/
 The `docs/` folder contains a complete set of Software Engineering artifacts. Each document follows standard UML conventions.
 
 | Artifact | Description |
-|---|---|
+| --- | --- |
 | Activity Diagrams | Flow of activities: ordering, payment, inventory |
 | Class Diagrams | Static structure: classes, attributes, relationships |
 | Communication Diagrams | Object interactions & message exchanges |
