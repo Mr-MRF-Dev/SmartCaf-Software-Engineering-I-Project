@@ -83,7 +83,7 @@ export default function LoginPage() {
             <UtensilsCrossed className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-            اسمارت چف
+            اسمارت کف
           </h1>
           <p className="text-sm font-medium text-emerald-600 dark:text-emerald-400 mt-1">
             دانشگاه صنعتی اصفهان
@@ -218,9 +218,9 @@ export default function LoginPage() {
                     ۰۲۱-۸۸۷۷۶۶۵۵
                   </a>
                   <span className="text-amber-400">|</span>
-                  <a href="mailto:support@smartchef.ir" className="flex items-center gap-1 text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100">
+                  <a href="mailto:support@smartcaf.ir" className="flex items-center gap-1 text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100">
                     <Mail className="w-3 h-3" />
-                    support@smartchef.ir
+                    support@smartcaf.ir
                   </a>
                 </div>
               </div>
@@ -229,7 +229,7 @@ export default function LoginPage() {
         </Card>
 
         <p className="text-center text-xs text-gray-400 mt-6">
-          سامانه هوشمند رزرو غذا - اسمارت چف © ۱۴۰۴
+          سامانه هوشمند رزرو غذا - اسمارت کف © ۱۴۰۴
         </p>
       </div>
 

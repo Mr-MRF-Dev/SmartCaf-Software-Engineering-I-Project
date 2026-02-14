@@ -386,11 +386,11 @@ export default function StudentDashboard() {
                     ۰۲۱-۸۸۷۷۶۶۵۵
                   </a>
                   <a
-                    href="mailto:support@smartchef.ir"
+                    href="mailto:support@smartcaf.ir"
                     className="flex items-center gap-1 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300"
                   >
                     <Mail className="w-4 h-4" />
-                    support@smartchef.ir
+                    support@smartcaf.ir
                   </a>
                 </div>
               </div>

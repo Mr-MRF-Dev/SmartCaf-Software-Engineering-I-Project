@@ -172,7 +172,7 @@ export default function StudentSupportPage() {
             <div className="text-center p-4 bg-gray-50 dark:bg-gray-950 rounded-lg border border-gray-200 dark:border-gray-800">
               <div className="text-2xl mb-2">✉️</div>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">ایمیل</p>
-              <p className="font-semibold text-gray-900 dark:text-white">support@smartchef.ir</p>
+              <p className="font-semibold text-gray-900 dark:text-white">support@smartcaf.ir</p>
             </div>
             <div className="text-center p-4 bg-gray-50 dark:bg-gray-950 rounded-lg border border-gray-200 dark:border-gray-800">
               <div className="text-2xl mb-2">⏰</div>

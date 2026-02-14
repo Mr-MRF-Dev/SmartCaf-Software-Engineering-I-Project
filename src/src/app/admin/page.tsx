@@ -314,7 +314,7 @@ export default function AdminDashboard() {
                   <Mail className="w-5 h-5 text-blue-600 mt-0.5" />
                   <div>
                     <p className="text-xs text-gray-500 dark:text-gray-400">ایمیل</p>
-                    <p className="text-sm font-medium">tech@smartchef.ir</p>
+                    <p className="text-sm font-medium">tech@smartcaf.ir</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">

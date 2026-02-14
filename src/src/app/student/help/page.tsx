@@ -78,7 +78,7 @@ const faqs = [
     questions: [
       {
         q: "پیشنهاد هوشمند چگونه کار می‌کند؟",
-        a: "سیستم هوش مصنوعی اسمارت چف بر اساس سابقه سفارشات، امتیازات و نظرات شما، و همچنین ترجیحات غذایی‌تان، بهترین غذاها را برای هر وعده پیشنهاد می‌دهد.",
+        a: "سیستم هوش مصنوعی اسمارت کف بر اساس سابقه سفارشات، امتیازات و نظرات شما، و همچنین ترجیحات غذایی‌تان، بهترین غذاها را برای هر وعده پیشنهاد می‌دهد.",
       },
       {
         q: "آیا می‌توانم محدودیت غذایی خود را مشخص کنم؟",
@@ -474,11 +474,11 @@ export default function HelpPage() {
                     ۰۲۱-۸۸۷۷۶۶۵۵
                   </a>
                   <a
-                    href="mailto:support@smartchef.ir"
+                    href="mailto:support@smartcaf.ir"
                     className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300"
                   >
                     <Mail className="w-4 h-4" />
-                    support@smartchef.ir
+                    support@smartcaf.ir
                   </a>
                 </div>
               </div>

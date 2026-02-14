@@ -50,7 +50,7 @@ export default function AdminLayout({
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-slate-800 dark:text-white leading-tight">
-                  پنل مدیریت اسمارت چف
+                  پنل مدیریت اسمارت کف
                 </span>
                 <span className="text-xs text-slate-500 dark:text-slate-400">
                   دانشگاه صنعتی اصفهان
@@ -139,7 +139,7 @@ export default function AdminLayout({
       {/* Footer */}
       <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center text-xs text-gray-400">
-          <p>پنل مدیریت سامانه اسمارت چف © ۱۴۰۴</p>
+          <p>پنل مدیریت سامانه اسمارت کف © ۱۴۰۴</p>
         </div>
       </footer>
     </div>

@@ -52,7 +52,7 @@ export default function StudentLayout({
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-gray-900 dark:text-white leading-tight">
-                  اسمارت چف
+                  اسمارت کف
                 </span>
                 <span className="text-xs text-gray-500 dark:text-gray-400">
                   دانشگاه صنعتی اصفهان
@@ -177,7 +177,7 @@ export default function StudentLayout({
       {/* Footer */}
       <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center text-xs text-gray-400">
-          <p>سامانه هوشمند رزرو غذا - اسمارت چف © ۱۴۰۴</p>
+          <p>سامانه هوشمند رزرو غذا - اسمارت کف © ۱۴۰۴</p>
         </div>
       </footer>
     </div>

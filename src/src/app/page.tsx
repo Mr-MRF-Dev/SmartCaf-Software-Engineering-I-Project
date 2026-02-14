@@ -25,7 +25,7 @@ export default function Home() {
         <div className="w-20 h-20 rounded-2xl bg-emerald-600 flex items-center justify-center mx-auto mb-6">
           <UtensilsCrossed className="w-10 h-10 text-white" />
         </div>
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">اسمارت چف</h1>
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">اسمارت کف</h1>
         <p className="text-sm font-medium text-emerald-600 dark:text-emerald-400 mb-3">
           دانشگاه صنعتی اصفهان
         </p>
@@ -153,7 +153,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-6">
         <p className="text-center text-xs text-gray-400">
-          سامانه هوشمند رزرو غذا - اسمارت چف © ۱۴۰۴ | پروژه مهندسی نرم‌افزار
+          سامانه هوشمند رزرو غذا - اسمارت کف © ۱۴۰۴ | پروژه مهندسی نرم‌افزار
         </p>
       </footer>
     </div>

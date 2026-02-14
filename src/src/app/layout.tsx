@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "اسمارت چف - سامانه هوشمند رزرو غذا",
+  title: "اسمارت کف - سامانه هوشمند رزرو غذا",
   description: "سامانه هوشمند مدیریت و رزرو غذای دانشگاهی",
 };
 
