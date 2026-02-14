@@ -43,9 +43,6 @@ export default function StudentDashboard() {
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
             سلام، {user.name}! 👋
           </h1>
-          <p className="text-sm font-medium text-emerald-600 dark:text-emerald-400 mt-1">
-            دانشگاه صنعتی اصفهان
-          </p>
           <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
             به سامانه رزرو غذای دانشگاه خوش آمدید.
           </p>
