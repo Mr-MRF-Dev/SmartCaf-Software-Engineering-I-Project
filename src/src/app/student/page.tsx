@@ -292,7 +292,7 @@ export default function StudentDashboard() {
                   پشتیبانی فوری
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                  مشکلی دارید؟ تیم پشتیبانی ۲۴ ساعته ما آماده کمک به شماست.
+                  مشکلی دارید؟ تیم پشتیبانی ما ۲۴ ساعته آماده کمک به شماست.
                 </p>
                 <div className="flex flex-wrap gap-3 text-sm">
                   <a
