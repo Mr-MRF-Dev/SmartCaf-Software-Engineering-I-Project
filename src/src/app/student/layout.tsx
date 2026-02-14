@@ -12,6 +12,7 @@ import {
   User,
   Wallet,
   Headset,
+  BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -27,6 +28,7 @@ const studentNav = [
   { href: "/student/payment", label: "پرداخت", icon: CreditCard },
   { href: "/student/history", label: "تاریخچه", icon: History },
   { href: "/student/support", label: "پشتیبانی", icon: Headset },
+  { href: "/student/help", label: "راهنمایی", icon: BookOpen },
 ];
 
 export default function StudentLayout({
