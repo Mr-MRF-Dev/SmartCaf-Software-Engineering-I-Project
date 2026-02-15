@@ -118,42 +118,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Architecture Info */}
-      <section className="max-w-5xl mx-auto px-4 pb-16">
-        <div className="bg-slate-900 text-white rounded-2xl p-8">
-          <h2 className="text-xl font-bold mb-4">معماری سیستم</h2>
-          <div className="grid md:grid-cols-2 gap-6 text-sm">
-            <div>
-              <h3 className="font-semibold text-emerald-400 mb-2">
-                فرمت مدیریت داده‌ها
-              </h3>
-              <p className="text-slate-300 leading-relaxed">
-                از فرمت JSON برای مدیریت داده‌ها در سمت کلاینت استفاده شده است.
-                این فرمت به دلیل سازگاری بالا با JavaScript/TypeScript، سرعت
-                بالای پردازش، ساختار سلسله‌مراتبی و نیازمندی‌های غیرعملکردی
-                مانند قابلیت نگهداری و توسعه‌پذیری انتخاب شده است.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-emerald-400 mb-2">
-                معماری نرم‌افزار
-              </h3>
-              <p className="text-slate-300 leading-relaxed">
-                از معماری سه‌لایه (Three-Tier Architecture) استفاده شده: لایه
-                نمایش (Presentation Layer/Next.js)، لایه منطق کسب‌وکار (Business
-                Logic Layer) و لایه داده (Data Layer). این معماری به دلیل
-                جداسازی مسئولیت‌ها، مقیاس‌پذیری و آزمون‌پذیری بالا انتخاب شده
-                است.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-6">
         <p className="text-center text-xs text-gray-400">
-          سامانه هوشمند رزرو غذا - اسمارت کف © ۱۴۰۴ | پروژه مهندسی نرم‌افزار
+          سامانه هوشمند رزرو غذا - اسمارت کف © ۱۴۰۴
         </p>
       </footer>
     </div>
