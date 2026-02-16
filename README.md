@@ -41,6 +41,7 @@ SmartCaf-Software-Project/
 │   ├── activity-diagram/          # UML Activity Diagrams
 │   ├── class-diagram/             # UML Class Diagrams
 │   ├── communication-diagram/     # UML Communication Diagrams
+│   ├── package-diagram/           # UML Package Diagrams
 │   ├── process-model/             # Business process models
 │   ├── proposal/                  # Project proposal & feasibility
 │   ├── requirements/              # SRS (functional & non-functional)
@@ -48,7 +49,8 @@ SmartCaf-Software-Project/
 │   ├── state-diagram/             # UML State Diagrams
 │   ├── use-case-description/      # Detailed use case descriptions
 │   ├── use-case-diagram/          # UML Use Case Diagrams
-│   └── user-story/                # Agile user stories
+│   ├── user-story/                # Agile user stories
+│   └── windows-navigation-diagram/ # UI flow & screen transitions
 │
 ├── src/                           # Next.js frontend application
 │   ├── public/                    # Static assets
@@ -74,6 +76,7 @@ The `docs/` folder contains a complete set of Software Engineering artifacts. Ea
 | Activity Diagrams | Flow of activities: ordering, payment, inventory |
 | Class Diagrams | Static structure: classes, attributes, relationships |
 | Communication Diagrams | Object interactions & message exchanges |
+| Package Diagrams | Logical grouping & dependencies between packages |
 | Process Models | High-level & detailed operational workflows |
 | Proposal | Problem statement, scope, feasibility |
 | Requirements (SRS) | Functional & non-functional requirements |
@@ -82,6 +85,7 @@ The `docs/` folder contains a complete set of Software Engineering artifacts. Ea
 | Use Case Descriptions | Structured textual descriptions of behavior |
 | Use Case Diagrams | System boundaries, actors, interactions |
 | User Stories | Agile user stories for all roles |
+| Windows Navigation Diagrams | UI flow & screen transitions for user interfaces |
 
 ## 💻 Frontend Application
 
