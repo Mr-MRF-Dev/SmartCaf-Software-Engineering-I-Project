@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { UtensilsCrossed, Eye, EyeOff, LogIn, AlertCircle, Phone, Mail, MessageCircle, KeyRound, ArrowRight, CheckCircle2 } from "lucide-react";
+import { UtensilsCrossed, Eye, EyeOff, LogIn, AlertCircle, Phone, Mail, MessageCircle, KeyRound, ArrowRight, CheckCircle2, Home } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { toast } from "sonner";
+import Link from "next/link";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -77,6 +78,16 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-linear-to-bl from-emerald-50 via-white to-emerald-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
+        {/* Home Button */}
+        <div className="flex justify-center mb-4">
+          <Button variant="ghost" size="sm" asChild className="gap-1.5 text-gray-500 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400">
+            <Link href="/">
+              <Home className="w-4 h-4" />
+              صفحه اصلی
+            </Link>
+          </Button>
+        </div>
+
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 rounded-2xl bg-emerald-600 flex items-center justify-center mx-auto mb-4">
