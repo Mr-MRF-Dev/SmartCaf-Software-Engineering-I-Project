@@ -26,6 +26,7 @@ export interface FoodItem {
   image: string;
   calories: number;
   available: boolean;
+  remainingCapacity: number;
   portionSizes: { label: string; priceMultiplier: number }[];
 }
 
@@ -118,6 +119,7 @@ export const mockFoods: FoodItem[] = [
     image: "🍖",
     calories: 650,
     available: true,
+    remainingCapacity: 45,
     portionSizes: [
       { label: "معمولی", priceMultiplier: 1 },
       { label: "بزرگ", priceMultiplier: 1.5 },
@@ -132,6 +134,7 @@ export const mockFoods: FoodItem[] = [
     image: "🍲",
     calories: 550,
     available: true,
+    remainingCapacity: 12,
     portionSizes: [
       { label: "معمولی", priceMultiplier: 1 },
       { label: "بزرگ", priceMultiplier: 1.4 },
@@ -146,6 +149,7 @@ export const mockFoods: FoodItem[] = [
     image: "🍗",
     calories: 600,
     available: true,
+    remainingCapacity: 30,
     portionSizes: [
       { label: "معمولی", priceMultiplier: 1 },
       { label: "بزرگ", priceMultiplier: 1.3 },
@@ -160,6 +164,7 @@ export const mockFoods: FoodItem[] = [
     image: "🍳",
     calories: 350,
     available: true,
+    remainingCapacity: 60,
     portionSizes: [{ label: "معمولی", priceMultiplier: 1 }],
   },
   {
@@ -171,6 +176,7 @@ export const mockFoods: FoodItem[] = [
     image: "🥚",
     calories: 300,
     available: true,
+    remainingCapacity: 55,
     portionSizes: [{ label: "معمولی", priceMultiplier: 1 }],
   },
   {
@@ -182,6 +188,7 @@ export const mockFoods: FoodItem[] = [
     image: "🍢",
     calories: 580,
     available: true,
+    remainingCapacity: 8,
     portionSizes: [
       { label: "معمولی", priceMultiplier: 1 },
       { label: "بزرگ", priceMultiplier: 1.4 },
@@ -196,6 +203,7 @@ export const mockFoods: FoodItem[] = [
     image: "🍜",
     calories: 200,
     available: true,
+    remainingCapacity: 25,
     portionSizes: [{ label: "معمولی", priceMultiplier: 1 }],
   },
   {
@@ -207,6 +215,7 @@ export const mockFoods: FoodItem[] = [
     image: "🍝",
     calories: 500,
     available: false,
+    remainingCapacity: 0,
     portionSizes: [
       { label: "معمولی", priceMultiplier: 1 },
       { label: "بزرگ", priceMultiplier: 1.3 },

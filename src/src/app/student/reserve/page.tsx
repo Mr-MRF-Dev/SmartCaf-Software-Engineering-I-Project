@@ -294,12 +294,34 @@ export default function ReservePage() {
                                 </p>
                               </div>
                             </div>
-                            {!food.available && (
+                            {!food.available ? (
                               <Badge
                                 variant="destructive"
                                 className="text-xs"
                               >
                                 ناموجود
+                              </Badge>
+                            ) : food.remainingCapacity <= 5 ? (
+                              <Badge
+                                variant="destructive"
+                                className="text-xs"
+                              >
+                                <Users className="w-3 h-3 ml-1" />
+                                {food.remainingCapacity} پرس
+                              </Badge>
+                            ) : food.remainingCapacity <= 15 ? (
+                              <Badge
+                                className="text-xs bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 hover:bg-amber-100"
+                              >
+                                <Users className="w-3 h-3 ml-1" />
+                                {food.remainingCapacity} پرس
+                              </Badge>
+                            ) : (
+                              <Badge
+                                className="text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 hover:bg-emerald-100"
+                              >
+                                <Users className="w-3 h-3 ml-1" />
+                                {food.remainingCapacity} پرس
                               </Badge>
                             )}
                           </div>
