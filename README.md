@@ -7,7 +7,7 @@
 
 ## 📋 Overview
 
-**SmartCaf** (اسمارت کف) is a comprehensive Software Engineering I project for a modern smart cafeteria reservation system. The repository includes both the full software engineering documentation (analysis & design artifacts) and a working **Next.js web frontend** that demonstrates the system.
+**SmartCaf** (اسمارت کف) is a comprehensive Software Engineering I project at Isfahan University of Technology ([IUT](https://iut.ac.ir/)) for a modern smart cafeteria reservation system. The repository includes both the full software engineering documentation (analysis & design artifacts) and a working **Next.js web frontend** that demonstrates the system.
 
 ## 🎯 Project Objectives
 
