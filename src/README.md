@@ -51,17 +51,17 @@ Built with [Next.js](https://nextjs.org) 16 (App Router), React 19, TypeScript, 
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 22+
 - npm / yarn / pnpm / bun
 
 ### Installation
 
 ```bash
 # Install dependencies
-npm install
+bun install
 
 # Start development server
-npm run dev
+bun run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the app.
@@ -76,10 +76,10 @@ Open [http://localhost:3000](http://localhost:3000) to view the app.
 ### Available Scripts
 
 ```bash
-npm run dev      # Start dev server
-npm run build    # Production build
-npm run start    # Start production server
-npm run lint     # Run ESLint
+bun run dev      # Start dev server
+bun run build    # Production build
+bun run start    # Start production server
+bun run lint     # Run ESLint
 ```
 
 ## 📂 Project Structure

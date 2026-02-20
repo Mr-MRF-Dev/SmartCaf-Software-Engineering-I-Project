@@ -95,8 +95,8 @@ The `src/` folder contains a fully functional **Next.js 16** frontend prototype.
 
 ```bash
 cd src
-npm install
-npm run dev
+bun install
+bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) — login with `admin`/`admin` (admin panel) or any 5+ character username (student panel).
