@@ -1,9 +1,15 @@
 # 🍽 SmartCaf
 
-![GitHub repo size](https://img.shields.io/github/repo-size/Mr-MRF-Dev/SmartCaf-Software-Engineering-I-Project)
-[![GitHub License](https://img.shields.io/github/license/Mr-MRF-Dev/SmartCaf-Software-Engineering-I-Project)](/LICENSE)
+<div align="center">
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome+to+SmartCaf!+🍽️;Smart+Cafeteria+Management+System;Software+Engineering+I+Project;Complete+SDLC+Documentation;Analysis+%26+Design+Phase;&size=28&center=true&width=600)](https://git.io/typing-svg)
+
+</div>
+
+![student panel](images\student-panel.png)
+
+![GitHub repo size](https://img.shields.io/github/repo-size/Mr-MRF-Dev/SmartCaf-Software-Engineering-I-Project)
+[![GitHub License](https://img.shields.io/github/license/Mr-MRF-Dev/SmartCaf-Software-Engineering-I-Project)](/LICENSE)
 
 ## 📋 Overview
 
