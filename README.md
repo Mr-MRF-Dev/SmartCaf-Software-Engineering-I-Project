@@ -1,9 +1,9 @@
 # 🍽 SmartCaf
 
 <div align="center">
-
-[![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome+to+SmartCaf!+🍽️;Smart+Cafeteria+Management+System;Software+Engineering+I+Project;Complete+SDLC+Documentation;Analysis+%26+Design+Phase;&size=28&center=true&width=600)](https://git.io/typing-svg)
-
+  <a href="#">
+    <img src="https://readme-typing-svg.herokuapp.com/?lines=Welcome+to+SmartCaf!+🍽️;Smart+Cafeteria+Management+System;Software+Engineering+I+Project;Complete+SDLC+Documentation;Analysis+%26+Design+Phase;&size=28&center=true&width=600" alt="Typing SVG"/>
+  </a>
 </div>
 
 ![student panel](images\student-panel.png)
