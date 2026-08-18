@@ -14,14 +14,14 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-bl from-emerald-50 via-white to-emerald-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
+    <div className="min-h-screen flex flex-col justify-between bg-linear-to-bl from-emerald-50 via-white to-emerald-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
       {/* Theme Toggle - Fixed Top Right */}
       <div className="fixed top-4 left-4 z-50">
         <ThemeToggle />
       </div>
 
       {/* Hero */}
-      <header className="max-w-5xl mx-auto px-4 pt-12 pb-16 text-center">
+      <header className="max-w-5xl mx-auto px-4 pt-16 pb-16 text-center">
         <div className="w-20 h-20 rounded-2xl bg-emerald-600 flex items-center justify-center mx-auto mb-6">
           <UtensilsCrossed className="w-10 h-10 text-white" />
         </div>
