@@ -48,15 +48,14 @@ export default function InventoryPage() {
   const categories = [...new Set(mockInventory.map((i) => i.category))];
 
   const filtered = mockInventory.filter((item) => {
-    const matchSearch =
-      !searchQuery || item.name.includes(searchQuery);
+    const matchSearch = !searchQuery || item.name.includes(searchQuery);
     const matchCategory =
       categoryFilter === "all" || item.category === categoryFilter;
     return matchSearch && matchCategory;
   });
 
   const lowStockCount = mockInventory.filter(
-    (i) => i.quantity <= i.minQuantity
+    (i) => i.quantity <= i.minQuantity,
   ).length;
 
   const handleAdd = () => {
@@ -68,7 +67,9 @@ export default function InventoryPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-gray-900 dark:text-white">مدیریت انبار</h1>
+          <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+            مدیریت انبار
+          </h1>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
             موجودی مواد اولیه و کالاها را مدیریت کنید.
           </p>
@@ -93,13 +94,21 @@ export default function InventoryPage() {
             <p className="text-xs text-gray-500 dark:text-gray-400">کل اقلام</p>
           </CardContent>
         </Card>
-        <Card className={lowStockCount > 0 ? "border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950" : ""}>
+        <Card
+          className={
+            lowStockCount > 0
+              ? "border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950"
+              : ""
+          }
+        >
           <CardContent className="pt-4 pb-3 px-4 text-center">
             <AlertTriangle className="w-6 h-6 text-amber-600 mx-auto" />
             <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
               {lowStockCount}
             </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">کمبود موجودی</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              کمبود موجودی
+            </p>
           </CardContent>
         </Card>
         <Card>
@@ -108,7 +117,9 @@ export default function InventoryPage() {
             <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
               {mockInventory.length - lowStockCount}
             </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">موجودی کافی</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              موجودی کافی
+            </p>
           </CardContent>
         </Card>
       </div>
@@ -161,7 +172,10 @@ export default function InventoryPage() {
             {filtered.map((item) => {
               const isLow = item.quantity <= item.minQuantity;
               return (
-                <TableRow key={item.id} className={isLow ? "bg-amber-50 dark:bg-amber-950" : ""}>
+                <TableRow
+                  key={item.id}
+                  className={isLow ? "bg-amber-50 dark:bg-amber-950" : ""}
+                >
                   <TableCell className="font-medium">{item.name}</TableCell>
                   <TableCell>
                     <Badge variant="outline" className="text-xs">

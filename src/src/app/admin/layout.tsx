@@ -99,7 +99,7 @@ export default function AdminLayout({
                         "gap-1.5 whitespace-nowrap text-sm",
                         isActive
                           ? "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-gray-200"
-                          : "text-slate-500 dark:text-gray-400 hover:text-slate-800 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800"
+                          : "text-slate-500 dark:text-gray-400 hover:text-slate-800 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-gray-800",
                       )}
                     >
                       <item.icon className="w-4 h-4" />
@@ -124,7 +124,7 @@ export default function AdminLayout({
               {adminNav.find(
                 (n) =>
                   pathname === n.href ||
-                  (n.href !== "/admin" && pathname.startsWith(n.href))
+                  (n.href !== "/admin" && pathname.startsWith(n.href)),
               )?.label || "داشبورد"}
             </span>
           </div>

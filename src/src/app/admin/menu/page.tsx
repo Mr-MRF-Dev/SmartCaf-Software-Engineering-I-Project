@@ -95,9 +95,7 @@ export default function MenuManagementPage() {
             key={date}
             variant={selectedDate === date ? "default" : "outline"}
             className={
-              selectedDate === date
-                ? "bg-slate-800 hover:bg-slate-900"
-                : ""
+              selectedDate === date ? "bg-slate-800 hover:bg-slate-900" : ""
             }
             onClick={() => setSelectedDate(date)}
           >
@@ -154,9 +152,7 @@ export default function MenuManagementPage() {
                           size="icon"
                           variant="ghost"
                           className="w-7 h-7 text-gray-400 hover:text-red-600"
-                          onClick={() =>
-                            handleRemoveFood(menu.id, food.id)
-                          }
+                          onClick={() => handleRemoveFood(menu.id, food.id)}
                         >
                           <Trash2 className="w-3.5 h-3.5" />
                         </Button>
@@ -196,7 +192,9 @@ export default function MenuManagementPage() {
               <div
                 key={food.id}
                 className={`border rounded-lg p-3 text-center space-y-1 ${
-                  !food.available ? "opacity-60 bg-gray-50 dark:bg-gray-800" : ""
+                  !food.available
+                    ? "opacity-60 bg-gray-50 dark:bg-gray-800"
+                    : ""
                 }`}
               >
                 <div className="text-2xl">{food.image}</div>

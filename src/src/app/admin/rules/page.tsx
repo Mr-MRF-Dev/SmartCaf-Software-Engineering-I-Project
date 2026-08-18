@@ -36,8 +36,8 @@ export default function RulesPage() {
   const handleToggle = (id: string) => {
     setRules((prev) =>
       prev.map((rule) =>
-        rule.id === id ? { ...rule, isActive: !rule.isActive } : rule
-      )
+        rule.id === id ? { ...rule, isActive: !rule.isActive } : rule,
+      ),
     );
     toast.success("وضعیت قانون تغییر کرد.");
   };
@@ -93,7 +93,9 @@ export default function RulesPage() {
               <p className="text-2xl font-bold text-emerald-800 dark:text-emerald-300">
                 {activeRules.length}
               </p>
-              <p className="text-xs text-emerald-600 dark:text-emerald-400">قانون فعال</p>
+              <p className="text-xs text-emerald-600 dark:text-emerald-400">
+                قانون فعال
+              </p>
             </div>
           </CardContent>
         </Card>
@@ -133,7 +135,9 @@ export default function RulesPage() {
                       {rule.isActive ? "فعال" : "غیرفعال"}
                     </Badge>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{rule.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    {rule.description}
+                  </p>
                   <p className="text-xs text-gray-400 mt-2">
                     تاریخ ایجاد: {rule.createdAt}
                   </p>

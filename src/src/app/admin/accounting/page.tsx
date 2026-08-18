@@ -55,7 +55,9 @@ export default function AccountingPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl font-bold text-gray-900 dark:text-white">حسابداری و مالی</h1>
+        <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+          حسابداری و مالی
+        </h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           گزارشات مالی و تراکنش‌های سامانه
         </p>
@@ -67,7 +69,9 @@ export default function AccountingPage() {
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center gap-2 mb-2">
               <DollarSign className="w-5 h-5 text-emerald-600" />
-              <p className="text-xs text-emerald-600 dark:text-emerald-400">کل درآمد هفته</p>
+              <p className="text-xs text-emerald-600 dark:text-emerald-400">
+                کل درآمد هفته
+              </p>
             </div>
             <p className="text-xl font-bold text-emerald-800 dark:text-emerald-300">
               {formatPrice(totalRevenue)}
@@ -79,7 +83,9 @@ export default function AccountingPage() {
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center gap-2 mb-2">
               <ArrowDownCircle className="w-5 h-5 text-blue-600" />
-              <p className="text-xs text-blue-600 dark:text-blue-400">پرداخت‌ها</p>
+              <p className="text-xs text-blue-600 dark:text-blue-400">
+                پرداخت‌ها
+              </p>
             </div>
             <p className="text-xl font-bold text-blue-800 dark:text-blue-300">
               {formatPrice(totalPayments)}
@@ -91,7 +97,9 @@ export default function AccountingPage() {
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center gap-2 mb-2">
               <ArrowUpCircle className="w-5 h-5 text-amber-600" />
-              <p className="text-xs text-amber-600 dark:text-amber-400">بازگشت وجوه</p>
+              <p className="text-xs text-amber-600 dark:text-amber-400">
+                بازگشت وجوه
+              </p>
             </div>
             <p className="text-xl font-bold text-amber-800 dark:text-amber-300">
               {formatPrice(totalRefunds)}
@@ -103,7 +111,9 @@ export default function AccountingPage() {
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center gap-2 mb-2">
               <Receipt className="w-5 h-5 text-purple-600" />
-              <p className="text-xs text-purple-600 dark:text-purple-400">شارژ کیف پول</p>
+              <p className="text-xs text-purple-600 dark:text-purple-400">
+                شارژ کیف پول
+              </p>
             </div>
             <p className="text-xl font-bold text-purple-800 dark:text-purple-300">
               {formatPrice(totalCharges)}
@@ -144,7 +154,11 @@ export default function AccountingPage() {
                   />
                 }
               />
-              <Bar dataKey="totalRevenue" fill="var(--color-totalRevenue)" radius={[6, 6, 0, 0]} />
+              <Bar
+                dataKey="totalRevenue"
+                fill="var(--color-totalRevenue)"
+                radius={[6, 6, 0, 0]}
+              />
             </BarChart>
           </ChartContainer>
         </CardContent>
@@ -180,8 +194,8 @@ export default function AccountingPage() {
                         tx.type === "charge"
                           ? "default"
                           : tx.type === "refund"
-                          ? "secondary"
-                          : "outline"
+                            ? "secondary"
+                            : "outline"
                       }
                       className="text-xs"
                     >
@@ -210,16 +224,16 @@ export default function AccountingPage() {
                         tx.status === "success"
                           ? "default"
                           : tx.status === "pending"
-                          ? "secondary"
-                          : "destructive"
+                            ? "secondary"
+                            : "destructive"
                       }
                       className="text-xs"
                     >
                       {tx.status === "success"
                         ? "موفق"
                         : tx.status === "pending"
-                        ? "در انتظار"
-                        : "ناموفق"}
+                          ? "در انتظار"
+                          : "ناموفق"}
                     </Badge>
                   </TableCell>
                 </TableRow>

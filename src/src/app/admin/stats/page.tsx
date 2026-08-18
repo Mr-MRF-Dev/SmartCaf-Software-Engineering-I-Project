@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  BarChart3,
-  TrendingUp,
-  TrendingDown,
-  Calendar,
-} from "lucide-react";
+import { BarChart3, TrendingUp, TrendingDown, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -49,14 +44,16 @@ export default function StatsPage() {
   const totalRevenue = mockDailyStats.reduce((a, b) => a + b.totalRevenue, 0);
   const totalCancelled = mockDailyStats.reduce(
     (a, b) => a + b.cancelledOrders,
-    0
+    0,
   );
   const avgOrders = Math.round(totalOrders / mockDailyStats.length);
 
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl font-bold text-gray-900 dark:text-white">آمار و گزارشات</h1>
+        <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+          آمار و گزارشات
+        </h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           نمای کلی از عملکرد سامانه در هفته اخیر
         </p>
@@ -66,7 +63,9 @@ export default function StatsPage() {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <Card className="bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800">
           <CardContent className="pt-4 pb-3 px-4">
-            <p className="text-xs text-blue-600 dark:text-blue-400">کل سفارشات</p>
+            <p className="text-xs text-blue-600 dark:text-blue-400">
+              کل سفارشات
+            </p>
             <p className="text-2xl font-bold text-blue-800 dark:text-blue-300 mt-1">
               {totalOrders.toLocaleString("fa-IR")}
             </p>
@@ -76,7 +75,9 @@ export default function StatsPage() {
 
         <Card className="bg-emerald-50 dark:bg-emerald-950 border-emerald-200 dark:border-emerald-800">
           <CardContent className="pt-4 pb-3 px-4">
-            <p className="text-xs text-emerald-600 dark:text-emerald-400">کل درآمد</p>
+            <p className="text-xs text-emerald-600 dark:text-emerald-400">
+              کل درآمد
+            </p>
             <p className="text-xl font-bold text-emerald-800 dark:text-emerald-300 mt-1">
               {formatPrice(totalRevenue)}
             </p>
@@ -86,7 +87,9 @@ export default function StatsPage() {
 
         <Card className="bg-amber-50 dark:bg-amber-950 border-amber-200 dark:border-amber-800">
           <CardContent className="pt-4 pb-3 px-4">
-            <p className="text-xs text-amber-600 dark:text-amber-400">میانگین سفارش روزانه</p>
+            <p className="text-xs text-amber-600 dark:text-amber-400">
+              میانگین سفارش روزانه
+            </p>
             <p className="text-2xl font-bold text-amber-800 dark:text-amber-300 mt-1">
               {avgOrders.toLocaleString("fa-IR")}
             </p>
@@ -130,9 +133,21 @@ export default function StatsPage() {
               <XAxis dataKey="date" tick={{ fontSize: 12 }} />
               <YAxis tick={{ fontSize: 12 }} />
               <ChartTooltip content={<ChartTooltipContent />} />
-              <Bar dataKey="breakfastOrders" fill="var(--color-breakfastOrders)" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="lunchOrders" fill="var(--color-lunchOrders)" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="dinnerOrders" fill="var(--color-dinnerOrders)" radius={[4, 4, 0, 0]} />
+              <Bar
+                dataKey="breakfastOrders"
+                fill="var(--color-breakfastOrders)"
+                radius={[4, 4, 0, 0]}
+              />
+              <Bar
+                dataKey="lunchOrders"
+                fill="var(--color-lunchOrders)"
+                radius={[4, 4, 0, 0]}
+              />
+              <Bar
+                dataKey="dinnerOrders"
+                fill="var(--color-dinnerOrders)"
+                radius={[4, 4, 0, 0]}
+              />
             </BarChart>
           </ChartContainer>
         </CardContent>

@@ -37,10 +37,12 @@ export default function PaymentPage() {
   const [showCharge, setShowCharge] = useState(false);
   const [chargeAmount, setChargeAmount] = useState("");
   const [showPayConfirm, setShowPayConfirm] = useState(false);
-  const [selectedReservation, setSelectedReservation] = useState<string | null>(null);
+  const [selectedReservation, setSelectedReservation] = useState<string | null>(
+    null,
+  );
 
   const pendingReservations = mockReservations.filter(
-    (r) => r.status === "reserved"
+    (r) => r.status === "reserved",
   );
 
   const quickChargeAmounts = [50000, 100000, 200000, 500000];
@@ -65,7 +67,9 @@ export default function PaymentPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl font-bold text-gray-900 dark:text-white">پرداخت و کیف پول</h1>
+        <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+          پرداخت و کیف پول
+        </h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           موجودی خود را مدیریت کنید و رزروهای خود را پرداخت نمایید.
         </p>
@@ -116,9 +120,7 @@ export default function PaymentPage() {
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">{res.foodItem.image}</span>
                     <div>
-                      <p className="text-sm font-medium">
-                        {res.foodItem.name}
-                      </p>
+                      <p className="text-sm font-medium">{res.foodItem.name}</p>
                       <p className="text-xs text-gray-500">{res.date}</p>
                     </div>
                   </div>
@@ -170,8 +172,8 @@ export default function PaymentPage() {
                       tx.type === "charge"
                         ? "bg-green-100"
                         : tx.type === "refund"
-                        ? "bg-amber-100"
-                        : "bg-red-100"
+                          ? "bg-amber-100"
+                          : "bg-red-100"
                     }`}
                   >
                     {tx.type === "charge" ? (
@@ -189,9 +191,7 @@ export default function PaymentPage() {
                 </div>
                 <span
                   className={`text-sm font-medium ${
-                    tx.type === "payment"
-                      ? "text-red-600"
-                      : "text-green-600"
+                    tx.type === "payment" ? "text-red-600" : "text-green-600"
                   }`}
                 >
                   {tx.type === "payment" ? "-" : "+"}
@@ -209,7 +209,8 @@ export default function PaymentPage() {
           <DialogHeader>
             <DialogTitle>شارژ کیف پول</DialogTitle>
             <DialogDescription>
-              مبلغ مورد نظر خود را وارد کنید یا از مبالغ پیشنهادی استفاده نمایید.
+              مبلغ مورد نظر خود را وارد کنید یا از مبالغ پیشنهادی استفاده
+              نمایید.
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4">
@@ -217,7 +218,9 @@ export default function PaymentPage() {
               {quickChargeAmounts.map((amount) => (
                 <Button
                   key={amount}
-                  variant={chargeAmount === String(amount) ? "default" : "outline"}
+                  variant={
+                    chargeAmount === String(amount) ? "default" : "outline"
+                  }
                   className={
                     chargeAmount === String(amount)
                       ? "bg-emerald-600 hover:bg-emerald-700"
@@ -266,10 +269,7 @@ export default function PaymentPage() {
             </DialogDescription>
           </DialogHeader>
           <DialogFooter className="flex gap-2 sm:gap-0">
-            <Button
-              variant="outline"
-              onClick={() => setShowPayConfirm(false)}
-            >
+            <Button variant="outline" onClick={() => setShowPayConfirm(false)}>
               انصراف
             </Button>
             <Button

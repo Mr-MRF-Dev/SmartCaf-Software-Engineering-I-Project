@@ -422,7 +422,9 @@ export default function StudentDashboard() {
 
             {/* Star Rating */}
             <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-500 dark:text-gray-400">امتیاز شما:</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">
+                امتیاز شما:
+              </span>
               <div className="flex items-center gap-1">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <button
@@ -480,25 +482,36 @@ export default function StudentDashboard() {
           <div className="flex items-center gap-3 p-3 border rounded-lg">
             <div className="text-center">
               <p className="text-3xl font-bold text-amber-500">
-                {(mockComments.reduce((sum, c) => sum + c.rating, 0) / mockComments.length).toFixed(1)}
+                {(
+                  mockComments.reduce((sum, c) => sum + c.rating, 0) /
+                  mockComments.length
+                ).toFixed(1)}
               </p>
               <div className="flex items-center gap-0.5 mt-1">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star
                     key={star}
                     className={`w-3.5 h-3.5 ${
-                      star <= Math.round(mockComments.reduce((sum, c) => sum + c.rating, 0) / mockComments.length)
+                      star <=
+                      Math.round(
+                        mockComments.reduce((sum, c) => sum + c.rating, 0) /
+                          mockComments.length,
+                      )
                         ? "text-amber-400 fill-amber-400"
                         : "text-gray-300"
                     }`}
                   />
                 ))}
               </div>
-              <p className="text-xs text-gray-400 mt-1">{mockComments.length} نظر</p>
+              <p className="text-xs text-gray-400 mt-1">
+                {mockComments.length} نظر
+              </p>
             </div>
             <div className="flex-1 space-y-1 mr-2">
               {[5, 4, 3, 2, 1].map((star) => {
-                const count = mockComments.filter((c) => c.rating === star).length;
+                const count = mockComments.filter(
+                  (c) => c.rating === star,
+                ).length;
                 const percentage = (count / mockComments.length) * 100;
                 return (
                   <div key={star} className="flex items-center gap-2 text-xs">
@@ -529,7 +542,9 @@ export default function StudentDashboard() {
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 dark:text-white">{c.user}</p>
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">
+                        {c.user}
+                      </p>
                       <div className="flex items-center gap-1">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <Star
@@ -545,11 +560,15 @@ export default function StudentDashboard() {
                     </div>
                   </div>
                   <div className="text-left">
-                    <Badge variant="outline" className="text-xs">{c.meal}</Badge>
+                    <Badge variant="outline" className="text-xs">
+                      {c.meal}
+                    </Badge>
                     <p className="text-xs text-gray-400 mt-1">{c.date}</p>
                   </div>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-300 pr-10">{c.comment}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300 pr-10">
+                  {c.comment}
+                </p>
                 <div className="flex items-center gap-1 pr-10">
                   <button className="flex items-center gap-1 text-xs text-gray-400 hover:text-emerald-600 transition-colors">
                     <ThumbsUp className="w-3.5 h-3.5" />

@@ -49,8 +49,18 @@ import { faIR } from "date-fns/locale";
 
 // Persian month names (Jalali)
 const persianMonths = [
-  "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور",
-  "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند",
+  "فروردین",
+  "اردیبهشت",
+  "خرداد",
+  "تیر",
+  "مرداد",
+  "شهریور",
+  "مهر",
+  "آبان",
+  "آذر",
+  "دی",
+  "بهمن",
+  "اسفند",
 ];
 
 // Map Gregorian month index to approximate Jalali month (for display)
@@ -93,8 +103,18 @@ const mealOptions = [
 const availableDates = ["1404/11/21", "1404/11/22", "1404/11/23"];
 
 const deliveryOptions = [
-  { value: "dine-in", label: "حضوری", icon: Store, description: "دریافت در سلف" },
-  { value: "takeaway", label: "بسته‌بندی", icon: Package, description: "بسته‌بندی و تحویل" },
+  {
+    value: "dine-in",
+    label: "حضوری",
+    icon: Store,
+    description: "دریافت در سلف",
+  },
+  {
+    value: "takeaway",
+    label: "بسته‌بندی",
+    icon: Package,
+    description: "بسته‌بندی و تحویل",
+  },
 ];
 
 // Mock cafeteria live status
@@ -116,7 +136,7 @@ export default function ReservePage() {
   const [selectedDelivery, setSelectedDelivery] = useState("dine-in");
   const [showConfirm, setShowConfirm] = useState(false);
   const [calendarDate, setCalendarDate] = useState<Date | undefined>(
-    jalaliToGregorian["1404/11/21"]
+    jalaliToGregorian["1404/11/21"],
   );
 
   // Available dates for the calendar (only dates with menus)
@@ -136,7 +156,7 @@ export default function ReservePage() {
   const menus = mockMenuSchedule.filter(
     (m) =>
       m.date === selectedDate &&
-      (selectedMeal === "all" || m.meal === selectedMeal)
+      (selectedMeal === "all" || m.meal === selectedMeal),
   );
 
   const handleReserve = (food: FoodItem) => {
@@ -150,11 +170,12 @@ export default function ReservePage() {
     if (selectedFood) {
       const portion = selectedFood.portionSizes[selectedPortion];
       const totalPrice = Math.round(
-        selectedFood.price * portion.priceMultiplier
+        selectedFood.price * portion.priceMultiplier,
       );
-      const deliveryLabel = deliveryOptions.find(d => d.value === selectedDelivery)?.label || "";
+      const deliveryLabel =
+        deliveryOptions.find((d) => d.value === selectedDelivery)?.label || "";
       toast.success(
-        `رزرو ${selectedFood.name} (${portion.label} - ${deliveryLabel}) با موفقیت انجام شد. مبلغ: ${formatPrice(totalPrice)}`
+        `رزرو ${selectedFood.name} (${portion.label} - ${deliveryLabel}) با موفقیت انجام شد. مبلغ: ${formatPrice(totalPrice)}`,
       );
       setShowConfirm(false);
       setSelectedFood(null);
@@ -167,7 +188,7 @@ export default function ReservePage() {
       (d) =>
         d.getFullYear() === date.getFullYear() &&
         d.getMonth() === date.getMonth() &&
-        d.getDate() === date.getDate()
+        d.getDate() === date.getDate(),
     );
   };
 
@@ -295,31 +316,21 @@ export default function ReservePage() {
                               </div>
                             </div>
                             {!food.available ? (
-                              <Badge
-                                variant="destructive"
-                                className="text-xs"
-                              >
+                              <Badge variant="destructive" className="text-xs">
                                 ناموجود
                               </Badge>
                             ) : food.remainingCapacity <= 5 ? (
-                              <Badge
-                                variant="destructive"
-                                className="text-xs"
-                              >
+                              <Badge variant="destructive" className="text-xs">
                                 <Users className="w-3 h-3 ml-1" />
                                 {food.remainingCapacity} پرس
                               </Badge>
                             ) : food.remainingCapacity <= 15 ? (
-                              <Badge
-                                className="text-xs bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 hover:bg-amber-100"
-                              >
+                              <Badge className="text-xs bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 hover:bg-amber-100">
                                 <Users className="w-3 h-3 ml-1" />
                                 {food.remainingCapacity} پرس
                               </Badge>
                             ) : (
-                              <Badge
-                                className="text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 hover:bg-emerald-100"
-                              >
+                              <Badge className="text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 hover:bg-emerald-100">
                                 <Users className="w-3 h-3 ml-1" />
                                 {food.remainingCapacity} پرس
                               </Badge>
@@ -394,11 +405,25 @@ export default function ReservePage() {
                 formatters={{
                   formatCaption: (date) => {
                     const key = `${date.getFullYear()}-${date.getMonth() + 1}`;
-                    return gregorianToJalaliMonth[key] || date.toLocaleDateString("fa-IR", { month: "long", year: "numeric" });
+                    return (
+                      gregorianToJalaliMonth[key] ||
+                      date.toLocaleDateString("fa-IR", {
+                        month: "long",
+                        year: "numeric",
+                      })
+                    );
                   },
                   formatDay: (date) => toPersianDigits(date.getDate()),
                   formatWeekdayName: (date) => {
-                    const weekdays = ["یک", "دو", "سه", "چه", "پنج", "جم", "شن"];
+                    const weekdays = [
+                      "یک",
+                      "دو",
+                      "سه",
+                      "چه",
+                      "پنج",
+                      "جم",
+                      "شن",
+                    ];
                     return weekdays[date.getDay()];
                   },
                 }}
@@ -451,27 +476,38 @@ export default function ReservePage() {
                     ظرفیت
                   </span>
                   <span className="font-medium text-gray-700 dark:text-gray-300">
-                    {toPersianDigits(cafeteriaStatus.currentCapacity)} / {toPersianDigits(cafeteriaStatus.maxCapacity)}
+                    {toPersianDigits(cafeteriaStatus.currentCapacity)} /{" "}
+                    {toPersianDigits(cafeteriaStatus.maxCapacity)}
                   </span>
                 </div>
                 <div className="w-full h-2.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
                   <div
                     className={`h-full rounded-full transition-all ${
-                      cafeteriaStatus.currentCapacity / cafeteriaStatus.maxCapacity > 0.8
+                      cafeteriaStatus.currentCapacity /
+                        cafeteriaStatus.maxCapacity >
+                      0.8
                         ? "bg-red-500"
-                        : cafeteriaStatus.currentCapacity / cafeteriaStatus.maxCapacity > 0.5
-                        ? "bg-amber-500"
-                        : "bg-emerald-500"
+                        : cafeteriaStatus.currentCapacity /
+                              cafeteriaStatus.maxCapacity >
+                            0.5
+                          ? "bg-amber-500"
+                          : "bg-emerald-500"
                     }`}
-                    style={{ width: `${(cafeteriaStatus.currentCapacity / cafeteriaStatus.maxCapacity) * 100}%` }}
+                    style={{
+                      width: `${(cafeteriaStatus.currentCapacity / cafeteriaStatus.maxCapacity) * 100}%`,
+                    }}
                   />
                 </div>
                 <p className="text-[10px] text-gray-400">
-                  {cafeteriaStatus.currentCapacity / cafeteriaStatus.maxCapacity > 0.8
+                  {cafeteriaStatus.currentCapacity /
+                    cafeteriaStatus.maxCapacity >
+                  0.8
                     ? "سلف شلوغ است"
-                    : cafeteriaStatus.currentCapacity / cafeteriaStatus.maxCapacity > 0.5
-                    ? "شلوغی متوسط"
-                    : "سلف خلوت است"}
+                    : cafeteriaStatus.currentCapacity /
+                          cafeteriaStatus.maxCapacity >
+                        0.5
+                      ? "شلوغی متوسط"
+                      : "سلف خلوت است"}
                 </p>
               </div>
 
@@ -517,7 +553,8 @@ export default function ReservePage() {
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-sm">
-                وعده‌های {dateLabels[selectedDate]?.split(" ").slice(1).join(" ")}
+                وعده‌های{" "}
+                {dateLabels[selectedDate]?.split(" ").slice(1).join(" ")}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
@@ -573,7 +610,11 @@ export default function ReservePage() {
                 <div>
                   <p className="font-semibold">{selectedFood.name}</p>
                   <p className="text-sm text-gray-500">
-                    {selectedDate} - {getMealLabel(menus.find(m => m.foods.includes(selectedFood))?.meal || "")}
+                    {selectedDate} -{" "}
+                    {getMealLabel(
+                      menus.find((m) => m.foods.includes(selectedFood))?.meal ||
+                        "",
+                    )}
                   </p>
                 </div>
               </div>
@@ -600,8 +641,8 @@ export default function ReservePage() {
                       {portion.label} -{" "}
                       {formatPrice(
                         Math.round(
-                          selectedFood.price * portion.priceMultiplier
-                        )
+                          selectedFood.price * portion.priceMultiplier,
+                        ),
                       )}
                     </Button>
                   ))}
@@ -633,14 +674,18 @@ export default function ReservePage() {
                         }`}
                       />
                       <div>
-                        <p className={`text-sm font-medium ${
-                          selectedDelivery === opt.value
-                            ? "text-emerald-700 dark:text-emerald-300"
-                            : "text-gray-700 dark:text-gray-300"
-                        }`}>
+                        <p
+                          className={`text-sm font-medium ${
+                            selectedDelivery === opt.value
+                              ? "text-emerald-700 dark:text-emerald-300"
+                              : "text-gray-700 dark:text-gray-300"
+                          }`}
+                        >
                           {opt.label}
                         </p>
-                        <p className="text-[11px] text-gray-400">{opt.description}</p>
+                        <p className="text-[11px] text-gray-400">
+                          {opt.description}
+                        </p>
                       </div>
                       {selectedDelivery === opt.value && (
                         <Check className="w-4 h-4 text-emerald-600 mr-auto" />
@@ -651,17 +696,23 @@ export default function ReservePage() {
               </div>
 
               <div className="p-3 bg-emerald-50 dark:bg-emerald-950 rounded-lg text-center">
-                <p className="text-sm text-gray-600 dark:text-gray-400">مبلغ قابل پرداخت</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  مبلغ قابل پرداخت
+                </p>
                 <p className="text-xs text-gray-400 mt-0.5">
-                  {selectedFood?.portionSizes[selectedPortion]?.label} · {deliveryOptions.find(d => d.value === selectedDelivery)?.label}
+                  {selectedFood?.portionSizes[selectedPortion]?.label} ·{" "}
+                  {
+                    deliveryOptions.find((d) => d.value === selectedDelivery)
+                      ?.label
+                  }
                 </p>
                 <p className="text-xl font-bold text-emerald-700">
                   {formatPrice(
                     Math.round(
                       selectedFood.price *
                         selectedFood.portionSizes[selectedPortion]
-                          .priceMultiplier
-                    )
+                          .priceMultiplier,
+                    ),
                   )}
                 </p>
               </div>

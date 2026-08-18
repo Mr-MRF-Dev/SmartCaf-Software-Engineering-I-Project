@@ -25,7 +25,9 @@ export default function Home() {
         <div className="w-20 h-20 rounded-2xl bg-emerald-600 flex items-center justify-center mx-auto mb-6">
           <UtensilsCrossed className="w-10 h-10 text-white" />
         </div>
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">اسمارت کف</h1>
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+          اسمارت کف
+        </h1>
         <p className="text-sm font-medium text-emerald-600 dark:text-emerald-400 mb-3">
           دانشگاه صنعتی اصفهان
         </p>
@@ -112,7 +114,9 @@ export default function Home() {
               <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
                 {feature.title}
               </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">{feature.desc}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                {feature.desc}
+              </p>
             </div>
           ))}
         </div>

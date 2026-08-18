@@ -4,11 +4,7 @@ import { Brain, Sparkles, ShoppingCart, Check, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  mockAIRecommendations,
-  formatPrice,
-  mockFoods,
-} from "@/lib/mock-data";
+import { mockAIRecommendations, formatPrice, mockFoods } from "@/lib/mock-data";
 import { toast } from "sonner";
 
 export default function AIReservePage() {
@@ -27,8 +23,7 @@ export default function AIReservePage() {
             پیشنهاد هوشمند غذا
           </h1>
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            بر اساس سابقه سفارشات و سلیقه شما، بهترین غذاها را پیشنهاد
-            می‌دهیم.
+            بر اساس سابقه سفارشات و سلیقه شما، بهترین غذاها را پیشنهاد می‌دهیم.
           </p>
         </div>
       </div>

@@ -20,11 +20,7 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  mockDailyStats,
-  mockInventory,
-  formatPrice,
-} from "@/lib/mock-data";
+import { mockDailyStats, mockInventory, formatPrice } from "@/lib/mock-data";
 
 export default function AdminDashboard() {
   const todayStats = mockDailyStats[mockDailyStats.length - 1];
@@ -39,13 +35,15 @@ export default function AdminDashboard() {
     100;
 
   const lowStockItems = mockInventory.filter(
-    (item) => item.quantity <= item.minQuantity
+    (item) => item.quantity <= item.minQuantity,
   );
 
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">داشبورد مدیریت</h1>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+          داشبورد مدیریت
+        </h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           خلاصه وضعیت سامانه در یک نگاه
         </p>
@@ -57,7 +55,9 @@ export default function AdminDashboard() {
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-gray-500 dark:text-gray-400">سفارشات امروز</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  سفارشات امروز
+                </p>
                 <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
                   {todayStats.totalOrders}
                 </p>
@@ -88,7 +88,9 @@ export default function AdminDashboard() {
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-gray-500 dark:text-gray-400">درآمد امروز</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  درآمد امروز
+                </p>
                 <p className="text-xl font-bold text-gray-900 dark:text-white mt-1">
                   {formatPrice(todayStats.totalRevenue)}
                 </p>
@@ -119,7 +121,9 @@ export default function AdminDashboard() {
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-gray-500 dark:text-gray-400">لغو شده‌ها</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  لغو شده‌ها
+                </p>
                 <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
                   {todayStats.cancelledOrders}
                 </p>
@@ -138,7 +142,9 @@ export default function AdminDashboard() {
           <CardContent className="pt-4 pb-3 px-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-gray-500 dark:text-gray-400">هشدار موجودی</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  هشدار موجودی
+                </p>
                 <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
                   {lowStockItems.length}
                 </p>
@@ -179,7 +185,9 @@ export default function AdminDashboard() {
               ].map((meal) => (
                 <div key={meal.label} className="space-y-1">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-600 dark:text-gray-400">{meal.label}</span>
+                    <span className="text-gray-600 dark:text-gray-400">
+                      {meal.label}
+                    </span>
                     <span className="font-medium">
                       {meal.count} سفارش (
                       {((meal.count / todayStats.totalOrders) * 100).toFixed(0)}
@@ -300,12 +308,16 @@ export default function AdminDashboard() {
           <div className="grid md:grid-cols-2 gap-4">
             {/* Contact Info */}
             <div className="space-y-3">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-3">اطلاعات تماس</h4>
+              <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
+                اطلاعات تماس
+              </h4>
               <div className="space-y-2">
                 <div className="flex items-start gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
                   <Phone className="w-5 h-5 text-blue-600 mt-0.5" />
                   <div>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">تلفن پشتیبانی</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      تلفن پشتیبانی
+                    </p>
                     <p className="text-sm font-medium">۰۲۱-۸۸۷۷۶۶۵۵</p>
                     <p className="text-xs text-gray-500">داخلی ۲۰۱</p>
                   </div>
@@ -313,24 +325,34 @@ export default function AdminDashboard() {
                 <div className="flex items-start gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
                   <Mail className="w-5 h-5 text-blue-600 mt-0.5" />
                   <div>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">ایمیل</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      ایمیل
+                    </p>
                     <p className="text-sm font-medium">tech@smartcaf.ir</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
                   <MapPin className="w-5 h-5 text-blue-600 mt-0.5" />
                   <div>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">آدرس</p>
-                    <p className="text-sm">تهران، میدان ونک، برج سپهر، طبقه ۱۲</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      آدرس
+                    </p>
+                    <p className="text-sm">
+                      تهران، میدان ونک، برج سپهر، طبقه ۱۲
+                    </p>
                     <p className="text-xs text-gray-500">کدپستی: ۱۹۹۱۷۴۳۵۱۱</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
                   <Clock className="w-5 h-5 text-blue-600 mt-0.5" />
                   <div>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">ساعات کاری</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      ساعات کاری
+                    </p>
                     <p className="text-sm">شنبه تا چهارشنبه: ۹ صبح - ۶ عصر</p>
-                    <p className="text-xs text-gray-500">پنج‌شنبه: ۹ صبح - ۲ بعدازظهر</p>
+                    <p className="text-xs text-gray-500">
+                      پنج‌شنبه: ۹ صبح - ۲ بعدازظهر
+                    </p>
                   </div>
                 </div>
               </div>
@@ -338,16 +360,23 @@ export default function AdminDashboard() {
 
             {/* Quick Support */}
             <div className="space-y-3">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-3">پشتیبانی فوری</h4>
+              <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
+                پشتیبانی فوری
+              </h4>
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
                 <div className="flex items-center gap-2 mb-3">
                   <AlertTriangle className="w-5 h-5 text-amber-600" />
-                  <span className="text-sm font-medium text-gray-900 dark:text-white">مشکل فوری دارید؟</span>
+                  <span className="text-sm font-medium text-gray-900 dark:text-white">
+                    مشکل فوری دارید؟
+                  </span>
                 </div>
                 <p className="text-xs text-gray-600 dark:text-gray-400 mb-3">
                   برای دریافت پشتیبانی فنی فوری با شماره زیر تماس بگیرید:
                 </p>
-                <a href="tel:09121234567" className="block w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-center font-medium mb-2">
+                <a
+                  href="tel:09121234567"
+                  className="block w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-center font-medium mb-2"
+                >
                   ۰۹۱۲-۱۲۳-۴۵۶۷
                 </a>
                 <Button className="w-full bg-emerald-600 hover:bg-emerald-700 gap-2">
@@ -355,7 +384,7 @@ export default function AdminDashboard() {
                   چت آنلاین با پشتیبانی
                 </Button>
               </div>
-              
+
               <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 rounded-lg p-3">
                 <p className="text-xs text-amber-800 dark:text-amber-200 mb-2">
                   <strong>نسخه نرم‌افزار:</strong> v2.1.0

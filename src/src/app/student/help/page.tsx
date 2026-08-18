@@ -130,49 +130,57 @@ const errorCodes = [
     code: "ERR-1001",
     title: "خطای احراز هویت",
     description: "نام کاربری یا رمز عبور اشتباه است.",
-    solution: "رمز عبور خود را بررسی کنید. اگر فراموش کرده‌اید از «بازیابی رمز عبور» استفاده کنید.",
+    solution:
+      "رمز عبور خود را بررسی کنید. اگر فراموش کرده‌اید از «بازیابی رمز عبور» استفاده کنید.",
     severity: "medium",
   },
   {
     code: "ERR-1002",
     title: "حساب کاربری قفل شده",
-    description: "بعد از ۵ بار ورود ناموفق متوالی، حساب شما به مدت ۳۰ دقیقه قفل می‌شود.",
-    solution: "۳۰ دقیقه صبر کنید و مجدداً تلاش کنید. در صورت ادامه مشکل با پشتیبانی تماس بگیرید.",
+    description:
+      "بعد از ۵ بار ورود ناموفق متوالی، حساب شما به مدت ۳۰ دقیقه قفل می‌شود.",
+    solution:
+      "۳۰ دقیقه صبر کنید و مجدداً تلاش کنید. در صورت ادامه مشکل با پشتیبانی تماس بگیرید.",
     severity: "high",
   },
   {
     code: "ERR-2001",
     title: "موجودی ناکافی",
     description: "موجودی کیف پول شما برای ثبت این رزرو کافی نیست.",
-    solution: "ابتدا کیف پول خود را از بخش «پرداخت» شارژ کنید و سپس مجدداً رزرو را ثبت نمایید.",
+    solution:
+      "ابتدا کیف پول خود را از بخش «پرداخت» شارژ کنید و سپس مجدداً رزرو را ثبت نمایید.",
     severity: "medium",
   },
   {
     code: "ERR-2002",
     title: "خطای درگاه پرداخت",
     description: "اتصال به درگاه بانکی با مشکل مواجه شده است.",
-    solution: "اتصال اینترنت خود را بررسی کنید. از VPN استفاده نکنید. چند دقیقه بعد مجدداً تلاش کنید.",
+    solution:
+      "اتصال اینترنت خود را بررسی کنید. از VPN استفاده نکنید. چند دقیقه بعد مجدداً تلاش کنید.",
     severity: "high",
   },
   {
     code: "ERR-2003",
     title: "تراکنش ناموفق",
     description: "عملیات پرداخت توسط بانک تأیید نشد.",
-    solution: "مبلغ در صورت کسر از حساب، تا ۷۲ ساعت بازگشت داده می‌شود. در غیر این صورت تیکت ثبت کنید.",
+    solution:
+      "مبلغ در صورت کسر از حساب، تا ۷۲ ساعت بازگشت داده می‌شود. در غیر این صورت تیکت ثبت کنید.",
     severity: "high",
   },
   {
     code: "ERR-3001",
     title: "ظرفیت تکمیل",
     description: "ظرفیت رزرو برای این وعده غذایی به حداکثر رسیده است.",
-    solution: "وعده یا تاریخ دیگری را انتخاب کنید. می‌توانید از «پیشنهاد هوشمند» برای یافتن جایگزین استفاده کنید.",
+    solution:
+      "وعده یا تاریخ دیگری را انتخاب کنید. می‌توانید از «پیشنهاد هوشمند» برای یافتن جایگزین استفاده کنید.",
     severity: "medium",
   },
   {
     code: "ERR-3002",
     title: "خطای رزرو تکراری",
     description: "شما قبلاً برای این وعده و تاریخ رزرو ثبت کرده‌اید.",
-    solution: "هر دانشجو فقط یک رزرو برای هر وعده مجاز است. برای تغییر، ابتدا رزرو قبلی را لغو کنید.",
+    solution:
+      "هر دانشجو فقط یک رزرو برای هر وعده مجاز است. برای تغییر، ابتدا رزرو قبلی را لغو کنید.",
     severity: "low",
   },
   {
@@ -186,35 +194,40 @@ const errorCodes = [
     code: "ERR-3004",
     title: "محدودیت لغو ماهانه",
     description: "شما به حداکثر تعداد لغو مجاز در ماه رسیده‌اید (۵ بار).",
-    solution: "لغو بیشتر مشمول جریمه ۱۰٪ مبلغ غذا خواهد بود. برای موارد استثنایی با پشتیبانی تماس بگیرید.",
+    solution:
+      "لغو بیشتر مشمول جریمه ۱۰٪ مبلغ غذا خواهد بود. برای موارد استثنایی با پشتیبانی تماس بگیرید.",
     severity: "medium",
   },
   {
     code: "ERR-4001",
     title: "کد QR نامعتبر",
     description: "کد QR شما منقضی شده یا قبلاً استفاده شده است.",
-    solution: "از بخش تاریخچه، وضعیت رزرو خود را بررسی کنید. در صورت مشکل با اپراتور سلف هماهنگ کنید.",
+    solution:
+      "از بخش تاریخچه، وضعیت رزرو خود را بررسی کنید. در صورت مشکل با اپراتور سلف هماهنگ کنید.",
     severity: "high",
   },
   {
     code: "ERR-4002",
     title: "خارج از بازه تحویل",
     description: "زمان تحویل غذا برای این وعده به پایان رسیده است.",
-    solution: "ناهار: ۱۱:۳۰–۱۴:۰۰ / شام: ۱۸:۰۰–۲۰:۳۰. لطفاً در بازه مجاز مراجعه کنید.",
+    solution:
+      "ناهار: ۱۱:۳۰–۱۴:۰۰ / شام: ۱۸:۰۰–۲۰:۳۰. لطفاً در بازه مجاز مراجعه کنید.",
     severity: "medium",
   },
   {
     code: "ERR-5001",
     title: "خطای سرور",
     description: "خطای داخلی سرور رخ داده است.",
-    solution: "لطفاً چند دقیقه صبر کنید و مجدداً تلاش کنید. اگر مشکل ادامه داشت تیکت پشتیبانی ثبت کنید.",
+    solution:
+      "لطفاً چند دقیقه صبر کنید و مجدداً تلاش کنید. اگر مشکل ادامه داشت تیکت پشتیبانی ثبت کنید.",
     severity: "critical",
   },
   {
     code: "ERR-5002",
     title: "خطای اتصال به شبکه",
     description: "ارتباط با سرور برقرار نیست.",
-    solution: "اتصال اینترنت خود را بررسی کنید. صفحه را رفرش کنید. از VPN استفاده نکنید.",
+    solution:
+      "اتصال اینترنت خود را بررسی کنید. صفحه را رفرش کنید. از VPN استفاده نکنید.",
     severity: "critical",
   },
 ];
@@ -223,19 +236,28 @@ function getSeverityBadge(severity: string) {
   switch (severity) {
     case "low":
       return (
-        <Badge variant="outline" className="bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-700">
+        <Badge
+          variant="outline"
+          className="bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-700"
+        >
           کم
         </Badge>
       );
     case "medium":
       return (
-        <Badge variant="outline" className="bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-300 border-amber-300 dark:border-amber-700">
+        <Badge
+          variant="outline"
+          className="bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-300 border-amber-300 dark:border-amber-700"
+        >
           متوسط
         </Badge>
       );
     case "high":
       return (
-        <Badge variant="outline" className="bg-orange-50 dark:bg-orange-950 text-orange-700 dark:text-orange-300 border-orange-300 dark:border-orange-700">
+        <Badge
+          variant="outline"
+          className="bg-orange-50 dark:bg-orange-950 text-orange-700 dark:text-orange-300 border-orange-300 dark:border-orange-700"
+        >
           بالا
         </Badge>
       );
@@ -267,7 +289,7 @@ export default function HelpPage() {
         (q) =>
           !searchQuery ||
           q.q.includes(searchQuery) ||
-          q.a.includes(searchQuery)
+          q.a.includes(searchQuery),
       ),
     }))
     .filter((cat) => cat.questions.length > 0);
@@ -278,7 +300,7 @@ export default function HelpPage() {
       !errorSearch ||
       e.code.toLowerCase().includes(errorSearch.toLowerCase()) ||
       e.title.includes(errorSearch) ||
-      e.description.includes(errorSearch)
+      e.description.includes(errorSearch),
   );
 
   return (
@@ -443,7 +465,9 @@ export default function HelpPage() {
             <Card>
               <CardContent className="py-12 text-center">
                 <AlertTriangle className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-                <p className="text-gray-500">کد خطایی با این مشخصات یافت نشد.</p>
+                <p className="text-gray-500">
+                  کد خطایی با این مشخصات یافت نشد.
+                </p>
               </CardContent>
             </Card>
           )}

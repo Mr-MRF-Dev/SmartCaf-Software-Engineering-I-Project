@@ -2,12 +2,30 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { UtensilsCrossed, Eye, EyeOff, LogIn, AlertCircle, Phone, Mail, MessageCircle, KeyRound, ArrowRight, CheckCircle2, Home } from "lucide-react";
+import {
+  UtensilsCrossed,
+  Eye,
+  EyeOff,
+  LogIn,
+  AlertCircle,
+  Phone,
+  Mail,
+  MessageCircle,
+  KeyRound,
+  ArrowRight,
+  CheckCircle2,
+  Home,
+} from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { toast } from "sonner";
 import Link from "next/link";
 
@@ -59,7 +77,9 @@ export default function LoginPage() {
         toast.success("ورود موفق! خوش آمدید، مدیر سیستم.");
         router.push("/admin");
       } else {
-        toast.error("نام کاربری یا رمز عبور اشتباه است. لطفا مجددا تلاش کنید. کد خطا: 22");
+        toast.error(
+          "نام کاربری یا رمز عبور اشتباه است. لطفا مجددا تلاش کنید. کد خطا: 22",
+        );
         setError("نام کاربری یا رمز عبور اشتباه است. لطفا مجددا تلاش کنید.");
       }
     } else if (studentId.length >= 5 && password.length >= 3) {
@@ -93,7 +113,12 @@ export default function LoginPage() {
             سامانه هوشمند رزرو غذای دانشگاه
           </p>
           {/* Home Button */}
-          <Button variant="ghost" size="sm" asChild className="mt-3 gap-1.5 text-gray-500 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400">
+          <Button
+            variant="ghost"
+            size="sm"
+            asChild
+            className="mt-3 gap-1.5 text-gray-500 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400"
+          >
             <Link href="/">
               <Home className="w-4 h-4" />
               صفحه اصلی
@@ -221,12 +246,18 @@ export default function LoginPage() {
                   برای دریافت پشتیبانی فوری با ما تماس بگیرید:
                 </p>
                 <div className="flex flex-wrap gap-2 text-xs">
-                  <a href="tel:02188776655" className="flex items-center gap-1 text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100">
+                  <a
+                    href="tel:02188776655"
+                    className="flex items-center gap-1 text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100"
+                  >
                     <Phone className="w-3 h-3" />
                     ۰۲۱-۸۸۷۷۶۶۵۵
                   </a>
                   <span className="text-amber-400">|</span>
-                  <a href="mailto:support@smartcaf.ir" className="flex items-center gap-1 text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100">
+                  <a
+                    href="mailto:support@smartcaf.ir"
+                    className="flex items-center gap-1 text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100"
+                  >
                     <Mail className="w-3 h-3" />
                     support@smartcaf.ir
                   </a>
@@ -256,10 +287,12 @@ export default function LoginPage() {
               <div className="w-14 h-14 rounded-full bg-emerald-100 dark:bg-emerald-900 flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-7 h-7 text-emerald-600 dark:text-emerald-400" />
               </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white">ایمیل ارسال شد!</h3>
+              <h3 className="font-semibold text-gray-900 dark:text-white">
+                ایمیل ارسال شد!
+              </h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                لینک بازیابی رمز عبور به ایمیل شما ارسال شد.
-                لطفا صندوق ورودی خود را بررسی کنید.
+                لینک بازیابی رمز عبور به ایمیل شما ارسال شد. لطفا صندوق ورودی
+                خود را بررسی کنید.
               </p>
               <p className="text-xs text-gray-400">
                 (این یک شبیه‌سازی است و ایمیلی ارسال نمی‌شود)
@@ -276,8 +309,8 @@ export default function LoginPage() {
           ) : (
             <form onSubmit={handleForgotPassword} className="space-y-4">
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                شماره دانشجویی یا ایمیل خود را وارد کنید تا لینک بازیابی رمز عبور
-                برای شما ارسال شود.
+                شماره دانشجویی یا ایمیل خود را وارد کنید تا لینک بازیابی رمز
+                عبور برای شما ارسال شود.
               </p>
               <div className="space-y-2">
                 <Label htmlFor="forgotEmail">شماره دانشجویی یا ایمیل</Label>

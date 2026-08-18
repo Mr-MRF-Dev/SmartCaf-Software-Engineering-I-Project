@@ -55,7 +55,9 @@ export default function HistoryPage() {
   const [showDetail, setShowDetail] = useState(false);
 
   // Rating & comment state per reservation
-  const [reviews, setReviews] = useState<Record<string, { rating: number; comment: string }>>({
+  const [reviews, setReviews] = useState<
+    Record<string, { rating: number; comment: string }>
+  >({
     "res-3": { rating: 5, comment: "غذای عالی بود! خیلی خوشمزه و تازه." },
     "res-4": { rating: 4, comment: "کیفیت خوبی داشت. برنج عالی بود." },
   });
@@ -108,7 +110,9 @@ export default function HistoryPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl font-bold text-gray-900 dark:text-white">تاریخچه سفارشات</h1>
+        <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+          تاریخچه سفارشات
+        </h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           لیست همه رزروها و سفارشات شما در یک نگاه.
         </p>
@@ -236,9 +240,7 @@ export default function HistoryPage() {
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">{res.foodItem.image}</span>
                   <div>
-                    <p className="font-medium text-sm">
-                      {res.foodItem.name}
-                    </p>
+                    <p className="font-medium text-sm">{res.foodItem.name}</p>
                     <p className="text-xs text-gray-500">
                       {res.date} - {getMealLabel(res.meal)} - {res.portion}
                     </p>
@@ -254,7 +256,10 @@ export default function HistoryPage() {
                     )}
                   </div>
                 </div>
-                <Badge variant={getStatusBadgeVariant(res.status)} className="text-xs">
+                <Badge
+                  variant={getStatusBadgeVariant(res.status)}
+                  className="text-xs"
+                >
                   {getStatusLabel(res.status)}
                 </Badge>
               </div>
@@ -322,7 +327,9 @@ export default function HistoryPage() {
                 </div>
                 <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
                   <p className="text-gray-500 dark:text-gray-400">وعده</p>
-                  <p className="font-medium">{getMealLabel(selectedRes.meal)}</p>
+                  <p className="font-medium">
+                    {getMealLabel(selectedRes.meal)}
+                  </p>
                 </div>
                 <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
                   <p className="text-gray-500 dark:text-gray-400">پرس</p>
@@ -337,7 +344,10 @@ export default function HistoryPage() {
               </div>
 
               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 text-center">
-                <Badge variant={getStatusBadgeVariant(selectedRes.status)} className="mb-2">
+                <Badge
+                  variant={getStatusBadgeVariant(selectedRes.status)}
+                  className="mb-2"
+                >
                   {getStatusLabel(selectedRes.status)}
                 </Badge>
                 {(selectedRes.status === "paid" ||
@@ -363,7 +373,9 @@ export default function HistoryPage() {
 
               {/* Star Rating */}
               <div className="flex items-center gap-2">
-                <span className="text-sm text-gray-500 dark:text-gray-400">امتیاز:</span>
+                <span className="text-sm text-gray-500 dark:text-gray-400">
+                  امتیاز:
+                </span>
                 <div className="flex items-center gap-1">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <button
@@ -414,7 +426,11 @@ export default function HistoryPage() {
                 ) : (
                   <Send className="w-4 h-4" />
                 )}
-                {dialogSubmitting ? "در حال ارسال..." : reviews[selectedRes.id] ? "به‌روزرسانی نظر" : "ثبت نظر"}
+                {dialogSubmitting
+                  ? "در حال ارسال..."
+                  : reviews[selectedRes.id]
+                    ? "به‌روزرسانی نظر"
+                    : "ثبت نظر"}
               </Button>
             </div>
           )}

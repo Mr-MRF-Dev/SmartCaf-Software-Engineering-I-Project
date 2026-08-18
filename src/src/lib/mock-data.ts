@@ -393,27 +393,163 @@ export const mockTransactions: Transaction[] = [
 
 // ---- Mock Inventory ----
 export const mockInventory: InventoryItem[] = [
-  { id: "inv1", name: "برنج", unit: "کیلوگرم", quantity: 500, minQuantity: 100, lastUpdated: "1404/11/20", category: "غلات" },
-  { id: "inv2", name: "گوشت چرخ‌کرده", unit: "کیلوگرم", quantity: 80, minQuantity: 50, lastUpdated: "1404/11/20", category: "پروتئین" },
-  { id: "inv3", name: "مرغ", unit: "کیلوگرم", quantity: 120, minQuantity: 60, lastUpdated: "1404/11/20", category: "پروتئین" },
-  { id: "inv4", name: "روغن", unit: "لیتر", quantity: 45, minQuantity: 20, lastUpdated: "1404/11/19", category: "روغن و چربی" },
-  { id: "inv5", name: "پیاز", unit: "کیلوگرم", quantity: 200, minQuantity: 50, lastUpdated: "1404/11/20", category: "سبزیجات" },
-  { id: "inv6", name: "گوجه‌فرنگی", unit: "کیلوگرم", quantity: 150, minQuantity: 40, lastUpdated: "1404/11/20", category: "سبزیجات" },
-  { id: "inv7", name: "تخم‌مرغ", unit: "عدد", quantity: 300, minQuantity: 100, lastUpdated: "1404/11/19", category: "پروتئین" },
-  { id: "inv8", name: "ماکارونی", unit: "بسته", quantity: 15, minQuantity: 30, lastUpdated: "1404/11/18", category: "غلات" },
-  { id: "inv9", name: "نان بربری", unit: "عدد", quantity: 50, minQuantity: 20, lastUpdated: "1404/11/20", category: "نان" },
-  { id: "inv10", name: "کره", unit: "بسته", quantity: 25, minQuantity: 10, lastUpdated: "1404/11/19", category: "لبنیات" },
+  {
+    id: "inv1",
+    name: "برنج",
+    unit: "کیلوگرم",
+    quantity: 500,
+    minQuantity: 100,
+    lastUpdated: "1404/11/20",
+    category: "غلات",
+  },
+  {
+    id: "inv2",
+    name: "گوشت چرخ‌کرده",
+    unit: "کیلوگرم",
+    quantity: 80,
+    minQuantity: 50,
+    lastUpdated: "1404/11/20",
+    category: "پروتئین",
+  },
+  {
+    id: "inv3",
+    name: "مرغ",
+    unit: "کیلوگرم",
+    quantity: 120,
+    minQuantity: 60,
+    lastUpdated: "1404/11/20",
+    category: "پروتئین",
+  },
+  {
+    id: "inv4",
+    name: "روغن",
+    unit: "لیتر",
+    quantity: 45,
+    minQuantity: 20,
+    lastUpdated: "1404/11/19",
+    category: "روغن و چربی",
+  },
+  {
+    id: "inv5",
+    name: "پیاز",
+    unit: "کیلوگرم",
+    quantity: 200,
+    minQuantity: 50,
+    lastUpdated: "1404/11/20",
+    category: "سبزیجات",
+  },
+  {
+    id: "inv6",
+    name: "گوجه‌فرنگی",
+    unit: "کیلوگرم",
+    quantity: 150,
+    minQuantity: 40,
+    lastUpdated: "1404/11/20",
+    category: "سبزیجات",
+  },
+  {
+    id: "inv7",
+    name: "تخم‌مرغ",
+    unit: "عدد",
+    quantity: 300,
+    minQuantity: 100,
+    lastUpdated: "1404/11/19",
+    category: "پروتئین",
+  },
+  {
+    id: "inv8",
+    name: "ماکارونی",
+    unit: "بسته",
+    quantity: 15,
+    minQuantity: 30,
+    lastUpdated: "1404/11/18",
+    category: "غلات",
+  },
+  {
+    id: "inv9",
+    name: "نان بربری",
+    unit: "عدد",
+    quantity: 50,
+    minQuantity: 20,
+    lastUpdated: "1404/11/20",
+    category: "نان",
+  },
+  {
+    id: "inv10",
+    name: "کره",
+    unit: "بسته",
+    quantity: 25,
+    minQuantity: 10,
+    lastUpdated: "1404/11/19",
+    category: "لبنیات",
+  },
 ];
 
 // ---- Mock Daily Stats ----
 export const mockDailyStats: DailyStats[] = [
-  { date: "1404/11/15", totalOrders: 320, totalRevenue: 22400000, breakfastOrders: 80, lunchOrders: 160, dinnerOrders: 80, cancelledOrders: 12 },
-  { date: "1404/11/16", totalOrders: 290, totalRevenue: 20300000, breakfastOrders: 70, lunchOrders: 150, dinnerOrders: 70, cancelledOrders: 8 },
-  { date: "1404/11/17", totalOrders: 350, totalRevenue: 24500000, breakfastOrders: 90, lunchOrders: 170, dinnerOrders: 90, cancelledOrders: 15 },
-  { date: "1404/11/18", totalOrders: 310, totalRevenue: 21700000, breakfastOrders: 75, lunchOrders: 155, dinnerOrders: 80, cancelledOrders: 10 },
-  { date: "1404/11/19", totalOrders: 340, totalRevenue: 23800000, breakfastOrders: 85, lunchOrders: 165, dinnerOrders: 90, cancelledOrders: 11 },
-  { date: "1404/11/20", totalOrders: 360, totalRevenue: 25200000, breakfastOrders: 95, lunchOrders: 175, dinnerOrders: 90, cancelledOrders: 9 },
-  { date: "1404/11/21", totalOrders: 280, totalRevenue: 19600000, breakfastOrders: 65, lunchOrders: 145, dinnerOrders: 70, cancelledOrders: 7 },
+  {
+    date: "1404/11/15",
+    totalOrders: 320,
+    totalRevenue: 22400000,
+    breakfastOrders: 80,
+    lunchOrders: 160,
+    dinnerOrders: 80,
+    cancelledOrders: 12,
+  },
+  {
+    date: "1404/11/16",
+    totalOrders: 290,
+    totalRevenue: 20300000,
+    breakfastOrders: 70,
+    lunchOrders: 150,
+    dinnerOrders: 70,
+    cancelledOrders: 8,
+  },
+  {
+    date: "1404/11/17",
+    totalOrders: 350,
+    totalRevenue: 24500000,
+    breakfastOrders: 90,
+    lunchOrders: 170,
+    dinnerOrders: 90,
+    cancelledOrders: 15,
+  },
+  {
+    date: "1404/11/18",
+    totalOrders: 310,
+    totalRevenue: 21700000,
+    breakfastOrders: 75,
+    lunchOrders: 155,
+    dinnerOrders: 80,
+    cancelledOrders: 10,
+  },
+  {
+    date: "1404/11/19",
+    totalOrders: 340,
+    totalRevenue: 23800000,
+    breakfastOrders: 85,
+    lunchOrders: 165,
+    dinnerOrders: 90,
+    cancelledOrders: 11,
+  },
+  {
+    date: "1404/11/20",
+    totalOrders: 360,
+    totalRevenue: 25200000,
+    breakfastOrders: 95,
+    lunchOrders: 175,
+    dinnerOrders: 90,
+    cancelledOrders: 9,
+  },
+  {
+    date: "1404/11/21",
+    totalOrders: 280,
+    totalRevenue: 19600000,
+    breakfastOrders: 65,
+    lunchOrders: 145,
+    dinnerOrders: 70,
+    cancelledOrders: 7,
+  },
 ];
 
 // ---- Mock Site Rules ----
@@ -435,7 +571,8 @@ export const mockSiteRules: SiteRule[] = [
   {
     id: "rule3",
     title: "جریمه عدم دریافت",
-    description: "در صورت عدم دریافت غذای رزرو شده، ۵۰٪ مبلغ به عنوان جریمه کسر می‌شود.",
+    description:
+      "در صورت عدم دریافت غذای رزرو شده، ۵۰٪ مبلغ به عنوان جریمه کسر می‌شود.",
     isActive: true,
     createdAt: "1404/10/01",
   },
@@ -511,7 +648,8 @@ export const mockTickets: Ticket[] = [
     userId: "student1",
     userName: "علی احمدی",
     subject: "مشکل در پرداخت آنلاین",
-    description: "سلام، در هنگام پرداخت آنلاین برای شارژ کیف پول با خطا مواجه می‌شوم. لطفاً پیگیری کنید.",
+    description:
+      "سلام، در هنگام پرداخت آنلاین برای شارژ کیف پول با خطا مواجه می‌شوم. لطفاً پیگیری کنید.",
     category: "financial",
     priority: "high",
     status: "in-progress",
@@ -524,7 +662,8 @@ export const mockTickets: Ticket[] = [
         userId: "admin1",
         userName: "پشتیبانی",
         userRole: "admin",
-        message: "سلام، تیکت شما در دست بررسی است. لطفاً کد رهگیری تراکنش را ارسال کنید.",
+        message:
+          "سلام، تیکت شما در دست بررسی است. لطفاً کد رهگیری تراکنش را ارسال کنید.",
         createdAt: "1404/11/15 11:00",
       },
       {
@@ -556,7 +695,8 @@ export const mockTickets: Ticket[] = [
         userId: "admin1",
         userName: "پشتیبانی",
         userRole: "admin",
-        message: "سلام، مهلت لغو رزرو ۴ ساعت قبل از وعده غذایی می‌باشد. متاسفانه زمان لغو رزرو شما گذشته است.",
+        message:
+          "سلام، مهلت لغو رزرو ۴ ساعت قبل از وعده غذایی می‌باشد. متاسفانه زمان لغو رزرو شما گذشته است.",
         createdAt: "1404/11/14 17:00",
       },
       {
@@ -601,7 +741,8 @@ export const mockTickets: Ticket[] = [
         userId: "admin1",
         userName: "پشتیبانی",
         userRole: "admin",
-        message: "با سلام، موضوع به واحد آشپزخانه منتقل شد. از شما پوزش می‌خواهیم.",
+        message:
+          "با سلام، موضوع به واحد آشپزخانه منتقل شد. از شما پوزش می‌خواهیم.",
         createdAt: "1404/11/14 10:00",
       },
     ],
@@ -624,7 +765,8 @@ export const mockTickets: Ticket[] = [
         userId: "admin1",
         userName: "پشتیبانی",
         userRole: "admin",
-        message: "با سلام، درخواست شما به مدیریت سلف ارجاع داده شد. پس از بررسی به شما اطلاع داده خواهد شد.",
+        message:
+          "با سلام، درخواست شما به مدیریت سلف ارجاع داده شد. پس از بررسی به شما اطلاع داده خواهد شد.",
         createdAt: "1404/11/15 16:00",
       },
     ],
@@ -646,7 +788,8 @@ export interface SoftwareIssue {
   title: string;
   description: string;
   priority: "low" | "medium" | "high" | "critical";
-  status: "submitted" | "under-review" | "in-progress" | "resolved" | "rejected";
+  status:
+    "submitted" | "under-review" | "in-progress" | "resolved" | "rejected";
   submittedBy: string;
   createdAt: string;
   updatedAt: string;
@@ -693,7 +836,8 @@ export const mockSoftwareIssues: SoftwareIssue[] = [
     type: "bug",
     version: "v2.1.0",
     title: "خطا در محاسبه موجودی انبار",
-    description: "در صفحه موجودی انبار، تعداد برخی اقلام به درستی نمایش داده نمی‌شود.",
+    description:
+      "در صفحه موجودی انبار، تعداد برخی اقلام به درستی نمایش داده نمی‌شود.",
     priority: "high",
     status: "in-progress",
     submittedBy: "مدیر سلف دانشگاه تهران",
@@ -705,7 +849,8 @@ export const mockSoftwareIssues: SoftwareIssue[] = [
     type: "feature",
     version: "v2.1.0",
     title: "درخواست افزودن گزارش هفتگی",
-    description: "امکان دریافت گزارش آماری هفتگی از فروش و رزروها به صورت خودکار.",
+    description:
+      "امکان دریافت گزارش آماری هفتگی از فروش و رزروها به صورت خودکار.",
     priority: "medium",
     status: "under-review",
     submittedBy: "مدیر سلف دانشگاه شریف",
@@ -743,7 +888,9 @@ export function formatPrice(price: number): string {
   return new Intl.NumberFormat("fa-IR").format(price) + " تومان";
 }
 
-export function getStatusBadgeVariant(status: string): "default" | "secondary" | "destructive" | "outline" {
+export function getStatusBadgeVariant(
+  status: string,
+): "default" | "secondary" | "destructive" | "outline" {
   switch (status) {
     case "delivered":
       return "default";
