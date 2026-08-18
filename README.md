@@ -75,21 +75,21 @@ SmartCaf-Software-Project/
 
 The `docs/` folder contains a complete set of Software Engineering artifacts. Each document follows standard UML conventions.
 
-| Artifact | Description |
-| --- | --- |
-| Activity Diagrams | Flow of activities: ordering, payment, inventory |
-| Class Diagrams | Static structure: classes, attributes, relationships |
-| Communication Diagrams | Object interactions & message exchanges |
-| Package Diagrams | Logical grouping & dependencies between packages |
-| Process Models | High-level & detailed operational workflows |
-| Proposal | Problem statement, scope, feasibility |
-| Requirements (SRS) | Functional & non-functional requirements |
-| Sequence Diagrams | Time-ordered interactions for key scenarios |
-| State Diagrams | Lifecycle & state transitions of entities |
-| Use Case Descriptions | Structured textual descriptions of behavior |
-| Use Case Diagrams | System boundaries, actors, interactions |
-| User Stories | Agile user stories for all roles |
-| Windows Navigation Diagrams | UI flow & screen transitions for user interfaces |
+| Artifact                    | Description                                          |
+| --------------------------- | ---------------------------------------------------- |
+| Activity Diagrams           | Flow of activities: ordering, payment, inventory     |
+| Class Diagrams              | Static structure: classes, attributes, relationships |
+| Communication Diagrams      | Object interactions & message exchanges              |
+| Package Diagrams            | Logical grouping & dependencies between packages     |
+| Process Models              | High-level & detailed operational workflows          |
+| Proposal                    | Problem statement, scope, feasibility                |
+| Requirements (SRS)          | Functional & non-functional requirements             |
+| Sequence Diagrams           | Time-ordered interactions for key scenarios          |
+| State Diagrams              | Lifecycle & state transitions of entities            |
+| Use Case Descriptions       | Structured textual descriptions of behavior          |
+| Use Case Diagrams           | System boundaries, actors, interactions              |
+| User Stories                | Agile user stories for all roles                     |
+| Windows Navigation Diagrams | UI flow & screen transitions for user interfaces     |
 
 ## 💻 Frontend Application
 
